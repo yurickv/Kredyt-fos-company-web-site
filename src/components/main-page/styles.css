@@ -7,7 +7,7 @@
   font-size: 50px;
   color: #fff;
   font-weight: 500;
-  height: 300px;
+  /* height: 700px; */
   max-height: 100vh;
 }
 
@@ -72,6 +72,7 @@
 
 .navigation-wrapper {
   position: relative;
+  width: 700px;
 }
 
 .dots {
