@@ -18,9 +18,6 @@
 
 body {
 }
-/* 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */
+.container {
+  @apply mx-auto px-4 md:px-[78px] lg:px-[120px] xl:px-[120px];
+}

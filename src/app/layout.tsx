@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({
+  weight: ["600", "700", "800"],
+  display: "swap",
+  subsets: ["latin", "cyrillic"],
+});
 
 export const metadata: Metadata = {
   title: "Кредитна спілка Кредит-ФОС",
@@ -17,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ua">
-      <body className={inter.className}>
+      <body className={montserrat.className}>
         <Header />
         {children}
       </body>
