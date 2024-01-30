@@ -24,6 +24,9 @@ const config: Config = {
         gradient_accent:
           "linear-gradient(118deg, #962B9F 8.27%, #FA61FD 110.39%)",
       },
+      transitionProperty: {
+        "bg-gradient": "background-image",
+      },
       screens: {
         sm: "320px",
         md: "744px",

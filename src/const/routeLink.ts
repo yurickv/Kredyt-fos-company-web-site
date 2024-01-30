@@ -4,4 +4,5 @@ export const routeLink = [
   { link: "/branches", descr: "Відділення" },
   { link: "/information", descr: "Інформація" },
   { link: "/about-us", descr: "Про нас" },
+  { link: "/contacts", descr: "Контакти" },
 ];

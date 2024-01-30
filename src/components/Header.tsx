@@ -20,27 +20,27 @@ const Header: React.FC = () => {
           </Link>
           <a
             href="tel:+38(067)3501977"
-            className="flex gap-2.5 items-center text-primary_400 group hover:text-primary_300 p-4
-                transition-all duration-300 sr-only lg:not-sr-only"
+            className="flex gap-2.5  items-center text-primary_400 group hover:text-primary_300 p-4
+                transition-all duration-300 sr-only lg:not-sr-only text-xl font-extrabold"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span className="">
-              <PhoneIcon />
-            </span>
+            <PhoneIcon />
             <div>+38 097 067-350-19-77</div>
           </a>
         </div>
         <Button route="/" text="Сплатити кредит" />
       </div>
-      <nav className="py-[14px] flex justify-between">
+      <nav className="hidden lg:flex justify-between text-netural_100 ">
         {" "}
         {routeLink.map(({ link, descr }) => (
           <Link
             key={link}
-            className={`flex items-center gap-2 text-main hover:text-hover transition-colors duration-300 ${
+            className={`flex items-center gap-2 text-main hover:text-hover transition-all duration-300
+            px-3 py-6 text-primary_400 text-lg font-bold hover:bg-primary_100 focus:bg-primary_100
+            ${
               params === link &&
-              "after:h-full after:mr-auto after:border-2 after:border-purple-200 after:rounded-sm"
+              "bg-primary_400 text-inherit hover:text-primary_400 focus:text-primary_400"
             }`}
             href={link}
           >
