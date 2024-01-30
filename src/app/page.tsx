@@ -10,9 +10,9 @@ export default function Home() {
       <div>
         <HeroSlider />
       </div>
-      <div>
+      {/* <div>
         <NewsSlider />
-      </div>
+      </div> */}
     </main>
   );
 }
