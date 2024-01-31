@@ -3,16 +3,16 @@ import Link from "next/link";
 type ButtonProps = {
   route: string;
   text: string;
-  width?: string;
+  style?: string;
 };
 
-export const Button = ({ route, text, width }: ButtonProps) => {
+export const Button = ({ route, text, style }: ButtonProps) => {
   return (
     <Link
       href={route}
       className={`text-netural_100 text-lg font-extrabold leading-4 relative overflow-hidden
       bg-gradient_1 rounded-md px-[34px] py-5 text-mainTitleBlack text-center block          
-      ${width ? width : "w-max"}`}
+      ${style ? style : "w-max"}`}
     >
       {text}
       <span

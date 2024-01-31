@@ -20,7 +20,7 @@ const Header: React.FC = () => {
           </Link>
           <a
             href="tel:+38(067)3501977"
-            className="flex gap-2.5  items-center text-primary_400 group hover:text-primary_300 p-4
+            className="flex gap-2.5 items-center text-primary_400 group hover:text-primary_300 p-4
                 transition-all duration-300 sr-only lg:not-sr-only text-xl font-extrabold"
             target="_blank"
             rel="noopener noreferrer"
@@ -29,7 +29,7 @@ const Header: React.FC = () => {
             <div>+38 097 067-350-19-77</div>
           </a>
         </div>
-        <Button route="/" text="Сплатити кредит" />
+        <Button route="/" text="Сплатити кредит" style="hidden lg:block" />
       </div>
       <nav className="hidden lg:flex justify-between text-netural_100 ">
         {" "}
@@ -40,7 +40,7 @@ const Header: React.FC = () => {
             px-3 py-6 text-primary_400 text-lg font-bold hover:bg-primary_100 focus:bg-primary_100
             ${
               params === link &&
-              "bg-primary_400 text-inherit hover:text-primary_400 focus:text-primary_400"
+              "bg-primary_400 !text-inherit hover:!text-primary_400 focus:!text-primary_400"
             }`}
             href={link}
           >
