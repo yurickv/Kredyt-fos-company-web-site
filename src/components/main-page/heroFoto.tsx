@@ -1,6 +1,14 @@
 import { getImageProps } from "next/image";
 
-export default function HeroFotoDepsit() {
+interface HeroFotoDepsitProps {
+  mobileFoto: string;
+  desktopFoto: string;
+}
+
+export default function HeroFotoDepsit({
+  mobileFoto,
+  desktopFoto,
+}: HeroFotoDepsitProps) {
   const common = { alt: "Kredyt-FOS deposit offer foto", sizes: "100vw" };
   const {
     props: { srcSet: desktop },
@@ -8,7 +16,7 @@ export default function HeroFotoDepsit() {
     ...common,
     width: 1440,
     height: 448,
-    src: "/woman-showing-coins-1440.webp",
+    src: desktopFoto,
   });
   const {
     props: { srcSet: mobile, ...rest },
@@ -16,7 +24,7 @@ export default function HeroFotoDepsit() {
     ...common,
     width: 360,
     height: 548,
-    src: "/woman-showing-coins-360.webp",
+    src: mobileFoto,
   });
 
   return (
