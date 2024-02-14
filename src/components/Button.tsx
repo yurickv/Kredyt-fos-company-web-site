@@ -24,6 +24,3 @@ export const Button = ({ route, text, style }: ButtonProps) => {
     </Link>
   );
 };
-
-// after:content-['Сплатити кредит'] after:absolute after:left-0 after:top-0 after:w-full after:h-full after:transition-all
-//   after:bg-gradient_2 after:opacity-0 hover:after:opacity-100 after:rounded-md after:duration-300 after:z-10
