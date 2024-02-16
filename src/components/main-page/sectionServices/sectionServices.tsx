@@ -1,4 +1,3 @@
-import { SecondButton } from "../SecondButton";
 import { ServiceCard } from "./serviceCard";
 
 export const SectionServices = () => {

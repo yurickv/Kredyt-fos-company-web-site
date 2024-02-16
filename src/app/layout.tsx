@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 
 const montserrat = Montserrat({
-  weight: ["600", "700", "800"],
+  weight: ["400", "600", "700", "800"],
   display: "swap",
   subsets: ["latin", "cyrillic"],
 });
