@@ -7,9 +7,7 @@ import { SectionServices } from "@/components/main-page/sectionServices";
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between">
-      {/* <section>
-        <HeroSlider />
-      </section> */}
+      <HeroSlider />
       <SectionServices />
       {/* <div>
         <NewsSlider />

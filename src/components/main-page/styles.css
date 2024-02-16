@@ -6,18 +6,6 @@
   justify-content: center;
   font-size: 50px;
   color: #fff;
-  font-weight: 500;
-  /* height: 700px; */
-  /* max-height: 100vh; */
-}
-
-.number-slide1 {
-  background: rgb(64, 175, 255);
-  background: linear-gradient(
-    128deg,
-    rgba(64, 175, 255, 1) 0%,
-    rgba(63, 97, 255, 1) 100%
-  );
 }
 
 .number-slide2 {

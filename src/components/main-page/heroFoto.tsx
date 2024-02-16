@@ -1,15 +1,12 @@
 import { getImageProps } from "next/image";
 
-interface HeroFotoDepsitProps {
+interface HeroFotoProps {
   mobileFoto: string;
   desktopFoto: string;
 }
 
-export default function HeroFotoDepsit({
-  mobileFoto,
-  desktopFoto,
-}: HeroFotoDepsitProps) {
-  const common = { alt: "Kredyt-FOS deposit offer foto", sizes: "100vw" };
+export default function HeroFoto({ mobileFoto, desktopFoto }: HeroFotoProps) {
+  const common = { alt: "Kredyt-FOS offer foto", sizes: "100vw" };
   const {
     props: { srcSet: desktop },
   } = getImageProps({

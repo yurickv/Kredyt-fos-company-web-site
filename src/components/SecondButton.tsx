@@ -11,7 +11,7 @@ export const SecondButton = ({ route, text, style }: ButtonProps) => {
     <div className="rounded-lg overflow-hidden  inline-block">
       <Link
         href={route}
-        className="gradient-button py-4 px-[35px] text-lg font-bold"
+        className="gradient-button py-3 px-[31px] text-lg font-bold"
       >
         {text}
       </Link>
