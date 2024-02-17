@@ -18,7 +18,7 @@ export const AdvantageCard = ({ title, text, route }: AdvantageCardProps) => {
       <Link
         aria-label={route}
         href={route}
-        className="text-primary_300 hover:text-primary_200 font-extrabold py-2 pr-2"
+        className="text-primary_300 hover:text-primary_200 font-extrabold py-2 pr-2 transition-colors duration-300 text-[18px]"
       >
         Більше
       </Link>

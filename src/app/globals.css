@@ -41,3 +41,6 @@ body {
   color: transparent;
   transition: all 0.2s ease;
 }
+.title {
+  @apply text-[32px] md:text-[40px] font-extrabold md:font-bold text-primary_400;
+}

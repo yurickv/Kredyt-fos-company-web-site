@@ -8,9 +8,7 @@ export const SectionAdvantage = () => {
   return (
     <section className="pt-10 lg:pt-[50px] pb-16 md:pb-[138px] lg:pb-[124px]">
       <div className="px-4 md:px-[78px] lg:px-[120px]">
-        <h2 className="text-[20px] md:text-[40px] font-extrabold md:font-bold text-primary_400 ml-0">
-          Ось що робить нас унікальними:
-        </h2>
+        <h2 className="title">Ось що робить нас унікальними:</h2>
         <ul className="flex flex-col gap-[34px] md:grid md:grid-cols-2 xl:flex xl:flex-row md:gap-x-4 md:gap-y-6 flex-wrap justify-between mt-6">
           <li className="w-[282px] h-[256px]" id="Персональний підхід">
             <User />

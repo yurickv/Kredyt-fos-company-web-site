@@ -26,7 +26,7 @@ const Header: React.FC = () => {
             rel="noopener noreferrer"
           >
             <PhoneIcon />
-            <div>+38 097 067-350-19-77</div>
+            <div>+38 067 350-19-77</div>
           </a>
         </div>
         <Button route="/" text="Сплатити кредит" style="hidden lg:block" />
