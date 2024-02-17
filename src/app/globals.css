@@ -18,7 +18,7 @@
 
 body {
 }
-.container {
+.container-header {
   @apply mx-auto px-4 md:px-[78px] lg:px-[120px] xl:px-[120px];
 }
 

@@ -12,7 +12,7 @@ const Header: React.FC = () => {
   const params = usePathname();
 
   return (
-    <header className="container">
+    <header className="container container-header">
       <div className="pt-6 pb-4 flex items-center justify-between">
         <div className="flex items-center gap-14">
           <Link className="" href="/">

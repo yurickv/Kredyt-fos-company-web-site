@@ -3,8 +3,8 @@ import { Tick } from "../icons/Tick";
 
 export const SectionMilitary = () => {
   return (
-    <section className="py-[50px] px-4 md:px-[78px] lg:px-[120px] md:py-[100px] bg-gradient_2">
-      <div className="bg-netural_100 rounded-md px-6 py-6 md:py-10 lg:py-[50px] lg:px-[50px]">
+    <section className="py-[50px] px-4 md:px-[78px] lg:px-[120px] md:py-[100px] bg-[url('/background-for-mil.webp')] bg-center bg-cover">
+      <div className="bg-netural_100 rounded-md px-6 py-6 md:py-10 lg:py-[50px] lg:px-[50px] max-w-[1296px] mx-auto ">
         <h2 className="title">Взаємодія із захищеною категорією населення</h2>
         <h3 className="text-[16px] md:text-[18px] lg:text-[20px] text-primary_700 font-bold pt-6">
           Захищеною категорією населення є:
