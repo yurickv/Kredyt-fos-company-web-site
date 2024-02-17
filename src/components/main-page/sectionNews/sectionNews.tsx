@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./styles.css";
+import "../styles.css";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
@@ -10,7 +10,7 @@ export const NewsSlider = () => {
     initial: 0,
     slides: {
       perView: 3,
-      spacing: 15,
+      spacing: 24,
     },
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
@@ -21,9 +21,13 @@ export const NewsSlider = () => {
   });
 
   return (
-    <>
-      <div className="navigation-wrapper">
-        <div ref={sliderRef} className="keen-slider h-96">
+    <section className="max-w-[1536px] mx-auto py-[50px] px-4 md:px-[78px] lg:px-[120px]">
+      <div className="navigation-wrapper xl:w-[1200px] lg:w-[1040px] md:w-[588px] w-[328px]">
+        <h2 className="title pb-6">Новини</h2>
+        <div
+          ref={sliderRef}
+          className="keen-slider h-[370px] md:h-[438px] lg:h-[386px]"
+        >
           <div className="keen-slider__slide number-slide1">1</div>
           <div className="keen-slider__slide number-slide2">2</div>
           <div className="keen-slider__slide number-slide3">3</div>
@@ -70,7 +74,7 @@ export const NewsSlider = () => {
           })}
         </div>
       )}
-    </>
+    </section>
   );
 };
 

@@ -12,7 +12,7 @@ const Header: React.FC = () => {
   const params = usePathname();
 
   return (
-    <header className="container container-header">
+    <header className="container-header max-w-[1536px]">
       <div className="pt-6 pb-4 flex items-center justify-between">
         <div className="flex items-center gap-14">
           <Link className="" href="/">

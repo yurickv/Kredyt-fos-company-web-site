@@ -26,7 +26,7 @@ export const ServiceCard = ({
         <h2 className="text-primary_400 text-[20px] md:text-[48px] font-semibold">
           {title}
         </h2>
-        <p className="text-primary_700 max-w-[170px] min-h-[104px] md:max-w-[290px] pt-2 md:pt-4 ">
+        <p className="text-primary_700 max-w-[170px] min-h-[104px] md:max-w-[250px] pt-2 md:pt-4 ">
           {text}
         </p>
         <p className="bg-gradient_1 group-hover:bg-gradient_2 inline-block text-transparent font-bold bg-clip-text relative pt-3 md:pt-[89px]">
