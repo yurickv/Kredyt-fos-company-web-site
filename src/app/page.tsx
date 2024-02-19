@@ -1,7 +1,7 @@
 import { HeroSlider } from "@/components/main-page/heroSection";
 import { SectionAdvantage } from "@/components/main-page/sectionAdvantage/sectionAdvantage";
+import { SectionConsultForm } from "@/components/main-page/sectionConsult/sectionConsult";
 import { SectionMilitary } from "@/components/main-page/sectionMilitary";
-import NewsSlider from "@/components/main-page/sectionNews/sectionNews";
 import { SectionPartners } from "@/components/main-page/sectionPartners";
 import { SectionServices } from "@/components/main-page/sectionServices/sectionServices";
 import dynamic from "next/dynamic";
@@ -22,6 +22,7 @@ export default function Home() {
       <SectionMilitary />
       <SectionPartners />
       <NewsSliderDynamic />
+      <SectionConsultForm />
     </main>
   );
 }

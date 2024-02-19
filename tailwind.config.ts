@@ -23,6 +23,8 @@ const config: Config = {
         gradient_2: "linear-gradient(94deg, #287CE1 36.82%, #64DAFF 111.34%)",
         gradient_accent:
           "linear-gradient(118deg, #962B9F 8.27%, #FA61FD 110.39%)",
+        gradient_section:
+          "linear-gradient(90deg, #DAEAFE 0.05%, #8BB3DA 101.12%)",
       },
       screens: {
         sm: "320px",
