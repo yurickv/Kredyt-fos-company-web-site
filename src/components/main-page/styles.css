@@ -73,7 +73,7 @@
   border: none;
   width: 10px;
   height: 10px;
-  background: #c5c5c5;
+  background: #79c2e1;
   border-radius: 50%;
   margin: 0 5px;
   padding: 5px;
@@ -85,20 +85,21 @@
 }
 
 .dot.active {
-  background: #000;
+  background: #0a499c;
 }
 
 .arrow {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  fill: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  padding: 8px;
+  background-color: #e1f6ff;
+  fill: #0a499c;
   cursor: pointer;
 }
-
+.arrow:hover {
+  fill: #1c84b1;
+}
 .arrow--left {
   left: 5px;
 }
@@ -109,5 +110,8 @@
 }
 
 .arrow--disabled {
-  fill: rgba(255, 255, 255, 0.5);
+  fill: rgba(78, 75, 75, 0.5);
+}
+.arrow--disabled:hover {
+  fill: rgba(78, 75, 75, 0.5);
 }
