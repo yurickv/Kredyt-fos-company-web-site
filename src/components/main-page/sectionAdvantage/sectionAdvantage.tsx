@@ -1,5 +1,5 @@
 import { AdvantageCard } from "./advantageCard";
-import { User } from "@/components/icons/advantageSection/User";
+import { User } from "@/components/icons/advantageSection/userIcon";
 import { Handshake } from "@/components/icons/advantageSection/handshake";
 import { Security } from "@/components/icons/advantageSection/secuity";
 import { Speed } from "@/components/icons/advantageSection/speed";
