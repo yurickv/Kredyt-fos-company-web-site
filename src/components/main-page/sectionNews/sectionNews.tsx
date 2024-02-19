@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import "../styles.css";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
-export const NewsSlider = () => {
+const NewsSlider = () => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slides: {
-      perView: 3,
+      perView: getSlidesPerView(),
       spacing: 24,
     },
     slideChanged(slider) {
@@ -19,6 +21,29 @@ export const NewsSlider = () => {
       setLoaded(true);
     },
   });
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const handleResize = () => {
+        instanceRef.current?.update();
+      };
+
+      window.addEventListener("resize", handleResize);
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
+  }, [instanceRef]);
+
+  function getSlidesPerView() {
+    if (window.innerWidth < 744) {
+      return 1;
+    } else if (window.innerWidth < 1280) {
+      return 2;
+    } else {
+      return 3;
+    }
+  }
 
   return (
     <section className="max-w-[1536px] mx-auto py-[50px] px-4 md:px-[78px] lg:px-[120px]">
@@ -102,3 +127,5 @@ function Arrow(props: {
     </svg>
   );
 }
+
+export default NewsSlider;
