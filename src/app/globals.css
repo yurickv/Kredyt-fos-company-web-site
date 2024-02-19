@@ -18,9 +18,29 @@
 
 body {
 }
-/* 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */
+.container-header {
+  @apply mx-auto px-4 md:px-[78px] lg:px-[120px] xl:px-[120px];
+}
+
+.gradient-button {
+  border: 6px solid;
+  border-image: linear-gradient(94deg, #0b4d9d 36.82%, #2192b6 111.34%) 5;
+  display: inline-block;
+  background: linear-gradient(94deg, #0b4d9d 36.82%, #2192b6 111.34%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.2s ease;
+}
+
+.gradient-button:hover {
+  border-image: linear-gradient(94deg, #287ce1 36.82%, #64daff 111.34%) 5;
+  background: linear-gradient(94deg, #287ce1 36.82%, #64daff 111.34%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.2s ease;
+}
+.title {
+  @apply text-[32px] md:text-[40px] font-extrabold md:font-bold text-primary_400;
+}
