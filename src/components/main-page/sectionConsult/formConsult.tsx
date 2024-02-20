@@ -1,75 +1,85 @@
 "use client";
 import { useState } from "react";
 
-export const SectionConsultForm = () => {
+export const ConsultForm = () => {
   const [formData, setFormData] = useState({
     userName: "",
     phoneNumber: "",
     userMessage: "",
   });
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("/api/send-message", {
+      const messageData = {
+        userName: formData.userName,
+        phoneNumber: formData.phoneNumber,
+        userMessage: formData.userMessage,
+      };
+
+      const response = await fetch("/api/message", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          message: `Customer: ${formData.userName}\nPhone Number: ${formData.phoneNumber}\nMessage: ${formData.userMessage}`,
-        }),
+        body: JSON.stringify({ messageData }),
       });
 
       if (response.ok) {
-        console.log("Message sent successfully!");
-        // Clear form fields
+        // Handle success (e.g., show a success message)
+        console.log("Message sent successfully");
         setFormData({
           userName: "",
           phoneNumber: "",
           userMessage: "",
         });
       } else {
-        console.error("Failed to send message.");
+        // Handle errors (e.g., show an error message)
+        console.error("Failed to send message");
       }
     } catch (error) {
       console.error("Error sending message:", error);
     }
   };
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
       <input
+        className="rounded-md px-[10px] py-[14px]"
         type="text"
         name="userName"
         value={formData.userName}
         onChange={handleChange}
-        placeholder="Your Name"
+        placeholder="Ваше ім'я*"
         required
       />
       <input
+        className="rounded-md px-[10px] py-[14px]"
         type="tel"
         name="phoneNumber"
         value={formData.phoneNumber}
         onChange={handleChange}
-        placeholder="Phone Number"
+        placeholder="+380*"
         required
       />
       <textarea
+        className="rounded-md px-[10px] py-[14px] hidden lg:block"
         name="userMessage"
         value={formData.userMessage}
         onChange={handleChange}
-        placeholder="Your Message"
-        required
-      ></textarea>
+        placeholder="Коментар"
+        rows={4}
+      />
       <button type="submit">Submit</button>
     </form>
   );
