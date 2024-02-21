@@ -15,6 +15,8 @@ const config: Config = {
         primary_200: "#79C2E1",
         primary_100: "#E1F6FF",
         netural_100: "#FFFFFF",
+        netural_200: "#B0B0B0",
+        netural_300: "#808080",
         accent_500: "#962B9F",
         accent_300: "#FA61FD",
       },

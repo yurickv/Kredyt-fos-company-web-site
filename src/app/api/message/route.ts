@@ -1,43 +1,47 @@
 import axios, { AxiosResponse } from "axios";
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextRequest, NextResponse } from "next/server";
 
-interface FormData {
-  userName: string;
-  phoneNumber: string;
-  userMessage?: string;
-}
+export const POST = async (req: NextRequest, res: NextResponse) => {
+  const { userName, phoneNumber, userMessage } = (await req.json()) as {
+    userName: string;
+    phoneNumber: string;
+    userMessage: string;
+  };
 
-export const POST = async (req: NextApiRequest, res: NextApiResponse) => {
-  if (!req.body || !req.body.userName || !req.body.phoneNumber) {
-    return res.status(400).json({ message: "All fields are required" });
+  if (!userName || !phoneNumber) {
+    return NextResponse.json(
+      { message: "All fields are required" },
+      { status: 400 }
+    );
   }
 
-  const formData: FormData = req.body;
-
-  const telegramBotToken = "YOUR_BOT_TOKEN";
-  const chatId = "YOUR_CHAT_ID";
+  const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.BOT_CHAT_ID;
 
   try {
     const response: AxiosResponse = await axios.post(
       `https://api.telegram.org/bot${telegramBotToken}/sendMessage?chat_id=${chatId}`,
       {
-        text: `**Form Submitted:**
-
-        Name: ${formData.userName}
-        Phone Number: ${formData.phoneNumber}
-        Message: ${formData.userMessage}`,
+        text: `Заявка на консультацію:
+        Ім'я: ${userName}
+        Номер телефону: ${phoneNumber}
+        Повідомлення: ${userMessage || "N/A"}`,
       }
     );
 
     if (response.status === 200) {
-      return res.status(200).json({ message: "Form data sent successfully!" });
+      return NextResponse.json(
+        { message: "Form data sent successfully!" },
+        { status: 200 }
+      );
     } else {
       throw new Error("Telegram API error: " + response.statusText);
     }
   } catch (error) {
     console.error(error);
-    return res
-      .status(500)
-      .json({ message: "An error occurred while sending data" });
+    return NextResponse.json(
+      { message: "An error occurred while sending data" },
+      { status: 500 }
+    );
   }
 };
