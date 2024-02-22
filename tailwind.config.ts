@@ -15,6 +15,8 @@ const config: Config = {
         primary_200: "#79C2E1",
         primary_100: "#E1F6FF",
         netural_100: "#FFFFFF",
+        netural_200: "#B0B0B0",
+        netural_300: "#808080",
         accent_500: "#962B9F",
         accent_300: "#FA61FD",
       },
@@ -23,6 +25,8 @@ const config: Config = {
         gradient_2: "linear-gradient(94deg, #287CE1 36.82%, #64DAFF 111.34%)",
         gradient_accent:
           "linear-gradient(118deg, #962B9F 8.27%, #FA61FD 110.39%)",
+        gradient_section:
+          "linear-gradient(90deg, #DAEAFE 0.05%, #8BB3DA 101.12%)",
       },
       screens: {
         sm: "320px",

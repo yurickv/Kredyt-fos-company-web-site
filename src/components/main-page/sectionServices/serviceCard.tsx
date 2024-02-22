@@ -19,8 +19,8 @@ export const ServiceCard = ({
   return (
     <Link
       href={route}
-      className="w-[332px] h-[208px] md:w-[588px] md:h-[368px] rounded-md md:bg-[url('/background-for-services.webp')] bg-[url('/mobile-background-for-services.webp')] 
-      flex justify-end items-end group relative"
+      className="w-[332px] h-[208px] md:max-w-[844px] md:w-full md:h-[368px] rounded-md md:bg-[url('/background-for-services.webp')] bg-[url('/mobile-background-for-services.webp')] 
+      flex justify-end items-end group relative bg-cover bg-center"
     >
       <div className="absolute z-10 top-[16px] md:top-[34px] left-[21px] md:left-[34px]">
         <h2 className="text-primary_400 text-[20px] md:text-[48px] font-semibold">

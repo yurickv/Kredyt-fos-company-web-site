@@ -3,7 +3,7 @@ import { ServiceCard } from "./serviceCard";
 export const SectionServices = () => {
   return (
     <section className="pt-20 pb-10 md:py-[100px] mx-auto max-w-[1536px]">
-      <div className="mx-4 md:mx-[78px] lg:mx-[120px] flex flex-col lg:flex-row gap-6 justify-between">
+      <div className="mx-4 md:mx-[78px] lg:mx-[120px] flex flex-col lg:flex-row gap-6 justify-between items-center">
         <ServiceCard
           title="Депозити"
           text="Ознайомтесь з найкращими накопичувальними пропозиціями"
