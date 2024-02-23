@@ -51,7 +51,8 @@ export const ConsultForm = () => {
   return (
     <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4  mt-6">
       <input
-        className="rounded-md px-[10px] py-[14px] border hover:border-primary_300 transition-colors duration-300 w-full max-w-[350px]"
+        className="rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
+        transition-all duration-300 w-full max-w-[360px] outline-none  focus-within:ring-primary_300 active:ring-primary_300"
         type="text"
         name="userName"
         value={formData.userName}
@@ -60,7 +61,8 @@ export const ConsultForm = () => {
         required
       />
       <input
-        className="rounded-md px-[10px] py-[14px] border-2 hover:border-primary_300 transition-colors duration-300 max-w-[350px]"
+        className="rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
+        transition-all duration-300 w-full max-w-[360px] outline-none  focus-within:ring-primary_300 active:ring-primary_300"
         type="tel"
         name="phoneNumber"
         value={formData.phoneNumber}
@@ -69,23 +71,26 @@ export const ConsultForm = () => {
         required
       />
       <textarea
-        className="rounded-md px-[10px] py-[14px] hidden lg:block border col-span-2
-         hover:border-primary_300 transition-colors duration-300"
+        className="col-span-2 rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
+        transition-all duration-300 w-full outline-none focus-within:ring-primary_300 active:ring-primary_300"
         name="userMessage"
         value={formData.userMessage}
         onChange={handleChange}
         placeholder="Коментар"
         rows={4}
       />
-      <div className="flex flex-col md:flex-row gap-4 justify-between md:items-center col-span-2 mt-[34px]">
-        <label className="max-w-[407px] flex gap-4">
+      <div className="flex flex-col md:flex-row gap-4 justify-between md:items-center col-span-2 mt-[34px] group">
+        <label className="max-w-[407px] flex gap-4 cursor-pointer">
           <input
-            className="w-6 h-6 hover:border-primary_300 transition-colors duration-300 indeterminate:border-none"
+            className={`min-w-6 h-6 ring-2 ring-transparent transition-all duration-300  ${
+              isCheckboxChecked ? "" : "group-hover:ring-accent_300"
+            }`}
             type="checkbox"
             checked={isCheckboxChecked}
             onChange={handleCheckboxChange}
-          />{" "}
-          Я погоджуюсь з умовами обробки персональних даних
+            required
+          />
+          Я надаю згоду на обробку моїх персональних даних
         </label>
         <button
           type="submit"
