@@ -7,11 +7,11 @@ import { LogoIconTablet } from "./icons/LogoIconTablet";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="py-[50px] px-4 md:px-[78px] lg:px-[120px] md:py-[100px] bg-gradient_section">
-      <div className="flex flex-col gap-14 lg:flex-row max-w-[844px] lg:max-w-full">
+    <footer className="pt-[50px] pb-6 px-4 md:px-[78px] lg:px-[120px] md:pt-[100px] md:pb-[50px] bg-gradient_section">
+      <div className="flex flex-col gap-14 lg:flex-row max-w-[844px] lg:max-w-[1296px] lg:justify-between mx-auto">
         {" "}
         <div className="flex gap-14 md:gap-[65px] lg:gap-[86px] items-start max-[743px]:justify-center">
-          <div className="flex flex-col lg:flex-row items-center gap-14">
+          <div className="flex flex-col xl:flex-row items-center gap-14">
             {" "}
             <Link className="" href="/">
               <div className="hidden lg:block">
@@ -44,8 +44,7 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
               >
                 <PhoneIcon />
-
-                <div>067 350-19-77</div>
+                067 350-19-77
               </a>
             </div>
           </div>
@@ -54,7 +53,7 @@ const Footer: React.FC = () => {
               <Link
                 key={link}
                 className="transition-colors duration-300
-           py-2 text-primary_400 text-base md:text-lg font-normal md:font-semibold hover:text-primary_300 focus:text-primary_300"
+           pb-2 text-primary_400 text-base md:text-lg font-normal md:font-semibold hover:text-primary_300 focus:text-primary_300"
                 href={link}
               >
                 {descr}
@@ -62,7 +61,7 @@ const Footer: React.FC = () => {
             ))}
           </nav>
         </div>
-        <div className="flex flex-col gap-4 items-end ">
+        <div className="flex flex-col gap-6 items-end">
           <h3 className="text-[16px] md:text-[20px] font-bold text-primary_400">
             Залишились запитання?
           </h3>
@@ -84,6 +83,9 @@ const Footer: React.FC = () => {
           </button>
         </div>
       </div>
+      <p className="text-base text-primary_400 md:text-lg md:font-semibold mt-14 text-center">
+        © Кредитна спілка “Кредит-ФОС”, 2024
+      </p>
     </footer>
   );
 };
