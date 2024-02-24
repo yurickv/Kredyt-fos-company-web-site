@@ -3,11 +3,10 @@ import * as React from "react";
 import "./styles.css";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import HeroFoto from "./heroFoto";
 import { HeroText } from "./heroText";
 import Image from "next/image";
-import profilePic from "../../../public/businesswoman-showing-coins.webp";
-import profileDeposit from "../../../public/woman-showing-coins-1440.webp";
+import profileCredit from "../../../public/Main-screen-1.webp";
+import profileDeposit from "../../../public/Main-screen1.webp";
 
 export const HeroSlider = () => {
   const [sliderRef] = useKeenSlider<HTMLDivElement>(
@@ -53,13 +52,9 @@ export const HeroSlider = () => {
         className="keen-slider w-[743px] md:w-[1279px] lg:w-[1440px] h-[548px] md:h-[448px] relative"
       >
         <div className="keen-slider__slide w-full h-full flex flex-col justify-center items-center">
-          {/* <HeroFoto
-            mobileFoto="/woman-showing-coins-744.webp"
-            desktopFoto="/woman-showing-coins-1440.webp"
-          /> */}
           <Image
             alt="Kredyt FOS service foto"
-            src={profilePic}
+            src={profileCredit}
             placeholder="blur"
             fill
             priority
@@ -76,10 +71,6 @@ export const HeroSlider = () => {
           />
         </div>
         <div className="keen-slider__slide w-full  h-full flex flex-col justify-center items-center">
-          {/* <HeroFoto
-            mobileFoto="/businesswoman-showing-coins.webp"
-            desktopFoto="/businesswoman-showing-coins.webp"
-          /> */}
           <Image
             alt="Kredyt FOS service foto"
             src={profileDeposit}

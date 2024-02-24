@@ -54,7 +54,7 @@ const NewsSlider = () => {
       min-[844px]:w-[688px] min-[660px]:w-[628px] min-[560px]:w-[528px] min-[460px]:w-[428px]"
       >
         <div className="flex justify-between">
-          <h2 className="title pb-6">Новини</h2>{" "}
+          <h2 className="title !font-semibold pb-6">Новини</h2>{" "}
           {loaded && instanceRef.current && (
             <div className="flex gap-4">
               <Arrow

@@ -7,14 +7,14 @@ export const SectionServices = () => {
         <ServiceCard
           title="Депозити"
           text="Ознайомтесь з найкращими накопичувальними пропозиціями"
-          foto="/portrait-of-the-happy-family.webp"
+          foto="/family.webp"
           route="/deposit"
           styleFoto="w-[162px] h-[169px] group-hover:w-[173px] group-hover:h-[180px] md:w-[286px] md:h-[298px] md:group-hover:w-[306px] md:group-hover:h-[319px]"
         />
         <ServiceCard
           title="Кредити"
           text="Найгнучкіші умови кредитування спеціально для вас"
-          foto="/woman-with-money.webp"
+          foto="/girl.webp"
           route="/credit"
           styleFoto="w-[126px] h-[187px] group-hover:w-[132px] group-hover:h-[197px] md:w-[238px] md:h-[354px] md:group-hover:w-[251px] md:group-hover:h-[373px]"
         />

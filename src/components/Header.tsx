@@ -7,6 +7,8 @@ import { usePathname } from "next/navigation";
 import { routeLink } from "@/const/routeLink";
 import { LogoIcon } from "./icons/LogoIcon";
 import { PhoneIcon } from "./icons/PhoneIcon";
+import { LogoIconMobile } from "./icons/LogoIconMobile";
+import { LogoIconTablet } from "./icons/LogoIconTablet";
 
 const Header: React.FC = () => {
   const params = usePathname();
@@ -16,7 +18,15 @@ const Header: React.FC = () => {
       <div className="pt-6 pb-4 flex items-center justify-between">
         <div className="flex items-center gap-14">
           <Link className="" href="/">
-            <LogoIcon />
+            <div className="hidden lg:block">
+              <LogoIcon />
+            </div>
+            <div className="hidden md:block lg:hidden">
+              <LogoIconTablet />
+            </div>
+            <div className="md:hidden">
+              <LogoIconMobile />
+            </div>
           </Link>
           <a
             href="tel:+38(067)3501977"
