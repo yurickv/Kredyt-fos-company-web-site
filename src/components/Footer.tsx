@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
               {" "}
               <a
                 href="tel:+38(067)3501977"
-                className="flex gap-2.5 items-center text-primary_400 group hover:text-primary_300 py-2
+                className="flex gap-2.5 items-center text-primary_400 group hover:text-primary_300 pb-2
                 transition-all duration-300 text-base md:text-lg font-bold"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
               </a>
               <a
                 href="tel:+38(067)3501977"
-                className="flex gap-2.5 items-center text-primary_400 group hover:text-primary_300 py-2 mt-2 lg:mt-4
+                className="flex gap-2.5 items-center text-primary_400 group hover:text-primary_300 pb-2 mt-2 lg:mt-4
                 transition-all duration-300 text-base md:text-lg font-bold"
                 target="_blank"
                 rel="noopener noreferrer"
