@@ -6,7 +6,7 @@ import { Speed } from "@/components/icons/advantageSection/speed";
 
 export const SectionAdvantage = () => {
   return (
-    <section className="pt-10 lg:pt-[50px] pb-16 md:pb-[138px] lg:pb-[124px] max-w-[1536px] mx-auto">
+    <section className="pt-10 lg:pt-[50px] pb-16 md:pb-[138px] lg:pb-[124px] max-w-[1536px] mx-auto bg-netural_100">
       <div className="px-4 md:px-[78px] lg:px-[120px]">
         <h2 className="title">Ось що робить нас унікальними:</h2>
         <ul className="flex flex-col gap-[34px] md:grid md:grid-cols-2 xl:flex xl:flex-row md:gap-x-4 md:gap-y-6 flex-wrap justify-between mt-6">
