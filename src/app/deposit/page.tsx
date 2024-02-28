@@ -1,7 +1,7 @@
+import { SectionDepositCalc } from "@/components/deposit-page/sectionDepositCalc";
 import { SectionAdvantage } from "@/components/main-page/sectionAdvantage/sectionAdvantage";
 import { SectionMilitary } from "@/components/main-page/sectionMilitary";
 import { SectionPartners } from "@/components/main-page/sectionPartners";
-import { SectionDepositCalc } from "@/components/deposit-page/sectionDepositCalc";
 
 const Deposit = () => {
   return (
