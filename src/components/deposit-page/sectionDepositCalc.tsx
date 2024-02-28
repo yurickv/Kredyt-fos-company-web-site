@@ -1,14 +1,32 @@
 "use client";
 import { useState } from "react";
+import * as Yup from "yup";
+
+const schema = Yup.object().shape({
+  deposits: Yup.string().required("Обов'язкове поле"),
+  depositSum: Yup.number().required("Обов'язкове поле"),
+  depositDuration: Yup.number().required("Обов'язкове поле"),
+  dateInput: Yup.date()
+    .required("Обов'язкове поле")
+    .min(new Date(), "Дата має бути в майбутньому або поточна"),
+  paymentTime: Yup.string().required("Обов'язкове поле"),
+});
 
 export const SectionDepositCalc = () => {
   const [formData, setFormData] = useState({
     deposits: "",
-    paymentDate: "",
-    scaleInput1: "",
-    scaleInput2: "",
+    paymentTime: "",
+    depositSum: "",
+    depositDuration: "",
     dateInput: "",
   });
+  const [errors, setErrors] = useState<{
+    deposits?: string;
+    depositSum?: number;
+    paymentTime?: string;
+    depositDuration?: number;
+    dateInput?: Date;
+  }>({});
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -32,11 +50,34 @@ export const SectionDepositCalc = () => {
     }
   };
 
+  const validate = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    try {
+      // await schema.validate(
+      //   { [e.target.name]: e.target.value },
+      //   { abortEarly: false }
+      // );
+      // setErrors({});
+      await schema.validate(formData, { abortEarly: false });
+      // If validation succeeds, handle form submission here
+      console.log(formData);
+    } catch (err) {
+      const validationErrors: Record<string, string> = {};
+      (err as Yup.ValidationError).inner.forEach((error) => {
+        if (error.path) {
+          validationErrors[error.path] = error.message;
+          console.log(error.message);
+        }
+      });
+      setErrors(errors);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Handle form submission here
     console.log(formData);
   };
+
   return (
     <section className="px-4 md:px-[78px] lg:px-[120px] pt-[82px] md:pt-[50px] lg:pt-[82px] pb-[50px] bg-netural_100">
       <h2 className="title">Депозитний калькулятор:</h2>
@@ -47,7 +88,7 @@ export const SectionDepositCalc = () => {
               <label className="text-netural_400 text-base">Назва вкладу</label>
               <select
                 className="rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
-        transition-all duration-300 w-full max-w-[360px] outline-none  focus-within:ring-primary_300 active:ring-primary_300 text-primary_700"
+        transition-all duration-300 w-full max-w-[552px] outline-none  focus-within:ring-primary_300 active:ring-primary_300 text-primary_700"
                 name="deposits"
                 value={formData.deposits}
                 onChange={handleChange}
@@ -63,46 +104,67 @@ export const SectionDepositCalc = () => {
               <label className="text-netural_400 text-base">Сума вкладу</label>
               <input
                 className="rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
-        transition-all duration-300 w-full max-w-[360px] outline-none  focus-within:ring-primary_300 active:ring-primary_300 text-primary_700"
+        transition-all duration-300 w-full max-w-[552px] outline-none  focus-within:ring-primary_300 active:ring-primary_300 text-primary_700"
                 type="number"
-                name="scaleInput1"
-                value={formData.scaleInput1}
+                name="depositSum"
+                value={formData.depositSum}
                 onChange={handleScaleChange}
                 min={200}
                 max={20000}
                 step={100}
+                onBlur={validate}
                 required
               />
+              <input
+                className="w-full max-w-[552px] -mt-3"
+                type="range"
+                name="depositSum"
+                value={formData.depositSum}
+                onChange={handleScaleChange}
+                min={200}
+                max={20000}
+              />
             </div>
-            <div className="flex gap-4">
-              <div className="flex flex-col gap-2">
+            <div className="flex gap-4 w-full max-w-[552px]">
+              <div className="flex flex-col gap-2 grow">
                 <label className="text-netural_400 text-base">
                   Строк вкладу (к-сть місяців)
                 </label>
                 <input
                   className="rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
-        transition-all duration-300 w-full max-w-[360px] outline-none  focus-within:ring-primary_300 active:ring-primary_300 text-primary_700"
+        transition-all duration-300 outline-none  focus-within:ring-primary_300 active:ring-primary_300 text-primary_700"
                   type="number"
-                  name="scaleInput2"
-                  value={formData.scaleInput2}
+                  name="depositDuration"
+                  value={formData.depositDuration}
                   onChange={handleScaleChange}
                   min={1}
                   max={12}
                   step={1}
+                  onBlur={validate}
                   required
                 />
+                <input
+                  className="w-full max-w-[552px] -mt-3"
+                  type="range"
+                  name="depositDuration"
+                  value={formData.depositDuration}
+                  onChange={handleScaleChange}
+                  min={1}
+                  max={12}
+                />
               </div>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2 grow">
                 <label className="text-netural_400 text-base">
                   Дата підписання договору
                 </label>
                 <input
                   className="rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
-        transition-all duration-300 w-full max-w-[360px] outline-none  focus-within:ring-primary_300 active:ring-primary_300 text-primary_700"
+        transition-all duration-300 outline-none  focus-within:ring-primary_300 active:ring-primary_300 text-primary_700"
                   type="date"
                   name="dateInput"
                   value={formData.dateInput}
                   onChange={handleChange}
+                  onBlur={validate}
                   required
                 />
               </div>
@@ -114,9 +176,9 @@ export const SectionDepositCalc = () => {
               </label>
               <select
                 className="rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
-        transition-all duration-300 w-full max-w-[360px] outline-none  focus-within:ring-primary_300 active:ring-primary_300 text-primary_700"
-                name="paymentDate"
-                value={formData.paymentDate}
+        transition-all duration-300 w-full max-w-[552px] outline-none  focus-within:ring-primary_300 active:ring-primary_300 text-primary_700"
+                name="paymentTime"
+                value={formData.paymentTime}
                 onChange={handleChange}
                 required
               >
