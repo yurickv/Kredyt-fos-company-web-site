@@ -1,55 +1,28 @@
 "use client";
-import { depositTermPersent } from "@/const/depositData";
 import { useState } from "react";
 import * as Yup from "yup";
 
 const schema = Yup.object().shape({
-  depositSum: Yup.number()
-    .min(200, "Не менше 200грн.")
-    .max(20000, "Не більше 20 000грн.")
-    .required("Обов'язкове поле"),
+  depositSum: Yup.number().required("Обов'язкове поле"),
+  depositDuration: Yup.number().required("Обов'язкове поле"),
+  dateInput: Yup.date()
+    .required("Обов'язкове поле")
+    .min(new Date(), "Дата має бути в майбутньому або поточна"),
 });
 
-export const SectionDepositCalc = () => {
+export const SectionCreditCalc = () => {
   const [formData, setFormData] = useState({
     deposits: "Строковий",
-    paymentTime: "Щомісячно",
-    depositSum: 2000,
+    paymentTime: "В кінці терміну",
+    depositSum: 200,
     depositDuration: 12,
+    dateInput: "",
   });
   const [errors, setErrors] = useState<{
     depositSum?: number;
+    depositDuration?: number;
+    dateInput?: Date;
   }>({});
-
-  function resultPaiment(
-    deposits: string,
-    depositSum: number,
-    depositDuration: number
-  ) {
-    let persent = 0;
-    switch (deposits) {
-      case "Строковий":
-        depositTermPersent.find((option) => {
-          if (option.term === depositDuration) {
-            persent = option.persent;
-          }
-        });
-        break;
-      case "Накопичувальний":
-        break;
-      case "На вимогу":
-        break;
-      default:
-        alert("Я не знаю таких значень");
-    }
-    // console.log((persent / 12) * depositDuration);
-    return (persent / 12) * depositDuration * depositSum + depositSum;
-  }
-  const result = resultPaiment(
-    formData.deposits,
-    formData.depositSum,
-    formData.depositDuration
-  );
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -61,9 +34,7 @@ export const SectionDepositCalc = () => {
     }));
   };
 
-  const handleScaleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
+  const handleScaleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     // Ensure that value is a number
     const parsedValue = parseFloat(value);
@@ -77,17 +48,22 @@ export const SectionDepositCalc = () => {
 
   const validate = async (e: React.ChangeEvent<HTMLInputElement>) => {
     try {
+      // await schema.validate(
+      //   { [e.target.name]: e.target.value },
+      //   { abortEarly: false }
+      // );
+      // setErrors({});
       await schema.validate(formData, { abortEarly: false });
-      setErrors({});
+      // If validation succeeds, handle form submission here
     } catch (err) {
       const validationErrors: Record<string, string> = {};
       (err as Yup.ValidationError).inner.forEach((error) => {
         if (error.path) {
           validationErrors[error.path] = error.message;
+          console.log(validationErrors[error.path]);
         }
       });
-      setErrors(validationErrors);
-      // console.log(errors.depositSum);
+      // setErrors(errors);
     }
   };
 
@@ -118,6 +94,7 @@ export const SectionDepositCalc = () => {
                 <option value="На вимогу">На вимогу</option>
               </select>
             </div>
+
             <div className="flex flex-col gap-2">
               <label className="text-netural_400 text-base">Сума вкладу</label>
               <input
@@ -138,35 +115,56 @@ export const SectionDepositCalc = () => {
                 name="depositSum"
                 value={formData.depositSum}
                 onChange={handleScaleChange}
-                onBlur={validate}
                 step={100}
                 min={200}
                 max={20000}
               />
             </div>
-            <div className="flex flex-col gap-2">
-              <label className="text-netural_400 text-base">
-                Строк вкладу (к-сть місяців)
-              </label>
-              <select
-                className="rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
-        transition-all duration-300 w-full max-w-[552px] outline-none  focus-within:ring-primary_300 active:ring-primary_300 text-primary_700"
-                name="depositDuration"
-                value={formData.depositDuration}
-                onChange={handleScaleChange}
-                required
-              >
-                {depositTermPersent.map((item) => (
-                  <option
-                    key={item.term}
-                    value={item.term}
-                    disabled={formData.deposits === "Накопичувальний"}
-                  >
-                    {item.term}
-                  </option>
-                ))}
-              </select>
+            <div className="flex gap-4 w-full max-w-[552px]">
+              <div className="flex flex-col gap-2 grow">
+                <label className="text-netural_400 text-base">
+                  Строк вкладу (к-сть місяців)
+                </label>
+                <input
+                  className="rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
+        transition-all duration-300 outline-none  focus-within:ring-primary_300 active:ring-primary_300 text-primary_700"
+                  type="number"
+                  name="depositDuration"
+                  value={formData.depositDuration}
+                  onChange={handleScaleChange}
+                  min={1}
+                  max={12}
+                  step={1}
+                  onBlur={validate}
+                  required
+                />
+                <input
+                  className="w-full max-w-[552px] -mt-3"
+                  type="range"
+                  name="depositDuration"
+                  value={formData.depositDuration}
+                  onChange={handleScaleChange}
+                  min={1}
+                  max={12}
+                />
+              </div>
+              <div className="flex flex-col gap-2 grow">
+                <label className="text-netural_400 text-base">
+                  Дата підписання договору
+                </label>
+                <input
+                  className="rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
+        transition-all duration-300 outline-none  focus-within:ring-primary_300 active:ring-primary_300 text-primary_700"
+                  type="date"
+                  name="dateInput"
+                  value={formData.dateInput}
+                  onChange={handleChange}
+                  onBlur={validate}
+                  required
+                />
+              </div>
             </div>
+
             <div className="flex flex-col gap-2">
               <label className="text-netural_400 text-base">
                 Виплата відсотків
@@ -183,27 +181,17 @@ export const SectionDepositCalc = () => {
                 <option value="В кінці терміну">В кінці терміну</option>
               </select>
             </div>
+            <div className="col-span-2">
+              <button
+                type="submit"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Submit
+              </button>
+            </div>
           </div>
 
-          <div className="bg-netural_100 rounded-md px-4 md:px-6 py-6">
-            <div>
-              <p>До виплати</p>
-              <p>{result}</p>
-            </div>
-            <button
-              type="submit"
-              className="text-netural_100 text-lg font-extrabold leading-4 relative overflow-hidden 
-      bg-gradient_1 rounded-md px-[34px] py-5 text-mainTitleBlack text-center block w-full"
-            >
-              Надіслати заявку
-              <span
-                className="absolute inset-0 flex items-center justify-center text-lg font-extrabold leading-4 text-netural_100
-      bg-gradient_2 opacity-0 hover:opacity-100 transition-opacity duration-300 z-10 focus:opacity-100"
-              >
-                Надіслати заявку
-              </span>
-            </button>
-          </div>
+          <div></div>
         </form>
       </div>
     </section>
