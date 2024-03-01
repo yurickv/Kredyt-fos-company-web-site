@@ -1,4 +1,5 @@
 import { SectionDepositCalc } from "@/components/deposit-page/sectionDepositCalc";
+import { SectionInfoCard } from "@/components/deposit-page/sectionInfoCard";
 import { SectionAdvantage } from "@/components/main-page/sectionAdvantage/sectionAdvantage";
 import { SectionMilitary } from "@/components/main-page/sectionMilitary";
 import { SectionPartners } from "@/components/main-page/sectionPartners";
@@ -13,15 +14,20 @@ const Deposit = () => {
           <h1 className="text-primary_400 text-[40px] md:text-[64px] font-extrabold">
             Депозити
           </h1>
-          <div className="text-primary_400 font-extrabold flex gap-2 mt-6 mx">
-            <Link href="/">Домашня</Link>
+          <div className="text-primary_400  font-extrabold flex gap-2 mt-6 mx">
+            <Link
+              href="/"
+              className="hover:text-primary_300 transition-colors duration-300"
+            >
+              Домашня
+            </Link>
             <span>&#8250;</span>
             <p>Депозити</p>
           </div>
         </div>
       </section>
       <SectionDepositCalc />
-      <SectionAdvantage />
+      <SectionInfoCard />
       <SectionMilitary />
       <SectionPartners />
     </main>

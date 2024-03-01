@@ -1,4 +1,4 @@
-import { resultPersent } from "@/helpers/depositSum";
+import { resultPersent } from "@/helpers/calculationDepositSum";
 
 interface FormData {
   deposits: string;
@@ -12,18 +12,20 @@ interface Props {
 
 export const CalcResult: React.FC<Props> = ({ formData }) => {
   const { deposits, depositDuration, depositSum } = formData;
-  const persent = resultPersent(deposits, depositDuration);
+  const persent = resultPersent(deposits, depositDuration, depositSum);
 
   const accruedCash = (depositSum * persent).toFixed(2);
   const taxes = (parseFloat(accruedCash) * 0.195).toFixed(2);
   const profit = (parseFloat(accruedCash) - parseFloat(taxes)).toFixed(2);
-
+  const finalPaiment = (depositSum + parseFloat(profit))
+    .toFixed(2)
+    .replace(".", ",");
   return (
     <div className="bg-netural_100 rounded-md px-4 md:px-6 py-6">
       <div className="bg-primary_100 rounded-md border-l-4 border-l-primary_300 p-4">
         <p className="text-primary_700 text-[18px] font-bold">До виплати</p>
         <p className="text-primary_400 text-[32px] md:text-[40px] font-bold mt-3">
-          {(depositSum + parseFloat(profit)).toFixed(2).replace(".", ",")}
+          {200 > depositSum || depositSum > 50000 ? "..." : finalPaiment}
         </p>
       </div>
       <ul className="mt-[34px] md:mt-[17px] flex flex-col gap-[34px] md:flex-row justify-between">
@@ -55,11 +57,15 @@ export const CalcResult: React.FC<Props> = ({ formData }) => {
           </p>
         </li>
       </ul>
+      <p className="text-netural_300 mt-[34px] md:mt-[17px]">
+        Калькулятор розраховує приблизну суму. Для точного розрахунку надішліть
+        заявку
+      </p>
 
       <button
         type="submit"
         className="text-netural_100 text-lg font-extrabold leading-4 relative overflow-hidden 
-      bg-gradient_1 rounded-md px-[34px] py-5 text-mainTitleBlack text-center block w-full"
+      bg-gradient_1 rounded-md px-[34px] py-5 text-mainTitleBlack text-center block w-full mt-[34px] md:mt-[17px]"
       >
         Надіслати заявку
         <span
