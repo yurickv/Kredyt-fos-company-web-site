@@ -21,3 +21,22 @@ export const terminableDeposit = {
   termine: [3, 12, 18, 24, 36, 48],
   rate: [14, 15, 17, 18, 20, 23],
 };
+
+export const onDemandDeposit = {
+  title: "На вимогу",
+  termOne: true,
+  termTwo: true,
+  termThree: true,
+  termFour: true,
+  termine: ["0-48"],
+  rate: [8],
+};
+export const accumulativeDeposit = {
+  title: "Для накопичення",
+  termOne: true,
+  termTwo: true,
+  termThree: false,
+  termFour: true,
+  termine: [12, 18],
+  rate: [14, 15],
+};

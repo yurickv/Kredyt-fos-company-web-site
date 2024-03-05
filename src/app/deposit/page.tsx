@@ -1,8 +1,8 @@
 import { SectionDepositCalc } from "@/components/deposit-page/sectionDepositCalc";
+import { SectionDocuments } from "@/components/deposit-page/sectionDocuments";
 import { SectionInfoCard } from "@/components/deposit-page/sectionInfoCard";
-import { SectionAdvantage } from "@/components/main-page/sectionAdvantage/sectionAdvantage";
-import { SectionMilitary } from "@/components/main-page/sectionMilitary";
-import { SectionPartners } from "@/components/main-page/sectionPartners";
+import { SectionConsultForm } from "@/components/main-page/sectionConsult/sectionConsult";
+
 import Link from "next/link";
 
 const Deposit = () => {
@@ -28,8 +28,8 @@ const Deposit = () => {
       </section>
       <SectionDepositCalc />
       <SectionInfoCard />
-      <SectionMilitary />
-      <SectionPartners />
+      <SectionConsultForm />
+      <SectionDocuments />
     </main>
   );
 };
