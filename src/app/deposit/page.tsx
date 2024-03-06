@@ -1,5 +1,6 @@
 import { SectionDepositCalc } from "@/components/deposit-page/sectionDepositCalc";
 import { SectionDocuments } from "@/components/deposit-page/sectionDocuments";
+import { SectionInfo } from "@/components/deposit-page/sectionInfo";
 import { SectionInfoCard } from "@/components/deposit-page/sectionInfoCard";
 import { SectionConsultForm } from "@/components/main-page/sectionConsult/sectionConsult";
 
@@ -28,6 +29,7 @@ const Deposit = () => {
       </section>
       <SectionDepositCalc />
       <SectionInfoCard />
+      <SectionInfo />
       <SectionConsultForm />
       <SectionDocuments />
     </main>
