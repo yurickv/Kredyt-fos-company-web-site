@@ -7,15 +7,21 @@ export const SectionDocuments = () => {
         <h2 className="title">Перелік документів для оформлення депозиту</h2>
         <ul className="mt-6">
           <li className="flex gap-2 mt-6">
-            <SuccessIcon /> <span>Паспорт</span>
+            <div className="min-w-[18px]">
+              <SuccessIcon />
+            </div>{" "}
+            <span>Паспорт</span>
           </li>
           <li className="flex gap-2 mt-6">
-            <SuccessIcon />{" "}
+            <div className="min-w-[18px]">
+              <SuccessIcon />
+            </div>
             <span>Реєстраційний номер облікової картки платника податків</span>
           </li>
           <li className="flex gap-2 mt-6">
-            {" "}
-            <SuccessIcon />
+            <div className="min-w-[18px]">
+              <SuccessIcon />
+            </div>
             <span>Інші документи на вимогу кредитної спілки</span>
           </li>
         </ul>

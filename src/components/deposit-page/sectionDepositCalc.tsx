@@ -48,6 +48,21 @@ export const SectionDepositCalc = () => {
       }));
     }
   };
+  const handleDepositSumChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    const parsedValue = parseFloat(value);
+    if (!isNaN(parsedValue)) {
+      setFormData((prevState) => ({
+        ...prevState,
+        depositSum: parsedValue,
+      }));
+    } else {
+      setFormData((prevState) => ({
+        ...prevState,
+        depositSum: 0,
+      }));
+    }
+  };
 
   const validate = async (e: React.ChangeEvent<HTMLInputElement>) => {
     try {
@@ -106,12 +121,10 @@ export const SectionDepositCalc = () => {
                     className={`input-calc ${
                       errors.depositSum ? "!ring-red-500" : ""
                     }`}
-                    type="number"
+                    type="text"
                     name="depositSum"
                     value={formData.depositSum}
-                    onChange={handleScaleChange}
-                    min={1000}
-                    max={50000}
+                    onChange={handleDepositSumChange}
                     onBlur={validate}
                     required
                   />
