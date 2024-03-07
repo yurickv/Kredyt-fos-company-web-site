@@ -29,3 +29,22 @@ body {
         transition-all duration-300 w-full max-w-[552px] md:max-w-full lg:max-w-[552px] outline-none 
          focus-within:ring-primary_300 active:ring-primary_300 text-primary_700;
 }
+.gradient-button {
+  border: 6px solid;
+  border-image: linear-gradient(94deg, #0b4d9d 36.82%, #2192b6 111.34%) 5;
+  display: inline-block;
+  background: linear-gradient(94deg, #0b4d9d 36.82%, #2192b6 111.34%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.2s ease;
+}
+
+.gradient-button:hover {
+  border-image: linear-gradient(94deg, #287ce1 36.82%, #64daff 111.34%) 5;
+  background: linear-gradient(94deg, #287ce1 36.82%, #64daff 111.34%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.2s ease;
+}
