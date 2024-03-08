@@ -95,7 +95,7 @@ export const SectionCreditCalc = () => {
             <div className="flex flex-col gap-1 md:gap-[34px]">
               <div className="flex flex-col gap-2">
                 <label className="text-netural_400 text-base">
-                  Назва вкладу
+                  Підвид кредиту
                 </label>
                 <select
                   className="rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
@@ -105,15 +105,24 @@ export const SectionCreditCalc = () => {
                   onChange={handleChange}
                   required
                 >
-                  <option value="Строковий">Строковий</option>
-                  <option value="Накопичувальний">Накопичувальний</option>
-                  <option value="На вимогу">На вимогу</option>
+                  <option value="Споживчий">Споживчий</option>
+                  <option value="Під заставу депозиту">
+                    Під заставу депозиту
+                  </option>
+                  <option value="Інноваційний">Інноваційний</option>
+                  <option value="Підприємницький">Підприємницький</option>
+                  <option value="Для діяльності в селі">
+                    Для діяльності в селі
+                  </option>
+                  <option value="Сільськогосподарський">
+                    Сільськогосподарський
+                  </option>
                 </select>
               </div>
 
               <div className="flex flex-col gap-2">
                 <label className="text-netural_400 text-base">
-                  Сума вкладу
+                  Сума кредиту
                 </label>
                 <input
                   className="rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
@@ -122,8 +131,8 @@ export const SectionCreditCalc = () => {
                   name="depositSum"
                   value={formData.depositSum}
                   onChange={handleScaleChange}
-                  min={200}
-                  max={20000}
+                  min={1000}
+                  max={200000}
                   onBlur={validate}
                   required
                 />
@@ -133,15 +142,15 @@ export const SectionCreditCalc = () => {
                   name="depositSum"
                   value={formData.depositSum}
                   onChange={handleScaleChange}
-                  step={100}
-                  min={200}
-                  max={20000}
+                  step={1000}
+                  min={1000}
+                  max={200000}
                 />
               </div>
               <div className="flex gap-4 w-full max-w-[552px]">
                 <div className="flex flex-col gap-2 grow">
                   <label className="text-netural_400 text-base">
-                    Строк вкладу (к-сть місяців)
+                    Строк кредиту (к-сть місяців)
                   </label>
                   <input
                     className="rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 

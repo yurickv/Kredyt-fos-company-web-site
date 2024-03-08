@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowIcon } from "../icons/depositPage/arrowIcon";
 import { FailureIcon } from "../icons/depositPage/failureIcon";
 import { SuccessIcon } from "../icons/depositPage/successIcon";
@@ -22,11 +23,11 @@ export const InfoCardDeposit: React.FC<Props> = ({ term }) => {
     <div className="rounded-md ring-2 ring-primary_200 overflow-hidden flex flex-col lg:flex-row max-w-[844px] lg:max-w-full">
       <div className="bg-primary_100 flex flex-col justify-between items-start py-6 px-2 md:px-4 lg:px-6 lg:w-[330px] min-w-[300px]">
         <h3 className="text-[32px] font-bold text-primary_400">{title}</h3>
-        <div className="flex gap-3 group items-center mt-2">
-          <button
-            type="button"
-            className="relative bg-gradient_1 inline-block text-transparent bg-clip-text text-[18px] font-bold"
-          >
+        <Link
+          className="flex gap-3 group items-center mt-2"
+          href="#documentsDeposit"
+        >
+          <div className="relative bg-gradient_1 inline-block text-transparent bg-clip-text text-[18px] font-bold">
             Дізнатись більше
             <span
               className="absolute z-20 top-0 left-0 inset-0 bg-gradient_2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 focus:opacity-100 
@@ -34,11 +35,11 @@ export const InfoCardDeposit: React.FC<Props> = ({ term }) => {
             >
               Дізнатись більше
             </span>
-          </button>
+          </div>
           <div className="rotate-[55deg] group-hover:rotate-0 transition-all duration-300 w-2.5 h-2.5">
             <ArrowIcon />
           </div>
-        </div>
+        </Link>
       </div>
       <div className="flex flex-col md:flex-row md:gap-4">
         <div className="py-6 px-2 md:px-4 lg:px-6 min-w-[240px] lg:min-w-[349px]">
