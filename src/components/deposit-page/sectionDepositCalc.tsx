@@ -35,31 +35,20 @@ export const SectionDepositCalc = () => {
     }));
   };
 
-  const handleScaleChange = (
+  const handleDepositChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    // Ensure that value is a number
     const parsedValue = parseFloat(value);
     if (!isNaN(parsedValue)) {
       setFormData((prevState) => ({
         ...prevState,
         [name]: parsedValue,
       }));
-    }
-  };
-  const handleDepositSumChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    const parsedValue = parseFloat(value);
-    if (!isNaN(parsedValue)) {
-      setFormData((prevState) => ({
-        ...prevState,
-        depositSum: parsedValue,
-      }));
     } else {
       setFormData((prevState) => ({
         ...prevState,
-        depositSum: 0,
+        [name]: 0,
       }));
     }
   };
@@ -124,7 +113,7 @@ export const SectionDepositCalc = () => {
                     type="text"
                     name="depositSum"
                     value={formData.depositSum}
-                    onChange={handleDepositSumChange}
+                    onChange={handleDepositChange}
                     onBlur={validate}
                     required
                   />
@@ -138,7 +127,7 @@ export const SectionDepositCalc = () => {
                     type="range"
                     name="depositSum"
                     value={formData.depositSum}
-                    onChange={handleScaleChange}
+                    onChange={handleDepositChange}
                     onBlur={validate}
                     step={500}
                     min={1000}
@@ -155,7 +144,7 @@ export const SectionDepositCalc = () => {
                     className="input-calc"
                     name="depositDuration"
                     value={formData.depositDuration}
-                    onChange={handleScaleChange}
+                    onChange={handleDepositChange}
                     required
                   >
                     {formData.deposits === "Строковий" &&

@@ -1,9 +1,9 @@
 import { resultPersent } from "@/helpers/calculationDepositSum";
 
 interface FormData {
-  deposits: string;
-  depositDuration: number;
-  depositSum: number;
+  credits: string;
+  creditDuration: number;
+  creditSum: number;
 }
 
 interface Props {
@@ -11,22 +11,24 @@ interface Props {
 }
 
 export const CalcCreditResult: React.FC<Props> = ({ formData }) => {
-  const { deposits, depositDuration, depositSum } = formData;
-  const persent = resultPersent(deposits, depositDuration, depositSum);
+  const { credits, creditDuration, creditSum } = formData;
+  // const persent = resultPersent(deposits, depositDuration, creditSum);
 
-  const accruedCash = (depositSum * persent).toFixed(2);
-  const taxes = (parseFloat(accruedCash) * 0.195).toFixed(2);
-  const profit = (parseFloat(accruedCash) - parseFloat(taxes)).toFixed(2);
-  const finalPaiment = (depositSum + parseFloat(profit))
-    .toFixed(2)
-    .replace(".", ",");
+  // const accruedCash = (depositSum * persent).toFixed(2);
+  // const taxes = (parseFloat(accruedCash) * 0.195).toFixed(2);
+  // const profit = (parseFloat(accruedCash) - parseFloat(taxes)).toFixed(2);
+  // const finalPaiment = (depositSum + parseFloat(profit))
+  //   .toFixed(2)
+  //   .replace(".", ",");
   return (
     <div className="bg-netural_100 rounded-md px-4 md:px-6 py-6">
       <div className="bg-primary_100 rounded-md border-l-4 border-l-primary_300 p-4">
-        <p className="text-primary_700 text-[18px] font-bold">До виплати</p>
-        <p className="text-primary_400 text-[32px] md:text-[40px] font-bold mt-3">
-          {200 > depositSum || depositSum > 50000 ? "..." : finalPaiment}
+        <p className="text-primary_700 text-[18px] font-bold">
+          Орієнтовний щомісячний платіж
         </p>
+        {/* <p className="text-primary_400 text-[32px] md:text-[40px] font-bold mt-3">
+          {200 > creditSum || creditSum > 50000 ? "..." : finalPaiment}
+        </p> */}
       </div>
       <ul className="mt-[34px] md:mt-[17px] flex flex-col gap-[34px] md:flex-row justify-between">
         <li key="accrued" className="flex justify-between gap-4 md:flex-col">
@@ -34,27 +36,27 @@ export const CalcCreditResult: React.FC<Props> = ({ formData }) => {
             <p className="text-primary_700">Нараховано %</p>
             <div className="w-[50px] h-1 rounded-full bg-primary_300 mt-2 md:mt-4"></div>
           </div>
-          <p className="text-primary_400 text-[20px] md:text-[32px] font-bold">
+          {/* <p className="text-primary_400 text-[20px] md:text-[32px] font-bold">
             {accruedCash.replace(".", ",")}
-          </p>
+          </p> */}
         </li>
         <li key="taxes" className="flex justify-between gap-4 md:flex-col">
           <div>
             <p className="text-primary_700">Податки</p>
             <div className="w-[50px] h-1 rounded-full bg-primary_300 mt-2 md:mt-4"></div>
           </div>
-          <p className="text-primary_400 text-[20px] md:text-[32px] font-bold">
+          {/* <p className="text-primary_400 text-[20px] md:text-[32px] font-bold">
             {taxes.replace(".", ",")}
-          </p>
+          </p> */}
         </li>
         <li key="profit" className="flex justify-between gap-4 md:flex-col">
           <div>
             <p className="text-primary_700">Прибуток</p>
             <div className="w-[50px] h-1 rounded-full bg-primary_300 mt-2 md:mt-4"></div>
           </div>
-          <p className="text-primary_400 text-[20px] md:text-[32px] font-bold">
+          {/* <p className="text-primary_400 text-[20px] md:text-[32px] font-bold">
             {profit.replace(".", ",")}
-          </p>
+          </p> */}
         </li>
       </ul>
       <p className="text-netural_300 mt-[34px] md:mt-[17px]">
