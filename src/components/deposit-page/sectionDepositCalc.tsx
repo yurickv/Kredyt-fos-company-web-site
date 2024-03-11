@@ -123,7 +123,12 @@ export const SectionDepositCalc = () => {
                     </p>
                   )}{" "}
                   <input
-                    className="absolute left-0 -bottom-1 w-full max-w-[552px] md:max-w-full lg:max-w-[552px] -mt-3.5 appearance-none rounded-md bg-netural_400 h-1"
+                    className="absolute left-0 -bottom-1 w-full max-w-[552px] md:max-w-full lg:max-w-[552px] -mt-3.5 appearance-none rounded-md h-1"
+                    style={{
+                      background: `linear-gradient(to right, #79C2E1 ${
+                        formData.depositSum / 500
+                      }%, #808080 ${formData.depositSum / 500}%)`,
+                    }}
                     type="range"
                     name="depositSum"
                     value={formData.depositSum}

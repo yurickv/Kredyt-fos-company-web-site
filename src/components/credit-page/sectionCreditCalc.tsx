@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { CalcCreditResult } from "./calcResult";
 import { SuccessIcon } from "../icons/depositPage/successIcon";
 import { FailureIcon } from "../icons/depositPage/failureIcon";
+import { creditTypesPersent } from "@/const/creditData";
 
 const schema = Yup.object().shape({
   creditSum: Yup.number()
@@ -19,7 +20,7 @@ const schema = Yup.object().shape({
 export const SectionCreditCalc = () => {
   const [formData, setFormData] = useState({
     credits: "Споживчий",
-    dateInput: "",
+    dateInput: new Date().toISOString().split("T")[0],
     creditSum: 10000,
     creditDuration: 12,
   });
@@ -97,18 +98,14 @@ export const SectionCreditCalc = () => {
                   onChange={handleChange}
                   required
                 >
-                  <option value="Споживчий">Споживчий</option>
-                  <option value="Під заставу депозиту">
-                    Під заставу депозиту
-                  </option>
-                  <option value="Інноваційний">Інноваційний</option>
-                  <option value="Підприємницький">Підприємницький</option>
-                  <option value="Для діяльності в селі">
-                    Для діяльності в селі
-                  </option>
-                  <option value="Сільськогосподарський">
-                    Сільськогосподарський
-                  </option>
+                  {creditTypesPersent.map((item) => (
+                    <option
+                      key={Object.keys(item)[0]}
+                      value={Object.keys(item)[0]}
+                    >
+                      {Object.keys(item)[0]}
+                    </option>
+                  ))}
                 </select>
               </div>
 
@@ -136,7 +133,13 @@ export const SectionCreditCalc = () => {
                     </p>
                   )}{" "}
                   <input
-                    className="absolute left-0 -bottom-1 w-full max-w-[552px] md:max-w-full lg:max-w-[552px] -mt-3.5 appearance-none rounded-md bg-netural_400 h-1"
+                    className="absolute left-0 -bottom-1 w-full max-w-[552px] md:max-w-full lg:max-w-[552px] -mt-3.5 appearance-none rounded-md h-1"
+                    // className="appearance-none w-full h-2 rounded-md bg-gray-200 outline-none"
+                    style={{
+                      background: `linear-gradient(to right, #79C2E1 ${
+                        formData.creditSum / 2000
+                      }%, #808080 ${formData.creditSum / 2000}%)`,
+                    }}
                     type="range"
                     name="creditSum"
                     value={formData.creditSum}
@@ -172,7 +175,12 @@ export const SectionCreditCalc = () => {
                       </p>
                     )}{" "}
                     <input
-                      className="absolute left-0 -bottom-1 w-full max-w-[552px] md:max-w-full lg:max-w-[552px] -mt-3.5 appearance-none rounded-md bg-netural_400 h-1"
+                      className="absolute left-0 -bottom-1 w-full max-w-[552px] md:max-w-full lg:max-w-[552px] -mt-3.5 appearance-none rounded-md h-1"
+                      style={{
+                        background: `linear-gradient(to right, #79C2E1 ${
+                          formData.creditDuration / 0.25
+                        }%, #808080 ${formData.creditDuration / 0.25}%)`,
+                      }}
                       type="range"
                       name="creditDuration"
                       value={formData.creditDuration}
@@ -198,7 +206,7 @@ export const SectionCreditCalc = () => {
                   />
                 </div>
               </div>
-              <div className="flex gap-4 w-full max-w-[552px] justify-around">
+              <div className="flex flex-col gap-4 w-full max-w-[552px]">
                 <div className="flex gap-2 items-center">
                   <SuccessIcon />
                   <span className="text-[18px] text-primary_700">Ануїтет</span>
