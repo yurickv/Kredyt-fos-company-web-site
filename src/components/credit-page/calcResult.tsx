@@ -6,6 +6,7 @@ interface FormData {
   credits: string;
   creditDuration: number;
   creditSum: number;
+  dateInput: string;
 }
 
 interface Props {
@@ -97,12 +98,12 @@ export const CalcCreditResult: React.FC<Props> = ({ formData }) => {
         </button>
       </div>
       {isModalOpen && (
-        <Modal onClose={() => setIsModalOpen(false)}>
-          <h3 className="text-[32px] font-bold text-primary_400 mt-8">
-            {credits}
-          </h3>
-          <div className="w-[50px] h-1 rounded-full bg-primary_300 mt-2 md:mt-4"></div>
-        </Modal>
+        <Modal
+          formData={formData}
+          payment={parseFloat(payment)}
+          persent={persent}
+          onClose={() => setIsModalOpen(false)}
+        />
       )}
     </>
   );
