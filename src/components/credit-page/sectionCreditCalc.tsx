@@ -71,7 +71,9 @@ export const SectionCreditCalc = () => {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     e.preventDefault();
     // Handle form submission here
     console.log(formData);
@@ -83,7 +85,7 @@ export const SectionCreditCalc = () => {
         <h2 className="title">Кредитний калькулятор:</h2>
         <div className="mt-6 bg-netural_200 rounded-md px-4 md:px-10 py-10 md:max-w-[844px] lg:max-w-full">
           <form
-            onSubmit={handleSubmit}
+            // onSubmit={handleSubmit}
             className="flex flex-col lg:grid lg:grid-cols-2 gap-4"
           >
             <div className="flex flex-col gap-1 md:gap-[34px]">
@@ -217,8 +219,23 @@ export const SectionCreditCalc = () => {
                 </div>
               </div>
             </div>
-
-            <CalcCreditResult formData={formData} />
+            <div className="bg-netural_100 rounded-md px-4 md:px-6 py-6">
+              <CalcCreditResult formData={formData} />
+              <button
+                type="submit"
+                onClick={handleSubmit}
+                className="text-netural_100 text-lg font-extrabold leading-4 relative overflow-hidden 
+      bg-gradient_1 rounded-md px-[34px] py-5 text-mainTitleBlack text-center block w-full mt-[34px] md:mt-[17px]"
+              >
+                Надіслати заявку
+                <span
+                  className="absolute inset-0 flex items-center justify-center text-lg font-extrabold leading-4 text-netural_100
+      bg-gradient_2 opacity-0 hover:opacity-100 transition-opacity duration-300 z-10 focus:opacity-100"
+                >
+                  Надіслати заявку
+                </span>
+              </button>
+            </div>
           </form>
         </div>
       </div>

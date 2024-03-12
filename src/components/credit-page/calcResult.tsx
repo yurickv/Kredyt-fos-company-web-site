@@ -20,21 +20,27 @@ export const CalcCreditResult: React.FC<Props> = ({ formData }) => {
   let persent = 0;
   persent = getCreditPercent(credits);
 
-  const annuityCoof =
-    (persent * (1 + persent) ** creditDuration) /
-    ((1 - persent) ** creditDuration - 1);
+  const payment = (
+    (creditSum * persent * (1 + persent) ** creditDuration) /
+    ((1 + persent) ** creditDuration - 1)
+  ).toFixed(2);
 
-  const payment = (creditSum * annuityCoof * -1).toFixed(2);
   const allPaidSum = (parseFloat(payment) * creditDuration).toFixed(2);
   const paidInterest = (parseFloat(allPaidSum) - creditSum).toFixed(2);
   const AveragePersentRate = (
-    (parseFloat(paidInterest) / parseFloat(allPaidSum)) *
+    (parseFloat(paidInterest) / creditSum) *
     100
   ).toFixed(2);
 
+  const onHandleSchedule = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    e.preventDefault();
+    setIsModalOpen(true);
+  };
   return (
     <>
-      <div className="bg-netural_100 rounded-md px-4 md:px-6 py-6">
+      <div className="">
         <div className="bg-primary_100 rounded-md border-l-4 border-l-primary_300 p-4">
           <p className="text-primary_700 text-[18px] font-bold">
             Орієнтовний щомісячний платіж
@@ -72,30 +78,13 @@ export const CalcCreditResult: React.FC<Props> = ({ formData }) => {
             </p>
           </li>
         </ul>
-        <button
-          onClick={() => setIsModalOpen(true)}
-          className="text-primary_300 mt-4"
-        >
+        <button onClick={onHandleSchedule} className="text-primary_300 mt-4">
           Переглянути детальний графік розрахунків
         </button>
         <p className="text-netural_300 mt-[34px] md:mt-[17px]">
           Калькулятор розраховує приблизну суму. Для точного розрахунку
           надішліть заявку
         </p>
-
-        <button
-          type="submit"
-          className="text-netural_100 text-lg font-extrabold leading-4 relative overflow-hidden 
-      bg-gradient_1 rounded-md px-[34px] py-5 text-mainTitleBlack text-center block w-full mt-[34px] md:mt-[17px]"
-        >
-          Надіслати заявку
-          <span
-            className="absolute inset-0 flex items-center justify-center text-lg font-extrabold leading-4 text-netural_100
-      bg-gradient_2 opacity-0 hover:opacity-100 transition-opacity duration-300 z-10 focus:opacity-100"
-          >
-            Надіслати заявку
-          </span>
-        </button>
       </div>
       {isModalOpen && (
         <Modal
