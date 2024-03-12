@@ -35,31 +35,20 @@ export const SectionDepositCalc = () => {
     }));
   };
 
-  const handleScaleChange = (
+  const handleDepositChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    // Ensure that value is a number
     const parsedValue = parseFloat(value);
     if (!isNaN(parsedValue)) {
       setFormData((prevState) => ({
         ...prevState,
         [name]: parsedValue,
       }));
-    }
-  };
-  const handleDepositSumChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    const parsedValue = parseFloat(value);
-    if (!isNaN(parsedValue)) {
-      setFormData((prevState) => ({
-        ...prevState,
-        depositSum: parsedValue,
-      }));
     } else {
       setFormData((prevState) => ({
         ...prevState,
-        depositSum: 0,
+        [name]: 0,
       }));
     }
   };
@@ -124,7 +113,7 @@ export const SectionDepositCalc = () => {
                     type="text"
                     name="depositSum"
                     value={formData.depositSum}
-                    onChange={handleDepositSumChange}
+                    onChange={handleDepositChange}
                     onBlur={validate}
                     required
                   />
@@ -134,11 +123,16 @@ export const SectionDepositCalc = () => {
                     </p>
                   )}{" "}
                   <input
-                    className="absolute left-0 -bottom-1 w-full max-w-[552px] md:max-w-full lg:max-w-[552px] -mt-3.5 appearance-none rounded-md bg-netural_400 h-1"
+                    className="absolute left-0 -bottom-1 w-full max-w-[552px] md:max-w-full lg:max-w-[552px] -mt-3.5 appearance-none rounded-md h-1"
+                    style={{
+                      background: `linear-gradient(to right, #79C2E1 ${
+                        formData.depositSum / 500
+                      }%, #808080 ${formData.depositSum / 500}%)`,
+                    }}
                     type="range"
                     name="depositSum"
                     value={formData.depositSum}
-                    onChange={handleScaleChange}
+                    onChange={handleDepositChange}
                     onBlur={validate}
                     step={500}
                     min={1000}
@@ -155,7 +149,7 @@ export const SectionDepositCalc = () => {
                     className="input-calc"
                     name="depositDuration"
                     value={formData.depositDuration}
-                    onChange={handleScaleChange}
+                    onChange={handleDepositChange}
                     required
                   >
                     {formData.deposits === "Строковий" &&

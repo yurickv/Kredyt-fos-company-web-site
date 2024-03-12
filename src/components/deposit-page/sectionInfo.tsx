@@ -3,7 +3,7 @@ import { PdfIcon } from "../icons/depositPage/pdfIcon";
 
 export const SectionInfo = () => {
   return (
-    <section className="bg-netural_100 py-[50px]">
+    <section className="bg-netural_100 py-[50px]" id="documentsDeposit">
       <div className="div-container">
         <h2 className="title">Інформація для кієнтів</h2>
         <ul className="mt-6">

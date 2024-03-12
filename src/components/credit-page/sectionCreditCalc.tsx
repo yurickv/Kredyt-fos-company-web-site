@@ -1,27 +1,32 @@
 "use client";
 import { useState } from "react";
 import * as Yup from "yup";
+import { CalcCreditResult } from "./calcResult";
+import { SuccessIcon } from "../icons/depositPage/successIcon";
+import { FailureIcon } from "../icons/depositPage/failureIcon";
+import { creditTypesPersent } from "@/const/creditData";
 
 const schema = Yup.object().shape({
-  depositSum: Yup.number().required("Обов'язкове поле"),
-  depositDuration: Yup.number().required("Обов'язкове поле"),
-  dateInput: Yup.date()
-    .required("Обов'язкове поле")
-    .min(new Date(), "Дата має бути в майбутньому або поточна"),
+  creditSum: Yup.number()
+    .min(1000, "Не менше 1000грн.")
+    .max(200000, "Не більше 200000грн.")
+    .required("Обов'язкове поле"),
+  creditDuration: Yup.number()
+    .min(1, "Не менше 1міс.")
+    .max(24, "Не більше 24міс.")
+    .required("Обов'язкове поле"),
 });
 
 export const SectionCreditCalc = () => {
   const [formData, setFormData] = useState({
-    deposits: "Строковий",
-    paymentTime: "В кінці терміну",
-    depositSum: 200,
-    depositDuration: 12,
-    dateInput: "",
+    credits: "Споживчий",
+    dateInput: new Date().toISOString().split("T")[0],
+    creditSum: 10000,
+    creditDuration: 12,
   });
   const [errors, setErrors] = useState<{
-    depositSum?: number;
-    depositDuration?: number;
-    dateInput?: Date;
+    creditSum?: number;
+    creditDuration?: number;
   }>({});
 
   const handleChange = (
@@ -34,165 +39,205 @@ export const SectionCreditCalc = () => {
     }));
   };
 
-  const handleScaleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCreditChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    // Ensure that value is a number
     const parsedValue = parseFloat(value);
     if (!isNaN(parsedValue)) {
       setFormData((prevState) => ({
         ...prevState,
         [name]: parsedValue,
       }));
+    } else {
+      setFormData((prevState) => ({
+        ...prevState,
+        [name]: 0,
+      }));
     }
   };
 
   const validate = async (e: React.ChangeEvent<HTMLInputElement>) => {
     try {
-      // await schema.validate(
-      //   { [e.target.name]: e.target.value },
-      //   { abortEarly: false }
-      // );
-      // setErrors({});
       await schema.validate(formData, { abortEarly: false });
-      // If validation succeeds, handle form submission here
+      setErrors({});
     } catch (err) {
       const validationErrors: Record<string, string> = {};
       (err as Yup.ValidationError).inner.forEach((error) => {
         if (error.path) {
           validationErrors[error.path] = error.message;
-          console.log(validationErrors[error.path]);
         }
       });
-      // setErrors(errors);
+      setErrors(validationErrors);
+      // console.log(errors.creditSum, errors.creditDuration);
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     e.preventDefault();
     // Handle form submission here
     console.log(formData);
   };
 
   return (
-    <section className="px-4 md:px-[78px] lg:px-[120px] pt-[82px] md:pt-[50px] lg:pt-[82px] pb-[50px] bg-netural_100">
-      <h2 className="title">Депозитний калькулятор:</h2>
-      <div className="mt-6 bg-netural_200 rounded-md px-4 md:px-10 py-10">
-        <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
-          <div className="flex flex-col gap-1 md:gap-[34px]">
-            <div className="flex flex-col gap-2">
-              <label className="text-netural_400 text-base">Назва вкладу</label>
-              <select
-                className="rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
-        transition-all duration-300 w-full max-w-[552px] outline-none  focus-within:ring-primary_300 active:ring-primary_300 text-primary_700"
-                name="deposits"
-                value={formData.deposits}
-                onChange={handleChange}
-                required
-              >
-                <option value="Строковий">Строковий</option>
-                <option value="Накопичувальний">Накопичувальний</option>
-                <option value="На вимогу">На вимогу</option>
-              </select>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <label className="text-netural_400 text-base">Сума вкладу</label>
-              <input
-                className="rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
-        transition-all duration-300 w-full max-w-[552px] outline-none  focus-within:ring-primary_300 active:ring-primary_300 text-primary_700"
-                type="number"
-                name="depositSum"
-                value={formData.depositSum}
-                onChange={handleScaleChange}
-                min={200}
-                max={20000}
-                onBlur={validate}
-                required
-              />
-              <input
-                className="w-full max-w-[552px] -mt-3"
-                type="range"
-                name="depositSum"
-                value={formData.depositSum}
-                onChange={handleScaleChange}
-                step={100}
-                min={200}
-                max={20000}
-              />
-            </div>
-            <div className="flex gap-4 w-full max-w-[552px]">
-              <div className="flex flex-col gap-2 grow">
+    <section className="pt-[82px] md:pt-[50px] lg:pt-[82px] pb-[50px] bg-netural_100">
+      <div className="div-container">
+        <h2 className="title">Кредитний калькулятор:</h2>
+        <div className="mt-6 bg-netural_200 rounded-md px-4 md:px-10 py-10 md:max-w-[844px] lg:max-w-full">
+          <form
+            // onSubmit={handleSubmit}
+            className="flex flex-col lg:grid lg:grid-cols-2 gap-4"
+          >
+            <div className="flex flex-col gap-1 md:gap-[34px]">
+              <div className="flex flex-col gap-2">
                 <label className="text-netural_400 text-base">
-                  Строк вкладу (к-сть місяців)
+                  Підвид кредиту
                 </label>
-                <input
-                  className="rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
-        transition-all duration-300 outline-none  focus-within:ring-primary_300 active:ring-primary_300 text-primary_700"
-                  type="number"
-                  name="depositDuration"
-                  value={formData.depositDuration}
-                  onChange={handleScaleChange}
-                  min={1}
-                  max={12}
-                  step={1}
-                  onBlur={validate}
-                  required
-                />
-                <input
-                  className="w-full max-w-[552px] -mt-3"
-                  type="range"
-                  name="depositDuration"
-                  value={formData.depositDuration}
-                  onChange={handleScaleChange}
-                  min={1}
-                  max={12}
-                />
-              </div>
-              <div className="flex flex-col gap-2 grow">
-                <label className="text-netural_400 text-base">
-                  Дата підписання договору
-                </label>
-                <input
-                  className="rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
-        transition-all duration-300 outline-none  focus-within:ring-primary_300 active:ring-primary_300 text-primary_700"
-                  type="date"
-                  name="dateInput"
-                  value={formData.dateInput}
+                <select
+                  className="input-calc"
+                  name="credits"
+                  value={formData.credits}
                   onChange={handleChange}
-                  onBlur={validate}
                   required
-                />
+                >
+                  {creditTypesPersent.map((item) => (
+                    <option
+                      key={Object.keys(item)[0]}
+                      value={Object.keys(item)[0]}
+                    >
+                      {Object.keys(item)[0]}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <label className="text-netural_400 text-base">
+                  Сума кредиту
+                </label>
+                <div className="relative">
+                  <input
+                    className={`input-calc ${
+                      errors.creditSum ? "!ring-red-500" : ""
+                    }`}
+                    type="text"
+                    name="creditSum"
+                    value={formData.creditSum}
+                    onChange={handleCreditChange}
+                    min={1000}
+                    max={200000}
+                    onBlur={validate}
+                    required
+                  />{" "}
+                  {errors.creditSum && (
+                    <p className="absolute left-2.5 bottom-0 text-red-500 text-xs  bg-white  rounded-md">
+                      {errors.creditSum}
+                    </p>
+                  )}{" "}
+                  <input
+                    className="absolute left-0 -bottom-1 w-full max-w-[552px] md:max-w-full lg:max-w-[552px] -mt-3.5 appearance-none rounded-md h-1"
+                    // className="appearance-none w-full h-2 rounded-md bg-gray-200 outline-none"
+                    style={{
+                      background: `linear-gradient(to right, #79C2E1 ${
+                        formData.creditSum / 2000
+                      }%, #808080 ${formData.creditSum / 2000}%)`,
+                    }}
+                    type="range"
+                    name="creditSum"
+                    value={formData.creditSum}
+                    onChange={handleCreditChange}
+                    step={1000}
+                    min={1000}
+                    max={200000}
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col md:flex-row gap-4 w-full max-w-[552px] md:max-w-full lg:max-w-[552px]">
+                <div className="flex flex-col gap-2 grow">
+                  <label className="text-netural_400 text-base">
+                    Строк кредиту (к-сть місяців)
+                  </label>
+                  <div className="relative">
+                    <input
+                      className={`input-calc ${
+                        errors.creditDuration ? "!ring-red-500" : ""
+                      }`}
+                      type="text"
+                      name="creditDuration"
+                      value={formData.creditDuration}
+                      onChange={handleCreditChange}
+                      min={1}
+                      max={24}
+                      onBlur={validate}
+                      required
+                    />
+                    {errors.creditDuration && (
+                      <p className="absolute left-2.5 bottom-0 text-red-500 text-xs  bg-white  rounded-md">
+                        {errors.creditDuration}
+                      </p>
+                    )}{" "}
+                    <input
+                      className="absolute left-0 -bottom-1 w-full max-w-[552px] md:max-w-full lg:max-w-[552px] -mt-3.5 appearance-none rounded-md h-1"
+                      style={{
+                        background: `linear-gradient(to right, #79C2E1 ${
+                          formData.creditDuration / 0.25
+                        }%, #808080 ${formData.creditDuration / 0.25}%)`,
+                      }}
+                      type="range"
+                      name="creditDuration"
+                      value={formData.creditDuration}
+                      onChange={handleCreditChange}
+                      min={1}
+                      max={24}
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2 grow">
+                  <label className="text-netural_400 text-base">
+                    Дата підписання договору
+                  </label>
+                  <input
+                    className="input-calc"
+                    type="date"
+                    name="dateInput"
+                    value={formData.dateInput}
+                    onChange={handleChange}
+                    onBlur={validate}
+                    required
+                    min={new Date().toISOString().split("T")[0]}
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col gap-4 w-full max-w-[552px]">
+                <div className="flex gap-2 items-center">
+                  <SuccessIcon />
+                  <span className="text-[18px] text-primary_700">Ануїтет</span>
+                </div>
+                <div className="flex gap-2 items-center">
+                  <FailureIcon />
+                  <span className="text-[18px] text-primary_700">Знижка</span>
+                </div>
               </div>
             </div>
-
-            <div className="flex flex-col gap-2">
-              <label className="text-netural_400 text-base">
-                Виплата відсотків
-              </label>
-              <select
-                className="rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
-        transition-all duration-300 w-full max-w-[552px] outline-none  focus-within:ring-primary_300 active:ring-primary_300 text-primary_700"
-                name="paymentTime"
-                value={formData.paymentTime}
-                onChange={handleChange}
-                required
-              >
-                <option value="Щомісячно">Щомісячно</option>
-                <option value="В кінці терміну">В кінці терміну</option>
-              </select>
-            </div>
-            <div className="col-span-2">
+            <div className="bg-netural_100 rounded-md px-4 md:px-6 py-6">
+              <CalcCreditResult formData={formData} />
               <button
                 type="submit"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                onClick={handleSubmit}
+                className="text-netural_100 text-lg font-extrabold leading-4 relative overflow-hidden 
+      bg-gradient_1 rounded-md px-[34px] py-5 text-mainTitleBlack text-center block w-full mt-[34px] md:mt-[17px]"
               >
-                Submit
+                Надіслати заявку
+                <span
+                  className="absolute inset-0 flex items-center justify-center text-lg font-extrabold leading-4 text-netural_100
+      bg-gradient_2 opacity-0 hover:opacity-100 transition-opacity duration-300 z-10 focus:opacity-100"
+                >
+                  Надіслати заявку
+                </span>
               </button>
             </div>
-          </div>
-
-          <div></div>
-        </form>
+          </form>
+        </div>
       </div>
     </section>
   );
