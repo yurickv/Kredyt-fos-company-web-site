@@ -1,4 +1,5 @@
 import { SectionCreditCalc } from "@/components/credit-page/sectionCreditCalc";
+import { SectionInfoCard } from "@/components/credit-page/sectionInfoCard";
 import Link from "next/link";
 
 const Credit = () => {
@@ -28,6 +29,7 @@ const Credit = () => {
         </div>
       </section>
       <SectionCreditCalc />
+      <SectionInfoCard />
     </main>
   );
 };
