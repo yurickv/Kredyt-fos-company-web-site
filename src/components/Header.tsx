@@ -48,7 +48,7 @@ const Header: React.FC = () => {
             <Link
               key={link}
               className={`flex items-center gap-2 text-main hover:text-hover transition-all duration-300
-            px-3 py-6 text-primary_400 text-lg font-bold hover:bg-primary_100 focus:bg-primary_100
+            px-5 py-5 text-primary_400 text-lg font-bold hover:bg-primary_100 focus:bg-primary_100
             ${
               params === link &&
               "bg-primary_400 !text-inherit hover:!text-primary_400 focus:!text-primary_400"

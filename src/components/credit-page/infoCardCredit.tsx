@@ -1,4 +1,5 @@
-import { CheckMarkIcon } from "../icons/checkMarkIcon";
+import Link from "next/link";
+import { CheckMarkIcon } from "../icons/creditPage/checkMarkIcon";
 import { ArrowIcon } from "../icons/depositPage/arrowIcon";
 import { SuccessIcon } from "../icons/depositPage/successIcon";
 
@@ -28,7 +29,10 @@ export const InfoCardCredit: React.FC<Props> = ({ term }) => {
     <div className="rounded-md ring-2 ring-primary_200 overflow-hidden flex flex-col max-w-full md:max-w-[499px] xl:max-w-full grow">
       <div className="bg-primary_100 flex flex-col justify-between items-start py-6 px-2 md:px-4 lg:px-6 min-w-[300px]">
         <h3 className="text-[32px] font-bold text-primary_400">{title}</h3>
-        <div className="flex gap-3 group items-center mt-2">
+        <Link
+          className="flex gap-3 group items-center mt-2"
+          href="#documentCredit"
+        >
           <button
             type="button"
             className="relative bg-gradient_1 inline-block text-transparent bg-clip-text text-[18px] font-bold"
@@ -44,7 +48,7 @@ export const InfoCardCredit: React.FC<Props> = ({ term }) => {
           <div className="rotate-[55deg] group-hover:rotate-0 transition-all duration-300 w-2.5 h-2.5">
             <ArrowIcon />
           </div>
-        </div>
+        </Link>
       </div>
       <div className="flex flex-col">
         <div className="py-6 px-2 md:px-4 lg:px-6 min-w-[240px] lg:min-w-[349px]">

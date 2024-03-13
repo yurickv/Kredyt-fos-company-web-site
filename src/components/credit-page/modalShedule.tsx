@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import OnCloseIcon from "../icons/onCloseIcon";
+import OnCloseIcon from "../icons/creditPage/onCloseIcon";
 
 interface ModalProps {
   formData: {
