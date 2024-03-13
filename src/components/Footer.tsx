@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
     <footer className="pt-[50px] pb-6 px-4 md:px-[78px] lg:px-[120px] md:pt-[100px] md:pb-[50px] bg-gradient_section">
       <div className="flex flex-col gap-14 lg:flex-row max-w-[844px] lg:max-w-[1296px] lg:justify-between mx-auto">
         {" "}
-        <div className="flex gap-14 md:gap-[65px] lg:gap-[86px] items-start max-[743px]:justify-center">
+        <div className="flex gap-14 md:gap-[65px] lg:gap-[86px] items-start max-[543px]:justify-between max-[743px]:justify-center">
           <div className="flex flex-col xl:flex-row items-center gap-14">
             {" "}
             <Link className="" href="/">

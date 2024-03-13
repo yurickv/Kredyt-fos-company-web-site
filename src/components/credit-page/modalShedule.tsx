@@ -32,8 +32,8 @@ export const Modal: React.FC<ModalProps> = ({
       for (let i = 1; i <= creditDuration; i++) {
         const year =
           currentDate.getFullYear() +
-          Math.floor((currentDate.getMonth() + i - 1) / 12);
-        const month = ((currentDate.getMonth() + i - 1) % 12) + 1;
+          Math.floor((currentDate.getMonth() + i) / 12);
+        const month = ((currentDate.getMonth() + i) % 12) + 1;
         const lastDayOfMonth = new Date(year, month, 0).getDate();
         const day = Math.min(currentDate.getDate(), lastDayOfMonth);
         const adjustedDate = new Date(year, month - 1, day);
@@ -47,7 +47,7 @@ export const Modal: React.FC<ModalProps> = ({
         remainingBalance -= parseFloat(principalPayment);
 
         schedule.push({
-          date: formatDate(i === 1 ? currentDate : adjustedDate),
+          date: formatDate(adjustedDate),
           paymentAmount: paymentAmount.toFixed(2),
           remainingBalance: remainingBalance.toFixed(2),
           principalPayment,

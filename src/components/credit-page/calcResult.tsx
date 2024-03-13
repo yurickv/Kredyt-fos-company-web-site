@@ -55,7 +55,7 @@ export const CalcCreditResult: React.FC<Props> = ({ formData }) => {
               <p className="text-primary_700">Сума процентів</p>
               <div className="w-[50px] h-1 rounded-full bg-primary_300 mt-2 md:mt-4"></div>
             </div>
-            <p className="text-primary_400 text-[20px] md:text-[32px] font-bold">
+            <p className="text-primary_400 text-[20px] min-[800px]:text-[32px] min-[1280px]:text-[28px] min-[1380px]:text-[32px] font-bold">
               {paidInterest.replace(".", ",")}
             </p>
           </li>
@@ -64,7 +64,7 @@ export const CalcCreditResult: React.FC<Props> = ({ formData }) => {
               <p className="text-primary_700">Загальна сума виплат</p>
               <div className="w-[50px] h-1 rounded-full bg-primary_300 mt-2 md:mt-4"></div>
             </div>
-            <p className="text-primary_400 text-[20px] md:text-[32px] font-bold">
+            <p className="text-primary_400 text-[20px] min-[800px]:text-[32px] min-[1280px]:text-[28px] min-[1380px]:text-[32px] font-bold">
               {allPaidSum.replace(".", ",")}
             </p>
           </li>
@@ -73,7 +73,7 @@ export const CalcCreditResult: React.FC<Props> = ({ formData }) => {
               <p className="text-primary_700">Середньорічна % ставка</p>
               <div className="w-[50px] h-1 rounded-full bg-primary_300 mt-2 md:mt-4"></div>
             </div>
-            <p className="text-primary_400 text-[20px] md:text-[32px] font-bold">
+            <p className="text-primary_400 text-[20px] min-[800px]:text-[32px] min-[1280px]:text-[28px] min-[1380px]:text-[32px] font-bold">
               {AveragePersentRate.replace(".", ",")}%
             </p>
           </li>
