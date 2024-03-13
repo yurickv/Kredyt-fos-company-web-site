@@ -1,5 +1,10 @@
 import { SectionCreditCalc } from "@/components/credit-page/sectionCreditCalc";
+import { SectionDocumentsCredit } from "@/components/credit-page/sectionDocumentsCredit";
 import { SectionInfoCard } from "@/components/credit-page/sectionInfoCard";
+import { SectionLendingConditions } from "@/components/credit-page/sectionLendingConditions";
+import { SectionOpportunities } from "@/components/credit-page/sectionOpportunities";
+import { SectionPreferences } from "@/components/credit-page/sectionPreferences";
+import { SectionConsultForm } from "@/components/main-page/sectionConsult/sectionConsult";
 import Link from "next/link";
 
 const Credit = () => {
@@ -30,6 +35,11 @@ const Credit = () => {
       </section>
       <SectionCreditCalc />
       <SectionInfoCard />
+      <SectionLendingConditions />
+      <SectionPreferences />
+      <SectionConsultForm />
+      <SectionDocumentsCredit />
+      <SectionOpportunities />
     </main>
   );
 };
