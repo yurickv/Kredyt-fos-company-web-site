@@ -199,7 +199,7 @@ export const SectionCreditCalc = () => {
                     Дата підписання договору
                   </label>
                   <input
-                    className="rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
+                    className="rounded-md px-[10px] pr-[20px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
         transition-all duration-300 w-full max-w-[552px] md:max-w-full lg:max-w-[552px] outline-none 
          focus-within:ring-primary_300 active:ring-primary_300 text-primary_700"
                     type="date"
