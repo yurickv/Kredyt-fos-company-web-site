@@ -15,7 +15,7 @@ interface Props {
 
 export const CalcCreditResult: React.FC<Props> = ({ formData }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { credits, creditDuration, creditSum } = formData;
+  const { credits, creditDuration, creditSum, dateInput } = formData;
 
   let persent = 0;
   persent = getCreditPercent(credits);
@@ -32,6 +32,10 @@ export const CalcCreditResult: React.FC<Props> = ({ formData }) => {
     100
   ).toFixed(2);
 
+  // console.log(PaymentSchedule);
+  // const AveragePersentRate =
+
+  console.log(AveragePersentRate);
   const onHandleSchedule = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
