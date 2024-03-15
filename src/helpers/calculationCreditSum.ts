@@ -7,23 +7,50 @@ export const getCreditPercent = (creditType: string): number => {
   return foundCredit ? Object.values(foundCredit)[0] : undefined;
 };
 
-function npv(payments: number[], discountRate: number): number {
-  // Check if the arguments are valid.
-  if (!Array.isArray(payments)) {
-    throw new Error("The payments argument must be an array.");
-  }
-  if (isNaN(discountRate)) {
-    throw new Error("The discountRate argument must be a number.");
-  }
+export function calculateIRR(cashFlows: number[]): number {
+  const tolerance = 1e-6;
+  const maximumIterations = 100;
 
-  // Calculate the present value of each cash flow.
-  const presentValues: number[] = [];
-  for (let i = 0; i < payments.length; i++) {
-    presentValues[i] = payments[i] / Math.pow(1 + discountRate, i + 1);
+  function NPV(rate: number): number {
+    let npv = 0;
+    for (let i = 0; i < cashFlows.length; i++) {
+      npv += cashFlows[i] / Math.pow(1 + rate, i);
+    }
+    return npv;
   }
 
-  // Calculate the net present value of the cash flows.
-  const netPresentValue: number = presentValues.reduce((a, b) => a + b, 0);
+  function derivative(rate: number): number {
+    let d = 0;
+    for (let i = 0; i < cashFlows.length; i++) {
+      d -= (i * cashFlows[i]) / Math.pow(1 + rate, i + 1);
+    }
+    return d;
+  }
 
-  return netPresentValue;
+  let guess = 0.1;
+  let nextGuess = 0;
+
+  for (let i = 0; i < maximumIterations; i++) {
+    nextGuess = guess - NPV(guess) / derivative(guess);
+    if (Math.abs(nextGuess - guess) < tolerance) {
+      return nextGuess;
+    }
+    guess = nextGuess;
+  }
+
+  throw new Error("IRR calculation did not converge");
+}
+
+export function generatePayments(
+  payment: number,
+  creditDuration: number,
+  creditSum: number
+) {
+  const payments = [creditSum];
+
+  for (let i = 0; i < creditDuration; i++) {
+    payments.push(payment * -1);
+  }
+
+  return payments;
 }

@@ -1,4 +1,8 @@
-import { getCreditPercent } from "@/helpers/calculationCreditSum";
+import {
+  calculateIRR,
+  generatePayments,
+  getCreditPercent,
+} from "@/helpers/calculationCreditSum";
 import { Modal } from "./modalShedule";
 import { useState } from "react";
 
@@ -15,7 +19,7 @@ interface Props {
 
 export const CalcCreditResult: React.FC<Props> = ({ formData }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { credits, creditDuration, creditSum, dateInput } = formData;
+  const { credits, creditDuration, creditSum } = formData;
 
   let persent = 0;
   persent = getCreditPercent(credits);
@@ -27,15 +31,16 @@ export const CalcCreditResult: React.FC<Props> = ({ formData }) => {
 
   const allPaidSum = (parseFloat(payment) * creditDuration).toFixed(2);
   const paidInterest = (parseFloat(allPaidSum) - creditSum).toFixed(2);
-  const AveragePersentRate = (
-    (parseFloat(paidInterest) / creditSum) *
-    100
-  ).toFixed(2);
 
-  // console.log(PaymentSchedule);
-  // const AveragePersentRate =
+  const masivPays = generatePayments(
+    parseFloat(payment),
+    creditDuration,
+    creditSum
+  );
 
-  console.log(AveragePersentRate);
+  const persentMonth = calculateIRR(masivPays);
+  const AveragePersentRate = (((1 + persentMonth) ** 12 - 1) * 100).toFixed(2);
+
   const onHandleSchedule = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
@@ -74,7 +79,7 @@ export const CalcCreditResult: React.FC<Props> = ({ formData }) => {
           </li>
           <li key="profit" className="flex justify-between gap-4 md:flex-col">
             <div>
-              <p className="text-primary_700">Середньорічна % ставка</p>
+              <p className="text-primary_700">Реальна річна % ставка</p>
               <div className="w-[50px] h-1 rounded-full bg-primary_300 mt-2 md:mt-4"></div>
             </div>
             <p className="text-primary_400 text-[20px] min-[800px]:text-[32px] min-[1280px]:text-[28px] min-[1380px]:text-[32px] font-bold">
