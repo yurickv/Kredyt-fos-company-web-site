@@ -3,10 +3,10 @@ import { depositAccumPersent, depositTermPersent } from "@/const/depositData";
 export function resultPersent(
   deposits: string,
   depositDuration: number,
-  depositSum: number
+  targetSum: number
 ) {
   let persent = 0;
-  if (200 > depositSum || depositSum > 50000) return persent;
+  if (200 > targetSum || targetSum > 50000) return persent;
 
   switch (deposits) {
     case "Строковий":

@@ -43,12 +43,12 @@ export function calculateIRR(cashFlows: number[]): number {
 
 export function generatePayments(
   payment: number,
-  creditDuration: number,
-  creditSum: number
+  duration: number,
+  targetSum: number
 ) {
-  const payments = [creditSum];
+  const payments = [targetSum];
 
-  for (let i = 0; i < creditDuration; i++) {
+  for (let i = 0; i < duration; i++) {
     payments.push(payment * -1);
   }
 

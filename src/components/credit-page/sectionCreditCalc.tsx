@@ -5,9 +5,10 @@ import { CalcCreditResult } from "./calcResult";
 import { SuccessIcon } from "../icons/depositPage/successIcon";
 import { FailureIcon } from "../icons/depositPage/failureIcon";
 import { creditTypesPersent } from "@/const/creditData";
+import { ModalWindow } from "../modalWindow";
 
 const schema = Yup.object().shape({
-  creditSum: Yup.number()
+  targetSum: Yup.number()
     .min(1000, "Не менше 1000грн.")
     .max(200000, "Не більше 200000грн.")
     .required("Обов'язкове поле"),
@@ -21,13 +22,14 @@ export const SectionCreditCalc = () => {
   const [formData, setFormData] = useState({
     credits: "Споживчий",
     dateInput: new Date().toISOString().split("T")[0],
-    creditSum: 10000,
-    creditDuration: 12,
+    targetSum: 10000,
+    duration: 12,
   });
   const [errors, setErrors] = useState<{
-    creditSum?: number;
-    creditDuration?: number;
+    targetSum?: number;
+    duration?: number;
   }>({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -67,7 +69,7 @@ export const SectionCreditCalc = () => {
         }
       });
       setErrors(validationErrors);
-      // console.log(errors.creditSum, errors.creditDuration);
+      // console.log(errors.targetSum, errors.duration);
     }
   };
 
@@ -75,6 +77,7 @@ export const SectionCreditCalc = () => {
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault();
+    setIsModalOpen(true);
     // Handle form submission here
     console.log(formData);
   };
@@ -120,20 +123,20 @@ export const SectionCreditCalc = () => {
                 <div className="relative">
                   <input
                     className={`input-calc ${
-                      errors.creditSum ? "!ring-red-500" : ""
+                      errors.targetSum ? "!ring-red-500" : ""
                     }`}
                     type="text"
-                    name="creditSum"
-                    value={formData.creditSum}
+                    name="targetSum"
+                    value={formData.targetSum}
                     onChange={handleCreditChange}
                     min={1000}
                     max={200000}
                     onBlur={validate}
                     required
                   />{" "}
-                  {errors.creditSum && (
+                  {errors.targetSum && (
                     <p className="absolute left-2.5 bottom-0 text-red-500 text-xs  bg-white  rounded-md">
-                      {errors.creditSum}
+                      {errors.targetSum}
                     </p>
                   )}{" "}
                   <input
@@ -141,12 +144,12 @@ export const SectionCreditCalc = () => {
                     // className="appearance-none w-full h-2 rounded-md bg-gray-200 outline-none"
                     style={{
                       background: `linear-gradient(to right, #79C2E1 ${
-                        formData.creditSum / 2000
-                      }%, #808080 ${formData.creditSum / 2000}%)`,
+                        formData.targetSum / 2000
+                      }%, #808080 ${formData.targetSum / 2000}%)`,
                     }}
                     type="range"
-                    name="creditSum"
-                    value={formData.creditSum}
+                    name="targetSum"
+                    value={formData.targetSum}
                     onChange={handleCreditChange}
                     step={1000}
                     min={1000}
@@ -162,32 +165,32 @@ export const SectionCreditCalc = () => {
                   <div className="relative">
                     <input
                       className={`input-calc ${
-                        errors.creditDuration ? "!ring-red-500" : ""
+                        errors.duration ? "!ring-red-500" : ""
                       }`}
                       type="text"
-                      name="creditDuration"
-                      value={formData.creditDuration}
+                      name="duration"
+                      value={formData.duration}
                       onChange={handleCreditChange}
                       min={1}
                       max={24}
                       onBlur={validate}
                       required
                     />
-                    {errors.creditDuration && (
+                    {errors.duration && (
                       <p className="absolute left-2.5 bottom-0 text-red-500 text-xs  bg-white  rounded-md">
-                        {errors.creditDuration}
+                        {errors.duration}
                       </p>
                     )}{" "}
                     <input
                       className="absolute left-0 -bottom-1 w-full max-w-[552px] md:max-w-full lg:max-w-[552px] -mt-3.5 appearance-none rounded-md h-1"
                       style={{
                         background: `linear-gradient(to right, #79C2E1 ${
-                          formData.creditDuration / 0.25
-                        }%, #808080 ${formData.creditDuration / 0.25}%)`,
+                          formData.duration / 0.25
+                        }%, #808080 ${formData.duration / 0.25}%)`,
                       }}
                       type="range"
-                      name="creditDuration"
-                      value={formData.creditDuration}
+                      name="duration"
+                      value={formData.duration}
                       onChange={handleCreditChange}
                       min={1}
                       max={24}
@@ -243,6 +246,14 @@ export const SectionCreditCalc = () => {
           </form>
         </div>
       </div>
+      {isModalOpen && (
+        <ModalWindow
+          formData={formData}
+          title="Заявка на кредит"
+          textButton="Надіслати заявку"
+          onClose={() => setIsModalOpen(false)}
+        />
+      )}
     </section>
   );
 };

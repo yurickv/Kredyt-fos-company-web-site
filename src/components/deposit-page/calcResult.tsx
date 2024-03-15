@@ -2,8 +2,8 @@ import { resultPersent } from "@/helpers/calculationDepositSum";
 
 interface FormData {
   deposits: string;
-  depositDuration: number;
-  depositSum: number;
+  duration: number;
+  targetSum: number;
 }
 
 interface Props {
@@ -11,13 +11,13 @@ interface Props {
 }
 
 export const CalcResult: React.FC<Props> = ({ formData }) => {
-  const { deposits, depositDuration, depositSum } = formData;
-  const persent = resultPersent(deposits, depositDuration, depositSum);
+  const { deposits, duration, targetSum } = formData;
+  const persent = resultPersent(deposits, duration, targetSum);
 
-  const accruedCash = (depositSum * persent).toFixed(2);
+  const accruedCash = (targetSum * persent).toFixed(2);
   const taxes = (parseFloat(accruedCash) * 0.195).toFixed(2);
   const profit = (parseFloat(accruedCash) - parseFloat(taxes)).toFixed(2);
-  const finalPaiment = (depositSum + parseFloat(profit))
+  const finalPaiment = (targetSum + parseFloat(profit))
     .toFixed(2)
     .replace(".", ",");
   return (
@@ -25,7 +25,7 @@ export const CalcResult: React.FC<Props> = ({ formData }) => {
       <div className="bg-primary_100 rounded-md border-l-4 border-l-primary_300 p-4">
         <p className="text-primary_700 text-[18px] font-bold">До виплати</p>
         <p className="text-primary_400 text-[32px] md:text-[40px] font-bold mt-3">
-          {200 > depositSum || depositSum > 50000 ? "..." : finalPaiment}
+          {200 > targetSum || targetSum > 50000 ? "..." : finalPaiment}
         </p>
       </div>
       <ul className="mt-[34px] md:mt-[17px] flex flex-col gap-[34px] md:flex-row justify-between">
