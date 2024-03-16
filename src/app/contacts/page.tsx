@@ -1,17 +1,15 @@
+import Accordion from "@/components/contacts-page/accordion";
 import Link from "next/link";
 
 const Contacts = () => {
   return (
     <main>
-      <section className="bg-transparent min-h-[448px] py-16 md:py-[100px] lg:py-[153px]">
-        <div className="fixed -top-[1px] -z-10 bg-[url('/Main-screen-1.webp')] bg-center bg-cover w-full h-[670px]"></div>
+      <section className="bg-transparent min-h-[300px] py-16 md:py-[100px] lg:py-[120px]">
+        <div className="fixed -top-[1px] -z-10 bg-[url('/Main-screen-1.webp')] bg-center bg-cover w-full h-[490px]"></div>
         <div className="div-container">
-          <h1 className="text-primary_400 text-[40px] md:text-[64px] font-extrabold">
-            Разом будуємо майбутнє
+          <h1 className="text-primary_400  font-extrabold text-[32px] md:text-[40px]">
+            Кредит ФОС - ваш партнер у фінансах
           </h1>
-          <div className="text-primary_400  font-extrabold flex gap-2 mt-6 text-[32px] md:text-[40px]">
-            <p>Кредит ФОС - ваш партнер у фінансах</p>
-          </div>
         </div>
       </section>
       <section className="bg-netural_100">
@@ -24,6 +22,14 @@ const Contacts = () => {
           </Link>
           <span>&#8250;</span>
           <p>Контакти</p>
+        </div>
+      </section>
+      <section className="pt-6 pb-[50px] bg-netural_100">
+        <div className="div-container">
+          <h2 className="title">Контакти</h2>
+          <div className="rounded-md bg-netural_200">
+            <Accordion />
+          </div>
         </div>
       </section>
     </main>

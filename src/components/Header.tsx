@@ -63,8 +63,8 @@ const Header: React.FC = () => {
           {routeLink.map(({ link, descr }) => (
             <Link
               key={link}
-              className={`transition-all duration-300
-            px-5 py-5 text-primary_400 text-lg font-bold hover:bg-primary_100 focus:bg-primary_100
+              className={`px-10 py-5 text-primary_400 text-lg font-bold
+               hover:bg-primary_100 focus:bg-primary_100 transition-colors duration-300
             ${
               params === link &&
               "bg-primary_400 !text-inherit hover:!text-primary_400 focus:!text-primary_400"
