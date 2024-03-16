@@ -40,8 +40,8 @@ export const POST = async (req: NextRequest, res: NextResponse) => {
         Номер телефону: ${phoneNumber}
         Повідомлення: ${userMessage || "N/A"}
         Вид кредиту - ${credits}
-        Термін - ${duration}
-        Сума - ${targetSum}
+        Термін - ${duration}міс.
+        Сума - ${targetSum}грн.
         Початок договору - ${dateInput}`;
   } else if (deposits) {
     message = `${titleMessage}
@@ -49,8 +49,8 @@ export const POST = async (req: NextRequest, res: NextResponse) => {
         Номер телефону: ${phoneNumber}
         Повідомлення: ${userMessage || "N/A"}
         Вид депозиту - ${deposits}
-        Термін - ${duration}
-        Сума - ${targetSum}`;
+        Термін - ${duration}міс.
+        Сума - ${targetSum}грн.`;
   } else {
     message = `${titleMessage}
         Ім'я: ${userName}

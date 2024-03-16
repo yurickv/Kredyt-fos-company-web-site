@@ -78,8 +78,7 @@ export const SectionCreditCalc = () => {
   ) => {
     e.preventDefault();
     setIsModalOpen(true);
-    // Handle form submission here
-    console.log(formData);
+    // console.log(formData);
   };
 
   return (
@@ -251,6 +250,7 @@ export const SectionCreditCalc = () => {
           formData={formData}
           title="Заявка на кредит"
           textButton="Надіслати заявку"
+          style="yes"
           onClose={() => setIsModalOpen(false)}
         />
       )}

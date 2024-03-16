@@ -4,6 +4,7 @@ import { useState } from "react";
 import * as Yup from "yup";
 import { CalcResult } from "./calcResult";
 import { depositAccumPersent, depositTermPersent } from "@/const/depositData";
+import { ModalWindow } from "../modalWindow";
 
 const schema = Yup.object().shape({
   targetSum: Yup.number()
@@ -24,6 +25,7 @@ export const SectionDepositCalc = () => {
     targetSum?: number;
     duration?: number;
   }>({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -71,8 +73,8 @@ export const SectionDepositCalc = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log(formData);
+    setIsModalOpen(true);
+    // console.log(formData);
   };
 
   return (
@@ -205,6 +207,15 @@ export const SectionDepositCalc = () => {
           </form>
         </div>
       </div>
+      {isModalOpen && (
+        <ModalWindow
+          formData={formData}
+          title="Заявка на депозит"
+          textButton="Надіслати заявку"
+          style="yes"
+          onClose={() => setIsModalOpen(false)}
+        />
+      )}
     </section>
   );
 };

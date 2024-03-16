@@ -1,11 +1,22 @@
+"use client";
+
+import { useState } from "react";
+
 import Link from "next/link";
 import { LogoIcon } from "./icons/LogoIcon";
 import { PhoneIcon } from "./icons/PhoneIcon";
 import { routeLink } from "@/const/routeLink";
 import { LogoIconMobile } from "./icons/LogoIconMobile";
 import { LogoIconTablet } from "./icons/LogoIconTablet";
+import { ModalWindow } from "./modalWindow";
 
 const Footer: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleClick = async () => {
+    setIsModalOpen(true);
+  };
+
   return (
     <footer className="pt-[50px] pb-6 px-4 md:px-[78px] lg:px-[120px] md:pt-[100px] md:pb-[50px] bg-gradient_section">
       <div className="flex flex-col gap-14 lg:flex-row max-w-[844px] lg:max-w-[1296px] lg:justify-between mx-auto">
@@ -70,6 +81,7 @@ const Footer: React.FC = () => {
           </p>
           <button
             type="button"
+            onClick={handleClick}
             className="text-netural_100 text-lg font-extrabold leading-4 relative overflow-hidden 
       bg-gradient_1 rounded-md px-[34px] py-5 text-mainTitleBlack text-center block md:min-w-[250px] md:w-[250px] w-full"
           >
@@ -86,6 +98,15 @@ const Footer: React.FC = () => {
       <p className="text-base text-primary_400 md:text-lg md:font-semibold mt-14 text-center">
         © Кредитна спілка “Кредит-ФОС”, 2024
       </p>
+      {isModalOpen && (
+        <ModalWindow
+          formData={{}}
+          title="Задати запитання"
+          textButton="Відправити"
+          style="yes"
+          onClose={() => setIsModalOpen(false)}
+        />
+      )}
     </footer>
   );
 };
