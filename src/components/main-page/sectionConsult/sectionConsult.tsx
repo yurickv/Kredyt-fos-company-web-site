@@ -11,7 +11,11 @@ export const SectionConsultForm = () => {
             Наш менеджер зв’яжеться з вами і відповість на всі запитання
           </p>
         </div>
-        <ConsultForm />
+        <ConsultForm
+          data={{}}
+          textButton="Замовити дзвінок"
+          title="Заявка на консультацію:"
+        />
       </div>
     </section>
   );

@@ -5,8 +5,8 @@ import OnCloseIcon from "../icons/creditPage/onCloseIcon";
 interface ModalProps {
   formData: {
     credits: string;
-    creditDuration: number;
-    creditSum: number;
+    duration: number;
+    targetSum: number;
     dateInput: string;
   };
   payment: number;
@@ -20,16 +20,16 @@ export const Modal: React.FC<ModalProps> = ({
   persent,
   onClose,
 }) => {
-  const { credits, creditDuration, creditSum, dateInput } = formData;
+  const { credits, duration, targetSum, dateInput } = formData;
   const [paymentSchedule, setPaymentSchedule] = useState<any[]>([]);
 
   useEffect(() => {
     const generatePaymentSchedule = () => {
       let schedule = [];
-      let remainingBalance = creditSum;
+      let remainingBalance = targetSum;
       let currentDate = new Date(dateInput);
 
-      for (let i = 1; i <= creditDuration; i++) {
+      for (let i = 1; i <= duration; i++) {
         const year =
           currentDate.getFullYear() +
           Math.floor((currentDate.getMonth() + i) / 12);
@@ -59,7 +59,7 @@ export const Modal: React.FC<ModalProps> = ({
     };
 
     generatePaymentSchedule();
-  }, [creditDuration, creditSum, dateInput, payment, persent]);
+  }, [duration, targetSum, dateInput, payment, persent]);
 
   const formatDate = (date: Date) => {
     const day = date.getDate().toString().padStart(2, "0");

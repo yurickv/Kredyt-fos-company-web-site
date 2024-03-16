@@ -8,8 +8,8 @@ import { useState } from "react";
 
 interface FormData {
   credits: string;
-  creditDuration: number;
-  creditSum: number;
+  duration: number;
+  targetSum: number;
   dateInput: string;
 }
 
@@ -19,24 +19,20 @@ interface Props {
 
 export const CalcCreditResult: React.FC<Props> = ({ formData }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { credits, creditDuration, creditSum } = formData;
+  const { credits, duration, targetSum } = formData;
 
   let persent = 0;
   persent = getCreditPercent(credits);
 
   const payment = (
-    (creditSum * persent * (1 + persent) ** creditDuration) /
-    ((1 + persent) ** creditDuration - 1)
+    (targetSum * persent * (1 + persent) ** duration) /
+    ((1 + persent) ** duration - 1)
   ).toFixed(2);
 
-  const allPaidSum = (parseFloat(payment) * creditDuration).toFixed(2);
-  const paidInterest = (parseFloat(allPaidSum) - creditSum).toFixed(2);
+  const allPaidSum = (parseFloat(payment) * duration).toFixed(2);
+  const paidInterest = (parseFloat(allPaidSum) - targetSum).toFixed(2);
 
-  const masivPays = generatePayments(
-    parseFloat(payment),
-    creditDuration,
-    creditSum
-  );
+  const masivPays = generatePayments(parseFloat(payment), duration, targetSum);
 
   const persentMonth = calculateIRR(masivPays);
   const AveragePersentRate = (((1 + persentMonth) ** 12 - 1) * 100).toFixed(2);

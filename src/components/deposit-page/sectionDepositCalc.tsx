@@ -4,26 +4,28 @@ import { useState } from "react";
 import * as Yup from "yup";
 import { CalcResult } from "./calcResult";
 import { depositAccumPersent, depositTermPersent } from "@/const/depositData";
+import { ModalWindow } from "../modalWindow";
 
 const schema = Yup.object().shape({
-  depositSum: Yup.number()
+  targetSum: Yup.number()
     .min(1000, "Не менше 1000грн.")
     .max(50000, "Не більше 50000грн.")
     .required("Обов'язкове поле"),
-  depositDuration: Yup.number().required("Обов'язкове поле"),
+  duration: Yup.number().required("Обов'язкове поле"),
 });
 
 export const SectionDepositCalc = () => {
   const [formData, setFormData] = useState({
     deposits: "Строковий",
     paymentTime: "Щомісячно",
-    depositSum: 10000,
-    depositDuration: 12,
+    targetSum: 10000,
+    duration: 12,
   });
   const [errors, setErrors] = useState<{
-    depositSum?: number;
-    depositDuration?: number;
+    targetSum?: number;
+    duration?: number;
   }>({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -65,14 +67,14 @@ export const SectionDepositCalc = () => {
         }
       });
       setErrors(validationErrors);
-      console.log(errors.depositSum, errors.depositDuration);
+      console.log(errors.targetSum, errors.duration);
     }
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log(formData);
+    setIsModalOpen(true);
+    // console.log(formData);
   };
 
   return (
@@ -110,30 +112,30 @@ export const SectionDepositCalc = () => {
                 <div className="relative">
                   <input
                     className={`input-calc ${
-                      errors.depositSum ? "!ring-red-500" : ""
+                      errors.targetSum ? "!ring-red-500" : ""
                     }`}
                     type="text"
                     name="depositSum"
-                    value={formData.depositSum}
+                    value={formData.targetSum}
                     onChange={handleDepositChange}
                     onBlur={validate}
                     required
                   />
-                  {errors.depositSum && (
+                  {errors.targetSum && (
                     <p className="absolute left-2.5 bottom-0 text-red-500 text-xs  bg-white  rounded-md">
-                      {errors.depositSum}
+                      {errors.targetSum}
                     </p>
                   )}{" "}
                   <input
                     className="absolute left-0 -bottom-1 w-full max-w-[552px] md:max-w-full lg:max-w-[552px] -mt-3.5 appearance-none rounded-md h-1"
                     style={{
                       background: `linear-gradient(to right, #79C2E1 ${
-                        formData.depositSum / 500
-                      }%, #808080 ${formData.depositSum / 500}%)`,
+                        formData.targetSum / 500
+                      }%, #808080 ${formData.targetSum / 500}%)`,
                     }}
                     type="range"
-                    name="depositSum"
-                    value={formData.depositSum}
+                    name="targetSum"
+                    value={formData.targetSum}
                     onChange={handleDepositChange}
                     onBlur={validate}
                     step={500}
@@ -151,8 +153,8 @@ export const SectionDepositCalc = () => {
                     className="rounded-md px-[10px] py-[14px] ring-2 ring-transparent hover:ring-primary_300 focus:ring-primary_300 
         transition-all duration-300 w-full max-w-[552px] md:max-w-full lg:max-w-[552px] outline-none 
          focus-within:ring-primary_300 active:ring-primary_300 text-primary_700"
-                    name="depositDuration"
-                    value={formData.depositDuration}
+                    name="duration"
+                    value={formData.duration}
                     onChange={handleDepositChange}
                     required
                   >
@@ -175,9 +177,9 @@ export const SectionDepositCalc = () => {
                         </option>
                       ))}
                   </select>
-                  {errors.depositDuration && (
+                  {errors.duration && (
                     <p className="absolute left-2.5 bottom-0 text-red-500 text-xs z-10 bg-white  rounded-xl max-w-[100px]">
-                      {errors.depositDuration}
+                      {errors.duration}
                     </p>
                   )}
                 </div>
@@ -205,6 +207,15 @@ export const SectionDepositCalc = () => {
           </form>
         </div>
       </div>
+      {isModalOpen && (
+        <ModalWindow
+          formData={formData}
+          title="Заявка на депозит"
+          textButton="Надіслати заявку"
+          style="yes"
+          onClose={() => setIsModalOpen(false)}
+        />
+      )}
     </section>
   );
 };
