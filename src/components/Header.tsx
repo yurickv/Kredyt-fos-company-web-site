@@ -89,6 +89,7 @@ const Header: React.FC = () => {
             px-4 py-4 text-lg font-bold hover:text-primary_100 focus:text-primary_100
             ${params === link && "!text-primary_100"}`}
               href={link}
+              onClick={toggleMobileMenu}
             >
               {descr}
             </Link>
