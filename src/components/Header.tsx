@@ -1,6 +1,6 @@
 "use client";
+import { useState } from "react";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./Button";
 import { usePathname } from "next/navigation";
@@ -9,9 +9,16 @@ import { LogoIcon } from "./icons/LogoIcon";
 import { PhoneIcon } from "./icons/PhoneIcon";
 import { LogoIconMobile } from "./icons/LogoIconMobile";
 import { LogoIconTablet } from "./icons/LogoIconTablet";
+import { MenuMobileIcon } from "./icons/MenuMobileIcon";
+import OnCloseIcon from "./icons/creditPage/onCloseIcon";
 
 const Header: React.FC = () => {
   const params = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    document.body.style.overflow = isMobileMenuOpen ? "auto" : "hidden";
+  };
 
   return (
     <header className="bg-netural_100">
@@ -41,13 +48,22 @@ const Header: React.FC = () => {
             </a>
           </div>
           <Button route="/" text="Сплатити кредит" style="hidden lg:block" />
+          <button
+            type="button"
+            aria-label="on open mobile navigation"
+            onClick={toggleMobileMenu}
+            className="text-primary_400 hover:text-primary_300 lg:sr-only"
+          >
+            {!isMobileMenuOpen && <MenuMobileIcon />}
+            {isMobileMenuOpen && <OnCloseIcon />}
+          </button>
         </div>
         <nav className="hidden lg:flex justify-between text-netural_100 ">
           {" "}
           {routeLink.map(({ link, descr }) => (
             <Link
               key={link}
-              className={`flex items-center gap-2 text-main hover:text-hover transition-all duration-300
+              className={`transition-all duration-300
             px-5 py-5 text-primary_400 text-lg font-bold hover:bg-primary_100 focus:bg-primary_100
             ${
               params === link &&
@@ -60,6 +76,25 @@ const Header: React.FC = () => {
           ))}
         </nav>
       </div>
+      {isMobileMenuOpen && (
+        <nav
+          className={`bg-primary_400 text-netural_100 absolute z-50 w-full h-full flex flex-col gap-6 
+          md:px-16 py-2 md:py-10`}
+        >
+          {" "}
+          {routeLink.map(({ link, descr }) => (
+            <Link
+              key={link}
+              className={`transition-all duration-300
+            px-4 py-4 text-lg font-bold hover:text-primary_100 focus:text-primary_100
+            ${params === link && "!text-primary_100"}`}
+              href={link}
+            >
+              {descr}
+            </Link>
+          ))}
+        </nav>
+      )}
     </header>
   );
 };
