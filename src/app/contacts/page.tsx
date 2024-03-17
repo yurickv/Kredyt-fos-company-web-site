@@ -1,4 +1,5 @@
 import Accordion from "@/components/contacts-page/accordion";
+import { SectionMap } from "@/components/main-page/sectionMap";
 import Link from "next/link";
 
 const Contacts = () => {
@@ -27,11 +28,12 @@ const Contacts = () => {
       <section className="pt-6 pb-[50px] bg-netural_100">
         <div className="div-container">
           <h2 className="title">Контакти</h2>
-          <div className="rounded-md bg-netural_200">
+          <div className="mt-6">
             <Accordion />
           </div>
         </div>
       </section>
+      <SectionMap />
     </main>
   );
 };
