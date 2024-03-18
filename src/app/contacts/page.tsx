@@ -28,9 +28,7 @@ const Contacts = () => {
       <section className="pt-6 pb-[50px] bg-netural_100">
         <div className="div-container">
           <h2 className="title">Контакти</h2>
-          <div className="mt-6">
-            <Accordion />
-          </div>
+          <Accordion />
         </div>
       </section>
       <SectionMap />

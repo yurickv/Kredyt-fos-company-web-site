@@ -13,7 +13,7 @@ const Accordion: React.FC = () => {
   };
 
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full mx-auto mt-6">
       {contactsData.map((data, index) => (
         <div key={index} className="mb-4">
           <button
