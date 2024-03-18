@@ -47,7 +47,11 @@ const Header: React.FC = () => {
               <div>+38 067 350-19-77</div>
             </a>
           </div>
-          <Button route="/" text="Сплатити кредит" style="hidden lg:block" />
+          <Button
+            route="#paidCredit"
+            text="Сплатити кредит"
+            style="hidden lg:block"
+          />
           <button
             type="button"
             aria-label="on open mobile navigation"

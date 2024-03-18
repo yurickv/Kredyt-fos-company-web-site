@@ -56,7 +56,7 @@ const Accordion: React.FC = () => {
                 {data.kodStateReg}
               </span>
             </p>
-            <div className="flex flex-col lg:flex-row gap-[300px] pb-6">
+            <div className="flex flex-col lg:flex-row lg:gap-[300px] pb-6">
               <div>
                 <h3 className="mt-6 text-[16px] md:text-[18px] text-primary_700">
                   Контакти для звернення клієнтів:
