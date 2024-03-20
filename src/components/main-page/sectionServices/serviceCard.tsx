@@ -1,3 +1,4 @@
+import { PointerIcon } from "@/components/icons/contactsPage/pointerIcon";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -29,11 +30,13 @@ export const ServiceCard = ({
         <p className="text-primary_700 max-w-[170px] min-h-[104px] md:max-w-[250px] pt-2 md:pt-4 ">
           {text}
         </p>
-        <p className="bg-gradient_1 inline-block text-transparent opacity-100 font-bold bg-clip-text relative pt-3 md:pt-[89px]">
+        <p className="bg-gradient_1 flex gap-2 items-center text-transparent opacity-100 font-bold tracking-wide bg-clip-text relative pt-3 md:pt-[89px]">
           Ознайомитись{" "}
-          <span className="text-primary_400 group-hover:text-primary_300 transition-all duration-300">
-            &#8250;
-          </span>
+          <div
+            className={`text-primary_400 group-hover:text-primary_300 transition-all duration-200 rotate-90 group-hover:scale-125 w-6`}
+          >
+            <PointerIcon />
+          </div>
           <span className="absolute pointer-events-none z-20 top-9 md:top-[89px] inset-0 bg-gradient_2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-focus:opacity-100 text-transparent bg-clip-text">
             Ознайомитись
           </span>

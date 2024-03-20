@@ -30,7 +30,7 @@ body {
          focus-within:ring-primary_300 active:ring-primary_300 text-primary_700;
 }
 .gradient-button {
-  border: 6px solid;
+  border: 4px solid;
   border-image: linear-gradient(94deg, #0b4d9d 36.82%, #2192b6 111.34%) 5;
   display: inline-block;
   background: linear-gradient(94deg, #0b4d9d 36.82%, #2192b6 111.34%);

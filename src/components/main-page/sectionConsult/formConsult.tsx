@@ -174,14 +174,14 @@ export const ConsultForm: React.FC<ModalProps> = ({
         <button
           type="submit"
           disabled={!isCheckboxChecked}
-          className={`text-netural_100 text-lg font-extrabold leading-4 relative overflow-hidden
+          className={`text-netural_100 text-lg font-bold leading-4 tracking-wide relative overflow-hidden
       bg-gradient_1 rounded-md px-[34px] py-5 text-mainTitleBlack text-center block  w-full ${
-        style ? "" : "md:min-w-[250px] md:w-[250px]"
+        style ? "" : "md:min-w-[255px] md:w-[255px]"
       }`}
         >
           {textButton}
           <span
-            className="absolute inset-0 flex items-center justify-center text-lg font-extrabold leading-4 text-netural_100
+            className="absolute inset-0 flex items-center justify-center text-lg font-bold leading-4 tracking-wide text-netural_100
       bg-gradient_2 opacity-0 hover:opacity-100 transition-opacity duration-300 z-10 focus:opacity-100"
           >
             {textButton}
