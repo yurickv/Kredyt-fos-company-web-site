@@ -211,6 +211,33 @@ const AboutUs = () => {
           </ul>
         </div>
       </section>
+      <section className="pt-6 pb-[50px] bg-gradient_section text-primary_700">
+        <div className="div-container flex flex-col gap-6 text-[16px] md:text-[18px] text-primary_700">
+          <h2 className="title">Наші досягнення</h2>
+          <ul className="flex flex-col gap-6 md:grid md:grid-cols-2 lg:flex lg:flex-row">
+            <li className="md:w-[277px] lg:w-[442px]">
+              <p className="font-bold text-[32px] md:twxt-[40px]">25</p>
+              <div className="w-[50px] h-1 rounded-full bg-primary_300 mt-2 md:mt-4"></div>
+              Років на ринку України
+            </li>
+            <li className="md:w-[277px] lg:w-[442px]">
+              <p className="font-bold text-[32px] md:twxt-[40px]">25</p>
+              <div className="w-[50px] h-1 rounded-full bg-primary_300 mt-2 md:mt-4"></div>
+              Років на ринку України
+            </li>
+            <li className="md:w-[277px] lg:w-[442px]">
+              <p className="font-bold text-[32px] md:twxt-[40px]">25</p>
+              <div className="w-[50px] h-1 rounded-full bg-primary_300 mt-2 md:mt-4"></div>
+              Років на ринку України
+            </li>
+            <li className="md:w-[277px] lg:w-[442px]">
+              <p className="font-bold text-[32px] md:twxt-[40px]">25</p>
+              <div className="w-[50px] h-1 rounded-full bg-primary_300 mt-2 md:mt-4"></div>
+              Років на ринку України
+            </li>
+          </ul>
+        </div>
+      </section>
     </main>
   );
 };
