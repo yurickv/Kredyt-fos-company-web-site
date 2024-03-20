@@ -47,7 +47,11 @@ const Header: React.FC = () => {
               <div>+38 067 350-19-77</div>
             </a>
           </div>
-          <Button route="/" text="Сплатити кредит" style="hidden lg:block" />
+          <Button
+            route="#paidCredit"
+            text="Сплатити кредит"
+            style="hidden lg:block"
+          />
           <button
             type="button"
             aria-label="on open mobile navigation"
@@ -63,7 +67,7 @@ const Header: React.FC = () => {
           {routeLink.map(({ link, descr }) => (
             <Link
               key={link}
-              className={`px-10 py-5 text-primary_400 text-lg font-bold
+              className={`px-10 py-5 text-primary_400 text-lg font-bold tracking-wide
                hover:bg-primary_100 focus:bg-primary_100 transition-colors duration-300
             ${
               params === link &&
@@ -86,7 +90,7 @@ const Header: React.FC = () => {
             <Link
               key={link}
               className={`transition-all duration-300
-            px-4 py-4 text-lg font-bold hover:text-primary_100 focus:text-primary_100
+            px-4 py-4 text-lg font-bold tracking-wide hover:text-primary_100 focus:text-primary_100
             ${params === link && "!text-primary_100"}`}
               href={link}
               onClick={toggleMobileMenu}

@@ -29,6 +29,9 @@ const config: Config = {
         gradient_section:
           "linear-gradient(90deg, #DAEAFE 0.05%, #8BB3DA 101.12%)",
       },
+      listStyleImage: {
+        checkmark: 'url("/check.png")',
+      },
       screens: {
         sm: "320px",
         md: "744px",
