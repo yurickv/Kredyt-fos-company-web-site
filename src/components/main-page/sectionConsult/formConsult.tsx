@@ -91,7 +91,7 @@ export const ConsultForm: React.FC<ModalProps> = ({
         style ? "flex flex-col gap-6" : "grid grid-cols-2 gap-4"
       } mt-6`}
     >
-      <div className={`${style ? "w-[500px]" : ""}`}>
+      <div>
         {style && (
           <label htmlFor="userName" className="text-netural_400">
             Ім’я*
