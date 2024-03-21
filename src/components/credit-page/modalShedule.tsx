@@ -69,8 +69,8 @@ export const Modal: React.FC<ModalProps> = ({
   };
 
   return (
-    <div className="fixed z-20 top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white rounded-lg p-6 relative m-4 overflow-auto">
+    <div className="fixed z-20 top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 overflow-hidden">
+      <div className="bg-white rounded-lg p-6 relative m-4 overflow-auto max-h-[90vh]">
         <h3 className="text-[32px] font-bold text-primary_400 mt-8">
           {credits}
         </h3>
