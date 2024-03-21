@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import OnCloseIcon from "../icons/creditPage/onCloseIcon";
 
 interface ModalProps {
@@ -22,6 +22,41 @@ export const Modal: React.FC<ModalProps> = ({
 }) => {
   const { credits, duration, targetSum, dateInput } = formData;
   const [paymentSchedule, setPaymentSchedule] = useState<any[]>([]);
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        onClose();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [onClose]);
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+    if (body) {
+      if (modalRef.current) {
+        body.style.overflow = "hidden"; // Disable scrolling
+      } else {
+        body.style.overflow = ""; // Enable scrolling
+      }
+    }
+
+    return () => {
+      const body = document.querySelector("body");
+      if (body) {
+        body.style.overflow = ""; // Ensure scrolling is re-enabled when the modal is closed
+      }
+    };
+  }, [modalRef]);
 
   useEffect(() => {
     const generatePaymentSchedule = () => {
@@ -70,7 +105,10 @@ export const Modal: React.FC<ModalProps> = ({
 
   return (
     <div className="fixed z-20 top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 overflow-hidden">
-      <div className="bg-white rounded-lg p-6 relative m-4 overflow-auto max-h-[90vh]">
+      <div
+        ref={modalRef}
+        className="bg-white rounded-lg p-6 relative m-4 overflow-auto max-h-[90vh]"
+      >
         <h3 className="text-[32px] font-bold text-primary_400 mt-8">
           {credits}
         </h3>
