@@ -63,7 +63,7 @@ export const ModalWindow: React.FC<ModalProps> = ({
   return (
     <div className="fixed z-20 top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 overflow-hidden">
       <div
-        className="bg-white rounded-lg p-[50px] relative m-4 overflow-auto"
+        className="bg-white rounded-lg px-4 py-[50px] md:px-[50px] relative m-4 overflow-auto"
         ref={modalRef}
       >
         <h3 className="text-[20px] font-bold text-primary_700">{title}</h3>

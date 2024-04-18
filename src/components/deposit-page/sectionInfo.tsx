@@ -1,4 +1,3 @@
-import { DocumentIcon } from "../icons/depositPage/documentIcon";
 import { PdfIcon } from "../icons/depositPage/pdfIcon";
 
 export const SectionInfo = () => {
@@ -8,15 +7,21 @@ export const SectionInfo = () => {
         <h2 className="title">Інформація для кієнтів</h2>
         <ul className="mt-6">
           <li className="flex gap-2 mt-6 cursor-pointer">
-            <PdfIcon />{" "}
+            <div className="w-6 h-6">
+              <PdfIcon />
+            </div>{" "}
             <span>Процентні ставки на внески, на депозитні рахунки</span>
           </li>
           <li className="flex gap-2 mt-6 cursor-pointer">
-            <PdfIcon /> <span>Примірний договір</span>
+            <div className="w-6 h-6">
+              <PdfIcon />
+            </div>{" "}
+            <span>Примірний договір</span>
           </li>
           <li className="flex gap-2 mt-6 cursor-pointer">
-            {" "}
-            <PdfIcon />
+            <div className="w-6 h-6">
+              <PdfIcon />
+            </div>{" "}
             <span>Правила надання фінансових послуг</span>
           </li>
         </ul>

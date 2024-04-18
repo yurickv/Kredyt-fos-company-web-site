@@ -58,36 +58,36 @@ export const InfoCardCredit: React.FC<Props> = ({ term }) => {
               key="creditSum"
             >
               <span className="w-[130px]">Сума кредиту</span>
-              <span className="text-[18px] text-primary_400 font-semibold w-[240px] text-end">
+              <span className="text-[18px] text-primary_400 font-semibold md:w-[240px] text-end">
                 {creditSum}
               </span>
             </li>
             <li
-              className="flex flex-col min-[430px]:flex-row gap-1 justify-between"
+              className="flex flex-col min-[420px]:flex-row gap-1 justify-between"
               key="creditTermine"
             >
               <span className="w-[240px]">Строк кредитування, міс.</span>
-              <span className="text-[18px] text-primary_400 font-semibold w-[240px] text-end">
+              <span className="text-[18px] text-primary_400 font-semibold md:w-[240px] text-end">
                 {creditTermine}
               </span>
             </li>
             <li
-              className="flex flex-col min-[430px]:flex-row gap-1 justify-between"
+              className="flex flex-row gap-1 justify-between"
               key="creditInterest"
             >
               <span className="w-[240px]">Процентна ставка, % річних</span>{" "}
-              <span className="text-[18px] text-primary_400 font-semibold w-[240px] text-end">
+              <span className="text-[18px] text-primary_400 font-semibold md:w-[240px] text-end">
                 {creditInterest}
               </span>
             </li>
             <li
-              className="flex flex-col min-[430px]:flex-row gap-1 justify-between"
+              className="flex flex-row gap-1 justify-between"
               key="creditRealInterest"
             >
               <span className="w-[240px]">
                 Максимальна реальна процентна ставка, % річних
               </span>
-              <span className="text-[18px] text-primary_400 font-semibold w-[240px] text-end">
+              <span className="text-[18px] text-primary_400 font-semibold md:w-[240px] text-end">
                 {creditRealInterest}
               </span>
             </li>

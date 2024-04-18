@@ -38,7 +38,9 @@ export const FinService = () => {
         </li>
         <li className="border-b border-primary_100 pb-4">
           <a href="#" className="flex gap-3 mt-6 cursor-pointer">
-            <PdfIcon />{" "}
+            <div className="w-5 h-5">
+              <PdfIcon />
+            </div>{" "}
             <span className="md:text-lg">
               <span className="text-primary_400 font-bold ">
                 Положення про фінансові послуги
@@ -54,31 +56,42 @@ export const FinService = () => {
       <ul>
         <li>
           <a href="#" className="flex gap-2 mt-6 cursor-pointer">
-            <CheckMarkIcon /> Вклад строковий класичний <PdfIcon />
+            <div className="w-5 h-5">
+              <PdfIcon />
+            </div>{" "}
+            Вклад строковий класичний
           </a>
         </li>
         <li>
           <a href="#" className="flex gap-2 mt-6 cursor-pointer">
-            <CheckMarkIcon />
-            Вклад строковий накопичувальний <PdfIcon />
+            <div className="w-5 h-5">
+              <PdfIcon />
+            </div>{" "}
+            Вклад строковий накопичувальний
           </a>
         </li>
         <li>
           <a href="#" className="flex gap-2 mt-6 cursor-pointer">
-            <CheckMarkIcon />
-            Вклад на вимогу <PdfIcon />
+            <div className="w-5 h-5">
+              <PdfIcon />
+            </div>{" "}
+            Вклад на вимогу
           </a>
         </li>
         <li>
           <a href="#" className="flex gap-2 mt-6 cursor-pointer">
-            <CheckMarkIcon />
-            Кредитний договір <PdfIcon />
+            <div className="w-5 h-5">
+              <PdfIcon />
+            </div>{" "}
+            Кредитний договір
           </a>
         </li>
         <li>
           <a href="#" className="flex gap-2 mt-6 cursor-pointer">
-            <CheckMarkIcon />
-            Договір відновлювальної кредитної лінії <PdfIcon />
+            <div className="w-5 h-5">
+              <PdfIcon />
+            </div>{" "}
+            Договір відновлювальної кредитної лінії
           </a>
         </li>
       </ul>

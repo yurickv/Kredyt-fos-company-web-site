@@ -49,7 +49,7 @@ export const ValuesEmploeesSection = () => {
       <section className="pt-6 pb-[50px] bg-netural_100 text-primary_700">
         <div className="div-container flex flex-col gap-6 text-[16px] md:text-[18px] text-primary_700">
           <h2 className="title">Наші працівники</h2>
-          <p className="mt-6">
+          <p className="">
             Найкраща команда експертів, котра готова надати кваліфіковану
             підтримку та консультації у всіх фінансових питаннях.
           </p>
