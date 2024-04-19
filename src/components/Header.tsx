@@ -23,7 +23,7 @@ const Header: React.FC = () => {
   return (
     <header className="bg-netural_100">
       <div className="w-full h-[81px] lg:h-[178px]"></div>
-      <div className="px-4 md:px-[78px] lg:px-[120px] max-w-[1536px] mx-auto w-full fixed top-0 z-50 bg-netural_100">
+      <div className="px-4 md:px-[78px] lg:px-[120px] max-w-[1536px] mx-auto w-full fixed top-0 inset-x-0 z-50 bg-netural_100">
         <div className="pt-6 pb-4 flex items-center justify-between">
           <div className="flex items-center gap-14">
             <Link className="" href="/">
