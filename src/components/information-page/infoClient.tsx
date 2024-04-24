@@ -1,4 +1,6 @@
+import { PointerIcon } from "../icons/contactsPage/pointerIcon";
 import { PdfIcon } from "../icons/depositPage/pdfIcon";
+import { Tick } from "../icons/Tick";
 
 export const InfoClientText = () => {
   return (
@@ -6,18 +8,103 @@ export const InfoClientText = () => {
       <h3 className="text-primary_400 text-[32px] font-bold py-4">
         Інформація клієнту
       </h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aut
-        repellendus, molestias cumque tempore ipsam ab quos dolor impedit
-        nostrum quia hic fuga neque. Ad sunt animi necessitatibus. Commodi,
-        amet?
+      <p className="text-base md:text-lg">
+        На виконання вимог ст. 12 Закону України «Про фінансові послуги та
+        державне регулювання ринків фінансових послуг» від 12.07.2001р №2664-ІІІ
+        (із змінами)КРЕДИТНА СПІЛКА «Кредит-ФОС» до укладання договору з
+        клієнтом надає наступну інформацію:
       </p>
-      <p className="mt-4">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aut
-        repellendus, molestias cumque tempore ipsam ab quos dolor impedit
-        nostrum quia hic fuga neque. Ad sunt animi necessitatibus. Commodi,
-        amet?
-      </p>
+      <h3 className="text-[16px] md:text-[18px] lg:text-[20px] text-primary_700 font-bold pt-6">
+        1. ОСОБА, ЯКА НАДАЄ ФІНАНСОВІ ПОСЛУГИ
+      </h3>
+      <ul className="text-base md:text-lg">
+        <details className="p-4 group">
+          <summary className="">
+            <h4 className="">
+              Найменування, місцезнаходження, контактний телефон і адреса
+              електронної пошти особи, яка надає фінансові послуги:
+            </h4>
+            <div className="group-hover:rotate-180 transition-transform duration-300">
+              <PointerIcon />
+            </div>
+          </summary>
+          <p
+            className="mt-2 bg-white dark:bg-darkBody z-10 font-medium text-lg lg:text-xl lg:leading-8 indent-4
+              text-mainText dark:text-mainTextBlack"
+          >
+            <strong>Найменування:</strong> КРЕДИТНА СПІЛКА «Кредит-ФОС»
+            <br />
+            <strong>Місцезнаходження:</strong> 46025, м. Тернопіль вул. Франка
+            20 прим.10.
+            <br /> <strong>Контактний телефон:</strong> 0673501977 <br />
+            <strong>Адреса електронної пошти:</strong> kredit.fos@gmail.com
+            <br />
+            <strong>
+              Адреса, за якою приймаються скарги споживачів фінансових послуг:
+            </strong>{" "}
+            46025, м. Тернопіль вул. Франка 20 прим.10.
+          </p>
+        </details>
+        <li className="flex gap-2 pt-4" id="mil-second">
+          <div className="w-6">
+            <Tick />
+          </div>
+          Найменування особи, яка надає посередницькі послуги (за наявності)
+          Особи, які надають посередницькі послуги - відсутні
+        </li>
+        <li className="flex gap-2 pt-4" id="mil-third">
+          <div className="w-6">
+            <Tick />
+          </div>
+          Відомості про державну реєстрацію особи, яка надає фінансові послуги
+          Дата державної реєстрації: 13.05.2004 Дата запису: 13.05.2004 Номер
+          запису: 16461200000002612 Код ЄДРПОУ 25694430
+        </li>
+        <li className="flex gap-2 pt-4" id="mil-fourth">
+          <div className="w-6">
+            <Tick />
+          </div>
+          Інформація щодо включення фінансової установи до відповідного
+          державного реєстру фінансових установ Інформація щодо включення КС до
+          державного реєстру фінансових установ: Включена до ДРФУ на підставі
+          рішення Держфінпослуг від 13.05.2004 №557 Серія та номер Свідоцтва КС
+          № 176 Дата видачі свідоцтва 13.05.2004
+        </li>
+        <li className="flex gap-2 pt-4" id="mil-fourth">
+          <div className="w-6">
+            <Tick />
+          </div>
+          Інформація щодо наявності в особи, яка надає фінансові послуги, права
+          на надання відповідної фінансової послуги Інформація щодо наявності в
+          КС, права на надання відповідної фінансової послуги: НАДАННЯ КОШТІВ У
+          ПОЗИКУ, В ТОМУ ЧИСЛІ І НА УМОВАХ ФІНАНСОВОГО КРЕДИТУ Ліцензія на
+          провадження господарської діяльності з надання фінансових послуг, а
+          саме на надання коштів у позику, в тому числі і на умовах фінансового
+          кредиту актуалізована ( розпорядження Національної комісії, що
+          здійснює державне регулювання у сфері ринків фінансових послуг від 27
+          квітня 2017 року № 1374). Строк дії – безстрокова. Статус - чинна.
+          ЗАЛУЧЕННЯ ФІНАНСОВИХ АКТИВІВ ІЗ ЗОБОВ’ЯЗАННЯМ ЩОДО НАСТУПНОГО ЇХ
+          ПОВЕРНЕННЯ Ліцензія на провадження господарської діяльності з надання
+          фінансових послуг, а саме на залучення фінансових активів із
+          зобов’язанням щодо наступного їх повернення актуалізована(
+          розпорядження Національної комісії, що здійснює державне регулювання у
+          сфері ринків фінансових послуг від 26 січня 2017 року № 162). Строк
+          дії -безстрокова. Статус - чинна.
+        </li>{" "}
+        <li className="flex gap-2 pt-4" id="mil-fourth">
+          <div className="w-6">
+            <Tick />
+          </div>
+          Контактна інформація органу, який здійснює державне регулювання щодо
+          діяльності КС у сфері фінансових послуг: Національний Банк України
+          (НБУ) місцезнаходження: Україна, 01601, місто Київ, ВУЛИЦЯ
+          ІНСТИТУТСЬКА, будинок 9, Зручна онлайн-форма на вебсайті НБУ; Для
+          електронного звернення: nbu@bank.gov.ua (заповніть і надішліть форму
+          та за потреби додайте супровідні матеріали. Але розмір вкладення – не
+          більше 10 МБ); Для листування: вул. Інститутська, 9, м. Київ, 01601
+        </li>{" "}
+      </ul>
+
       <a href="#" className="flex gap-2 mt-6 cursor-pointer">
         <PdfIcon /> Структура власності
       </a>
