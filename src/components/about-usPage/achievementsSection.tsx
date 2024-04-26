@@ -42,18 +42,18 @@ const AchievementsSection: React.FC = () => {
           />
           <AnimatedNumber
             isVisible={isVisible}
-            value={1555}
+            value={1120}
             label="Активних членів спілки"
           />
           <AnimatedNumber
             isVisible={isVisible}
-            value={750}
-            label="Видано кредитів"
+            value={400}
+            label="Видаємо кредитів в рік"
           />
           <AnimatedNumber
             isVisible={isVisible}
-            value={5}
-            label="мільйонів загальні резерви"
+            value={2}
+            label="Мільйонів резервного капіталу"
           />
         </ul>
       </div>

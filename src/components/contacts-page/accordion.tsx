@@ -94,14 +94,14 @@ const Accordion: React.FC = () => {
                       {data.workTime[0]}
                     </span>
                   </li>
-                  <li className="text-[16px] md:text-[18px] text-primary_700 mt-6">
+                  {/* <li className="text-[16px] md:text-[18px] text-primary_700 mt-6">
                     Субота:{" "}
                     <span className="text-primary_400 font-bold">
                       {data.workTime[1]}
                     </span>
-                  </li>
+                  </li> */}
                   <li className="text-[16px] md:text-[18px] text-primary_700 mt-6">
-                    Неділя:{" "}
+                    Субота-Неділя:{" "}
                     <span className="text-primary_400 font-bold">Вихідний</span>
                   </li>
                 </ul>

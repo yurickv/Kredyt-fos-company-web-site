@@ -5,9 +5,9 @@ import { PointerIcon } from "../icons/contactsPage/pointerIcon";
 import { SuccessIcon } from "../icons/depositPage/successIcon";
 
 export const SectionPaidCredit = () => {
-  const handleClick = () => {
-    alert("Ця можливість поки що в розробці, скористайтесь іншими");
-  };
+  // const handleClick = () => {
+  //   alert("Ця можливість поки що в розробці, скористайтесь іншими");
+  // };
 
   return (
     <section className="bg-netural_100 py-[50px]" id="paidCredit">
@@ -39,7 +39,7 @@ export const SectionPaidCredit = () => {
                 </div>
               </Link>
             </div>
-            <div className="mt-6">
+            {/* <div className="mt-6">
               <div className="text-primary_400 flex gap-2">
                 <div className="w-6">
                   <SuccessIcon />
@@ -63,7 +63,7 @@ export const SectionPaidCredit = () => {
                   <PointerIcon />
                 </div>
               </button>
-            </div>
+            </div> */}
           </div>
 
           <div className="mt-6 max-w-[500px]">
@@ -79,9 +79,9 @@ export const SectionPaidCredit = () => {
             </div>
             <ul className="text-primary_700 py-4">
               <li>Банк: УКРЕКСІМБАНК",</li>
-              <li>ЄДУПОУ 25694430</li>
+              <li>ЄДРПОУ: 25694430</li>
               <li>Одержувач: Кредит-ФОС</li>
-              <li>Код одержувача:4444444</li>
+              <li>Код одержувача: 25694430</li>
               <li>IBAN:UA803223130000026506000000200</li>
               <li>
                 Призначення платежу: Платіж за кредитним договором №__, від __
