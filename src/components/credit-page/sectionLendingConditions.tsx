@@ -1,4 +1,4 @@
-import { SuccessIcon } from "../icons/depositPage/successIcon";
+import { PdfIcon } from "../icons/depositPage/pdfIcon";
 
 export const SectionLendingConditions = () => {
   return (
@@ -7,31 +7,41 @@ export const SectionLendingConditions = () => {
         <h2 className="title">Умови кредитування</h2>
         <ul className="md:text-[18px] text-primary_700 flex flex-col gap-6 md:grid md:grid-cols-2">
           <li className="flex gap-2 md:w-[277px] lg:w-[442px]">
-            <div className="w-6">
-              <SuccessIcon />
-            </div>
-            кредит надається виключно у національній валюті як готівкою, так і
-            по перерахунку
+            <a href="#" className="flex gap-3 mt-6 cursor-pointer">
+              <div className="w-6 h-6">
+                <PdfIcon />
+              </div>{" "}
+              <span className="md:text-lg">Умови послуги</span>
+            </a>
           </li>
           <li className="flex gap-2 md:w-[277px] lg:w-[442px]">
-            <div className="w-6">
-              <SuccessIcon />
-            </div>
-            строк кредитуванння – до 2-х років (без застави), до 4-х років (із
-            заставою і поручителями)
+            <a href="#" className="flex gap-3 mt-6 cursor-pointer">
+              <div className="w-6 h-6">
+                <PdfIcon />
+              </div>{" "}
+              <span className="md:text-lg">Примірний кредитний договір</span>
+            </a>
           </li>
           <li className="flex gap-2 md:w-[277px] lg:w-[442px]">
-            <div className="w-6">
-              <SuccessIcon />
-            </div>
-            при достроковому погашенні кредиту штрафні санкцій не застосовуються
+            <a href="#" className="flex gap-3 mt-6 cursor-pointer">
+              <div className="w-6 h-6">
+                <PdfIcon />
+              </div>{" "}
+              <span className="md:text-lg">
+                Примірний договір кредитної лінії
+              </span>
+            </a>
           </li>
 
           <li className="flex gap-2 md:w-[277px] lg:w-[442px]">
-            <div className="w-6">
-              <SuccessIcon />
-            </div>
-            нарахування відсотків на залишкову суму кредиту
+            <a href="#" className="flex gap-3 mt-6 cursor-pointer">
+              <div className="w-6 h-6">
+                <PdfIcon />
+              </div>{" "}
+              <span className="md:text-lg">
+                Правила надання кредитних послуг
+              </span>
+            </a>
           </li>
         </ul>
       </div>

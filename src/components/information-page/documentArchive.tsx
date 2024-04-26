@@ -10,7 +10,7 @@ export const DocumentArchive = () => {
       <ul>
         <li className="border-b border-primary_100 pb-4">
           <a href="#" className="flex gap-3 mt-6 cursor-pointer">
-            <div className="w-5 h-5">
+            <div className="w-6 h-6">
               <PdfIcon />
             </div>{" "}
             <span className="md:text-lg">
@@ -20,7 +20,7 @@ export const DocumentArchive = () => {
         </li>
         <li className="border-b border-primary_100 pb-4">
           <a href="#" className="flex gap-3 mt-6 cursor-pointer">
-            <div className="w-5 h-5">
+            <div className="w-6 h-6">
               <PdfIcon />
             </div>{" "}
             <span className="md:text-lg">
@@ -30,7 +30,7 @@ export const DocumentArchive = () => {
         </li>
         <li className="border-b border-primary_100 pb-4">
           <a href="#" className="flex gap-3 mt-6 cursor-pointer">
-            <div className="w-5 h-5">
+            <div className="w-6 h-6">
               <PdfIcon />
             </div>{" "}
             <span className="md:text-lg">Примірні договори 28.05.2020</span>
@@ -38,7 +38,7 @@ export const DocumentArchive = () => {
         </li>
         <li className="border-b border-primary_100 pb-4">
           <a href="#" className="flex gap-3 mt-6 cursor-pointer">
-            <div className="w-5 h-5">
+            <div className="w-6 h-6">
               <PdfIcon />
             </div>{" "}
             <span className="md:text-lg">
@@ -48,7 +48,7 @@ export const DocumentArchive = () => {
         </li>{" "}
         <li className="border-b border-primary_100 pb-4">
           <a href="#" className="flex gap-3 mt-6 cursor-pointer">
-            <div className="w-5 h-5">
+            <div className="w-6 h-6">
               <PdfIcon />
             </div>{" "}
             <span className="md:text-lg">
@@ -58,7 +58,7 @@ export const DocumentArchive = () => {
         </li>{" "}
         <li className="border-b border-primary_100 pb-4">
           <a href="#" className="flex gap-3 mt-6 cursor-pointer">
-            <div className="w-5 h-5">
+            <div className="w-6 h-6">
               <PdfIcon />
             </div>{" "}
             <span className="md:text-lg">
@@ -68,7 +68,7 @@ export const DocumentArchive = () => {
         </li>
         <li className="border-b border-primary_100 pb-4">
           <a href="#" className="flex gap-3 mt-6 cursor-pointer">
-            <div className="w-5 h-5">
+            <div className="w-6 h-6">
               <PdfIcon />
             </div>{" "}
             <span className="md:text-lg">
@@ -78,7 +78,7 @@ export const DocumentArchive = () => {
         </li>{" "}
         <li className="border-b border-primary_100 pb-4">
           <a href="#" className="flex gap-3 mt-6 cursor-pointer">
-            <div className="w-5 h-5">
+            <div className="w-6 h-6">
               <PdfIcon />
             </div>{" "}
             <span className="md:text-lg">
@@ -88,7 +88,7 @@ export const DocumentArchive = () => {
         </li>{" "}
         <li className="border-b border-primary_100 pb-4">
           <a href="#" className="flex gap-3 mt-6 cursor-pointer">
-            <div className="w-5 h-5">
+            <div className="w-6 h-6">
               <PdfIcon />
             </div>{" "}
             <span className="md:text-lg">Примірні договори</span>
