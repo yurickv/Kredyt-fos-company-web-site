@@ -56,7 +56,7 @@ const Infomation = () => {
 
           <div className="lg:flex gap-6 hidden">
             {" "}
-            <aside className="overflow-hidden min-w-[355px] w-[355px] max-h-[583px] rounded-md border-primary_300 border-2 mt-6">
+            <aside className="overflow-hidden min-w-[355px] w-[355px] max-h-[582px] rounded-md border-primary_300 border-2 mt-6">
               <ul className="text-primary_400 text-[18px] font-bold">
                 {infoListTitle.map((item, index) => (
                   <li

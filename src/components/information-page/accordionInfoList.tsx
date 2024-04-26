@@ -2,8 +2,6 @@
 
 import React, { useState } from "react";
 import { PointerIcon } from "../icons/contactsPage/pointerIcon";
-import Link from "next/link";
-import { PdfIcon } from "../icons/depositPage/pdfIcon";
 import { DocumentArchive } from "@/components/information-page/documentArchive";
 import { FinService } from "@/components/information-page/finService";
 import { InfoClientText } from "@/components/information-page/infoClient";

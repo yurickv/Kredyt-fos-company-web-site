@@ -7,6 +7,7 @@ import { HeroText } from "./heroText";
 import Image from "next/image";
 import profileCredit from "../../../public/Main-screen-1.webp";
 import profileDeposit from "../../../public/Main-screen1.webp";
+import profileCreditPp from "../../../public/Main-screen-pp.webp";
 
 export const HeroSlider = () => {
   const [sliderRef] = useKeenSlider<HTMLDivElement>(
@@ -89,8 +90,25 @@ export const HeroSlider = () => {
             route="/deposit"
           />
         </div>
-        <div className="keen-slider__slide number-slide3 w-full  h-full">3</div>
-        <div className="keen-slider__slide number-slide4 w-full  h-full">4</div>
+        <div className="keen-slider__slide w-full  h-full flex flex-col justify-center items-center">
+          <Image
+            alt="Kredyt FOS service foto"
+            src={profileCreditPp}
+            placeholder="blur"
+            fill
+            priority
+            sizes="100vw"
+            style={{
+              objectFit: "cover",
+            }}
+          />
+          <HeroText
+            title="Кредити для підприємців"
+            text="Кращі пропозиції для вас"
+            textButton="Дізнатитсь більше"
+            route="/credit"
+          />
+        </div>
       </div>
     </section>
   );

@@ -92,23 +92,36 @@ const NewsSlider = () => {
           </div>
           <div className="keen-slider__slide">
             <NewsCard
-              title="Отримано ліцензію від НБУ"
-              text="15 лютого 2023 року отримано ліцензію на право проведення фінансових операцій з населенням. маємо можливість брати депозити і надавати кредити громадянам України."
+              title="Відкриття філії в смт.Козова"
+              text="15 лютого 2023 року відкрили філію в смт.Козова і готові приймати клієнтів"
               route="/about-us"
               foto="/Rectangle-21-(1).webp"
             />
           </div>
           <div className="keen-slider__slide">
             <NewsCard
-              title="Ми переїхали в нове приміщення"
-              text="15 лютого 2022 року спілка придбала за свої кошти нове приміщення по вул.Франка 1 і зробила там ремонт. Маємо можливість обслуговувати членів за новою адресою."
+              title="Відкриття філії в м.Збараж"
+              text="15 лютого 2022 року відкрили філію в смт.Козова і готові приймати клієнтів"
               route="/about-us"
               foto="/Rectangle-21-(2).webp"
             />
           </div>
-          <div className="keen-slider__slide number-slide4">4</div>
-          <div className="keen-slider__slide number-slide5">5</div>
-          <div className="keen-slider__slide number-slide6">6</div>
+          <div className="keen-slider__slide">
+            <NewsCard
+              title="Нам 25 років!"
+              text="2024 року кредитній спілці Кредит-ФОС виповнилось 25 років від реєстрації"
+              route="/about-us"
+              foto="/newsFoto.webp"
+            />
+          </div>{" "}
+          <div className="keen-slider__slide">
+            <NewsCard
+              title="Гранд для учасників спілки"
+              text="Допомога від Всесвітньої фундації кредитних спілок, проекту КЕП за надану підтримку - 'Обладнання для агровиробників'"
+              route="/about-us"
+              foto="/newsFoto1.webp"
+            />
+          </div>
         </div>
       </div>
       {loaded && instanceRef.current && (

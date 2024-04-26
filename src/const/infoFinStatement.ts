@@ -49,19 +49,4 @@ export const infoFinStatement = [
     finStatement: "#",
     auditStatement: "#",
   },
-  {
-    year: "2012",
-    finStatement: "#",
-    auditStatement: "#",
-  },
-  {
-    year: "2011",
-    finStatement: "#",
-    auditStatement: "#",
-  },
-  {
-    year: "2010",
-    finStatement: "#",
-    auditStatement: "#",
-  },
 ];

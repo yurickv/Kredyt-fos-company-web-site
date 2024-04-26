@@ -48,3 +48,7 @@ body {
   color: transparent;
   transition: all 0.2s ease;
 }
+
+details[open] summary div {
+  @apply rotate-180;
+}

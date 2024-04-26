@@ -4,31 +4,56 @@ export const InfoManagment = () => {
   return (
     <div className="text-primary_700">
       <h3 className="text-primary_400 text-[32px] font-bold pt-4">
-        Наглядова рада
+        Спостережна рада
       </h3>
       <div className="w-[50px] h-1 rounded-full bg-primary_300 mt-2 md:mt-4"></div>
-      <ul className="pt-4">
+      <ul className="pt-4 border-b border-primary_100 pb-4">
         <li className="pb-4">
-          Мокрицький Юрій Тарасович — Голова наглядової ради;
+          Голова спостережної ради - Маркович Марія Йосипівна
         </li>
+        <li className="">
+          Заступник голови спостережної ради - Ткачук Роман Андрійович
+        </li>
+        <li className="">
+          Член спостережної ради - Колісник Дем'ян Васильович
+        </li>
+        <li className="">
+          Член спостережної ради - Паничев Володимир Олександрович
+        </li>
+        <li className="">
+          Член спостережної ради - Андрійчук Володимир Андрійович
+        </li>
+      </ul>
+      <h3 className="text-primary_400 text-[32px] font-bold">
+        Ревізійна комісія
+      </h3>
+      <div className="w-[50px] h-1 rounded-full bg-primary_300 mt-2 md:mt-4"></div>
+      <ul className="pt-4 border-b border-primary_100 pb-4">
         <li className="pb-4">
-          Казарінов Володимир Олександрович — Заступник голови наглядової ради;
+          Голова ревізійної комісії - Цепенюк Михайло Іванович
         </li>
+        <li>Заступник голови ревізійної комісії - Фенюк Богдан Петрович</li>
+        <li>Член ревізійної комісії - Збожна Ольга Михайлівна</li>
+      </ul>
+      <h3 className="text-primary_400 text-[32px] font-bold">
+        Кредитний комітет
+      </h3>
+      <div className="w-[50px] h-1 rounded-full bg-primary_300 mt-2 md:mt-4"></div>
+      <ul className="pt-4 border-b border-primary_100 pb-4">
         <li className="pb-4">
-          Гончаренко Костянтин Сергійович — Секретар наглядової ради;
+          Голова кредитного комітету - Скриник Віра Йосипівна
         </li>
-        <li className="pb-4">
-          Розлуцька Зоряна Ярославівна — Член наглядової ради;
-        </li>
-        <li className="pb-4">
-          Сидоровський Володимир Михайлович — Член наглядової ради.
-        </li>
+        <li>Секретар кредитного комітету - Маркович Марія Йосипівна</li>
+        <li>Член кредитного комітету - Король Ольга Дем'янівна</li>
+        <li>Член кредитного комітету - Шуб'як Ігор Олексійович</li>
+        <li>Член кредитного комітету - Теслюк Тетяна Леонідівна</li>
       </ul>
       <h3 className="text-primary_400 text-[32px] font-bold">Правління</h3>
       <div className="w-[50px] h-1 rounded-full bg-primary_300 mt-2 md:mt-4"></div>
       <ul className="pt-4 border-b border-primary_100 pb-4">
-        <li className="pb-4">Ковбасюк Тетяна Борисівна — Голова правління;</li>
-        <li>Гончаренко Катерина Олегівна — Член правління.</li>
+        <li className="pb-4">Голова правління - Теслюк Тетяна Леонідівна</li>
+        <li>Член правління - Король Ольга Дем'янівна</li>
+        <li>Член правління - Шуб'як Ігор Олексійович</li>
       </ul>
       <p className="mt-4">
         Органами управління кредитної спілки є загальні збори членів кредитної
