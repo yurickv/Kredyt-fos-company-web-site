@@ -47,7 +47,7 @@ const NewsSlider = () => {
   }
 
   return (
-    <section className="max-w-[1536px] mx-auto py-[50px] px-4 md:px-[78px] lg:px-[120px]">
+    <section className="max-w-[1536px] mx-auto py-[50px] px-4 md:px-[78px] lg:px-[120px] bg-netural_100">
       <div
         className="navigation-wrapper xl:w-[1200px] lg:w-[1040px] md:w-[588px] w-[328px] 
        min-[1536px]:w-[1296px] min-[1024px]:w-[868px] min-[944px]:w-[788px]
@@ -84,10 +84,18 @@ const NewsSlider = () => {
         >
           <div className="keen-slider__slide">
             <NewsCard
+              title="Нам 25 років!"
+              text="2024 року кредитній спілці Кредит-ФОС виповнилось 25 років від початку роботи"
+              route="/about-us/anniversary-of-the-credit-union"
+              foto="/newsFoto.webp"
+            />
+          </div>
+          <div className="keen-slider__slide">
+            <NewsCard
               title="Загальні збори вкладників"
-              text="15 квітня 2023 року проведено загальні збори вкладників. Розлянуто підсумки роботи за рік, затверджені плани роботи на наступний. Обрано нового голову кредитного комітету."
-              route="/about-us"
-              foto="/Rectangle-21.webp"
+              text="15 травня 2023 року проведено загальні збори вкладників. Розлянуто підсумки роботи за рік, затверджені плани роботи на наступний."
+              route="/about-us/general-meetings-of-members"
+              foto="/newsFoto2.webp"
             />
           </div>
           <div className="keen-slider__slide">
@@ -104,14 +112,6 @@ const NewsSlider = () => {
               text="15 лютого 2022 року відкрили філію в смт.Козова і готові приймати клієнтів"
               route="/about-us"
               foto="/Rectangle-21-(2).webp"
-            />
-          </div>
-          <div className="keen-slider__slide">
-            <NewsCard
-              title="Нам 25 років!"
-              text="2024 року кредитній спілці Кредит-ФОС виповнилось 25 років від реєстрації"
-              route="/about-us"
-              foto="/newsFoto.webp"
             />
           </div>{" "}
           <div className="keen-slider__slide">

@@ -12,7 +12,8 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Кредитна спілка Кредит-ФОС",
-  description: "Кредити, депозити для громадян",
+  description:
+    "Кредити готівкою в м.Тернопіль та Тернопільській області, депозити для громадян, кредитний і депозитний калькулятори, швидкий розгляд заявки, онлайн подання заявки на кредит.",
 };
 
 export default function RootLayout({
