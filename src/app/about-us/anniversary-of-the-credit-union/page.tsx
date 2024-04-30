@@ -37,7 +37,7 @@ const Anniversary = () => {
           </Link>
           <span>&#8250;</span>
           <Link
-            href="/"
+            href="/about-us"
             className="text-netural_300 hover:text-primary_200 transition-colors duration-300"
           >
             Про нас

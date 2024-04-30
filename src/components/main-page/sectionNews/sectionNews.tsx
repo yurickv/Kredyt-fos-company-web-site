@@ -102,23 +102,23 @@ const NewsSlider = () => {
             <NewsCard
               title="Відкриття філії в смт.Козова"
               text="15 лютого 2023 року відкрили філію в смт.Козова і готові приймати клієнтів"
-              route="/about-us"
-              foto="/Rectangle-21-(1).webp"
+              route="/about-us/opening-branch-in-kozova"
+              foto="/newsFoto3.webp"
             />
           </div>
           <div className="keen-slider__slide">
             <NewsCard
               title="Відкриття філії в м.Збараж"
               text="15 лютого 2022 року відкрили філію в смт.Козова і готові приймати клієнтів"
-              route="/about-us"
-              foto="/Rectangle-21-(2).webp"
+              route="/about-us/opening-branch-in-zbarazh"
+              foto="/newsFoto4.webp"
             />
           </div>{" "}
           <div className="keen-slider__slide">
             <NewsCard
               title="Гранд для учасників спілки"
               text="Допомога від Всесвітньої фундації кредитних спілок, проекту КЕП за надану підтримку - 'Обладнання для агровиробників'"
-              route="/about-us"
+              route="/about-us/grand-for-union-members"
               foto="/newsFoto1.webp"
             />
           </div>
