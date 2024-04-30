@@ -7,6 +7,21 @@ import { SectionPaidCredit } from "@/components/credit-page/sectionPaidCredit";
 import { SectionPreferences } from "@/components/credit-page/sectionPreferences";
 import { SectionConsultForm } from "@/components/main-page/sectionConsult/sectionConsult";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Кредити готівкою від кредитної спілки Кредит-ФОС",
+  description:
+    "Види кредитів кредитної спілки Кредит-ФОС: споживчий, під заставу депозиту, інноваціїний, підприємницький, для діяльності в селі, для бізнесу в селі.  Кредит готівкою на руки можна отримати в м.Тернопіль, вул.Франка 20 або у філіях в Тернопільській області: в смт. Козова, м. Збараж, м. Скалат, смт.Вишнівець, смт. Підволочиськ. Просте онлайн подання заявки на кредит, прозорі умови і перелік документів для оформлення кредиту. Онлайн кредитний калькулятор з графіком платежів. Без прихованих комісій і платежів.",
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      "max-snippet": -1,
+    },
+  },
+};
 
 const Credit = () => {
   return (

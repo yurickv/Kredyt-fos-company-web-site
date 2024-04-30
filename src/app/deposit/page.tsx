@@ -3,8 +3,22 @@ import { SectionDocuments } from "@/components/deposit-page/sectionDocuments";
 import { SectionInfo } from "@/components/deposit-page/sectionInfo";
 import { SectionInfoCard } from "@/components/deposit-page/sectionInfoCard";
 import { SectionConsultForm } from "@/components/main-page/sectionConsult/sectionConsult";
-
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Депозити в кредитній спілці Кредит-ФОС",
+  description:
+    "Види депозитів кредитної спілки Кредит-ФОС: строковий, для накопичення, на вимогу. Внести депозит можна в м.Тернопіль, вул.Франка 20 або у філіях в Тернопільській області: в смт. Козова, м. Збараж, м. Скалат, смт.Вишнівець, смт. Підволочиськ. Просте онлайн подання заявки на депозит, перелік документів для оформлення депозиту. Онлайн депозитний калькулятор",
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      "max-snippet": -1,
+    },
+  },
+};
 
 const Deposit = () => {
   return (

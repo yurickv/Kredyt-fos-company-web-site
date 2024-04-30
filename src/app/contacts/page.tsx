@@ -1,6 +1,21 @@
 import Accordion from "@/components/contacts-page/accordion";
 import { SectionMap } from "@/components/main-page/sectionMap";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Контакти кредитної спілки Кредит-ФОС та її філій",
+  description:
+    "Адреса, номер телефону, графік роботи кредитної спілки Кредит-ФОС та всіх філій.  Філії знаходяться в Тернопільській області: в смт. Козова, м. Збараж, м. Скалат, смт.Вишнівець, смт. Підволочиськ",
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      "max-snippet": -1,
+    },
+  },
+};
 
 const Contacts = () => {
   return (

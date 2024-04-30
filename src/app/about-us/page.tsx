@@ -2,8 +2,31 @@ import { AboutUsSection } from "@/components/about-usPage/aboutSections";
 import AchievementsSection from "@/components/about-usPage/achievementsSection";
 import { PublicInfoSection } from "@/components/about-usPage/publicInfoSection";
 import { ValuesEmploeesSection } from "@/components/about-usPage/valuesEmploeesSection";
+import { Metadata } from "next";
+import dynamic from "next/dynamic";
+
+const NewsSliderDynamic = dynamic(
+  () => import("../../components/main-page/sectionNews/sectionNews"),
+  {
+    ssr: false,
+  }
+);
 
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Нормативні документи кредитної спілки Кредит-ФОС",
+  description:
+    "Опис структури керівництва кредитної спілки, новини, цінності та досягнення.",
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      "max-snippet": -1,
+    },
+  },
+};
 
 const AboutUs = () => {
   return (
@@ -29,7 +52,8 @@ const AboutUs = () => {
         </div>
       </section>
       <AboutUsSection />
-      <ValuesEmploeesSection />
+      <NewsSliderDynamic />
+      {/* <ValuesEmploeesSection /> */}
       <AchievementsSection />
       <PublicInfoSection />
     </main>
