@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kredyt-fos-company-web-site.vercel.app/sitemap.xml
