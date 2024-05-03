@@ -57,7 +57,7 @@ const AccordionInfoList: React.FC = () => {
           </button>
           <div
             className={`overflow-hidden transition-max-height duration-300 bg-netural_200 rounded-b-md px-6  ${
-              activeIndex === index ? "max-h-[1700px] pb-6" : "max-h-0"
+              activeIndex === index ? "max-h-[10700px] pb-6" : "max-h-0"
             }`}
           >
             {activeIndex !== null && infoComponents[activeIndex]}

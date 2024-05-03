@@ -140,15 +140,15 @@ export const SectionMilitary = () => {
             <div>+38 067-258-24-54</div>
           </a>
         </div>
-        <div>
+        <div className="overflow-hidden">
           <a
             href="mailto:kredit.fos@gmail.com"
             className="flex gap-2.5 items-center  pt-4 text-base md:text-lg"
             target="_blank"
             rel="noopener noreferrer"
           >
-            на електронну пошту
-            <div className="text-primary_400 group hover:text-primary_300 transition-all duration-300 text-xl font-extrabold">
+            на ел. пошту
+            <div className="text-primary_400 group hover:text-primary_300 transition-all duration-300 text-[18px] md:text-xl font-extrabold">
               kredit.fos@gmail.com
             </div>
           </a>
