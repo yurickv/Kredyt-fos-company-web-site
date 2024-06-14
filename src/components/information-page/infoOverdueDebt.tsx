@@ -38,7 +38,9 @@ export const InfoOverdueDebt = () => {
           </div>
           <div className="">
             <a
-              href="#"
+              href="https://drive.google.com/file/d/19xmi2-sd4pFBjXhMSLH2Bfg9jb4H_pK9/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="gap-2 cursor-pointer text-primary_400 inline-block pr-2"
             >
               Порядок взаємодії{" "}
@@ -56,7 +58,9 @@ export const InfoOverdueDebt = () => {
           </div>
           <div className="">
             <a
-              href="#"
+              href="https://drive.google.com/file/d/1tX85yqm8xjOiWmrChQI-WC0t_JTziAIR/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="gap-2 cursor-pointer text-primary_400 inline-block pr-2"
             >
               Порядок повідомлення{" "}

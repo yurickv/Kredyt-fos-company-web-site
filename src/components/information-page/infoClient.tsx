@@ -11,7 +11,7 @@ export const InfoClientText = () => {
       <p className="">
         На виконання вимог ст. 12 Закону України «Про фінансові послуги та
         державне регулювання ринків фінансових послуг» від 12.07.2001р №2664-ІІІ
-        (із змінами)КРЕДИТНА СПІЛКА «Кредит-ФОС» до укладання договору з
+        (із змінами) кредитна спілка «Кредит-ФОС» до укладання договору з
         клієнтом надає наступну інформацію:
       </p>
       <ul>
@@ -915,8 +915,21 @@ export const InfoClientText = () => {
         </li>
       </ul>
 
-      <a href="#" className="flex gap-2 mt-6 cursor-pointer">
+      <a
+        href="https://drive.google.com/file/d/1O64b89Stz8nqlOnK7vPvz7t_4hXQxjja/view?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex gap-2 mt-6 cursor-pointer"
+      >
         <PdfIcon /> Структура власності
+      </a>
+      <a
+        href="https://drive.google.com/file/d/1Wc-1Itx3Lk5QL6RmgxI5doGdMYq9cHts/view?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex gap-2 mt-6 cursor-pointer"
+      >
+        <PdfIcon /> Інформація для споживача
       </a>
     </div>
   );
