@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PointerIcon } from "../icons/contactsPage/pointerIcon";
 import { PdfIcon } from "../icons/depositPage/pdfIcon";
 import { Tick } from "../icons/Tick";
@@ -9,10 +10,17 @@ export const InfoClientText = () => {
         Інформація клієнту
       </h2>
       <p className="">
-        На виконання вимог ст. 12 Закону України «Про фінансові послуги та
-        державне регулювання ринків фінансових послуг» від 12.07.2001р №2664-ІІІ
-        (із змінами) кредитна спілка «Кредит-ФОС» до укладання договору з
-        клієнтом надає наступну інформацію:
+        На виконання вимог ч. 2 ст. 7 Закону України “Про фінансові послуги та
+        фінансові компанії” від 14.12.2021р. № 1953-IX кредитна спілка
+        «Кредит-ФОС» до укладання договору з клієнтом надає наступну інформацію:
+        <a
+          href="https://drive.google.com/file/d/1Wc-1Itx3Lk5QL6RmgxI5doGdMYq9cHts/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex gap-2 mt-6 cursor-pointer"
+        >
+          <PdfIcon /> Інформація для споживача
+        </a>
       </p>
       <ul>
         <li key="1">
@@ -914,7 +922,27 @@ export const InfoClientText = () => {
           </ul>
         </li>
       </ul>
-
+      <p>
+        Інша інформація про кредитну спілку, яка підлягає оприлюдненню
+        відповідно до законодавства України.{" "}
+      </p>
+      <p className="indent-4">
+        Відомості про про режим робочого часу та відокремлені підрозділи
+        фінансової установи:{" "}
+        <Link href="/contacts" className="underline hover:text-primary_300">
+          тут
+        </Link>
+      </p>{" "}
+      <p className="indent-4">
+        Відомості про порушення провадження у справі про банкрутство,
+        застосування процедури санації кредитної спілки: Стосовно Спілки не
+        порушено провадження у справі про банкрутство, не застосовані процедури
+        санації.
+      </p>{" "}
+      <p className="indent-4">
+        Відомості про прийняття рішення про ліквідацію спілки: Спілка не
+        перебуває на даний момент в стадії ліквідації.
+      </p>{" "}
       <a
         href="https://drive.google.com/file/d/1O64b89Stz8nqlOnK7vPvz7t_4hXQxjja/view?usp=sharing"
         target="_blank"
@@ -922,14 +950,6 @@ export const InfoClientText = () => {
         className="flex gap-2 mt-6 cursor-pointer"
       >
         <PdfIcon /> Структура власності
-      </a>
-      <a
-        href="https://drive.google.com/file/d/1Wc-1Itx3Lk5QL6RmgxI5doGdMYq9cHts/view?usp=sharing"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex gap-2 mt-6 cursor-pointer"
-      >
-        <PdfIcon /> Інформація для споживача
       </a>
     </div>
   );
