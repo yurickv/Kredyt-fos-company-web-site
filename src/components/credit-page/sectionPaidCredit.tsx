@@ -2,13 +2,9 @@
 import Link from "next/link";
 import { MapPointerIcon } from "../icons/contactsPage/mapPointerIcon";
 import { PointerIcon } from "../icons/contactsPage/pointerIcon";
-import { SuccessIcon } from "../icons/depositPage/successIcon";
+// import { SuccessIcon } from "../icons/depositPage/successIcon";
 
 export const SectionPaidCredit = () => {
-  // const handleClick = () => {
-  //   alert("Ця можливість поки що в розробці, скористайтесь іншими");
-  // };
-
   return (
     <section className="bg-netural_100 py-[50px]" id="paidCredit">
       <div className="div-container">

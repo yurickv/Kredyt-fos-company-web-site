@@ -54,7 +54,7 @@ const Header: React.FC = () => {
               </a>
             </div>
             <Button
-              route="#paidCredit"
+              route="credit/#paidCredit"
               text="Сплатити кредит"
               style="hidden lg:block"
             />
