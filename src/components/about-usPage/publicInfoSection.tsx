@@ -26,7 +26,12 @@ export const PublicInfoSection = () => {
           </li>
           <li className="mt-6 text-[16px] md:text-[18px] text-primary_700">
             <h3 className="mb-2">Відомості про державну реєстрацію в ЄДР</h3>
-            <a href="#" className="flex gap-3 mt-6 cursor-pointer">
+            <a
+              href="https://drive.google.com/file/d/14fx5j8tnQC29mxcRsTeDTREC79WCYB2Q/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex gap-3 mt-6 cursor-pointer"
+            >
               <div className="w-5 h-5">
                 <PdfIcon />
               </div>{" "}
