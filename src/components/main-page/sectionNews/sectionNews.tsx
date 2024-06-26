@@ -81,7 +81,7 @@ const NewsSlider = () => {
 
           <div
             ref={sliderRef}
-            className="keen-slider h-[370px] md:h-[438px] lg:h-[386px]"
+            className="keen-slider h-[375px] md:h-[438px] lg:h-[386px]"
           >
             <div className="keen-slider__slide">
               <NewsCard

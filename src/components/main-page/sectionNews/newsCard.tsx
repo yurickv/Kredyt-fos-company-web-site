@@ -15,7 +15,7 @@ export const NewsCard = ({ title, text, foto, route }: newsCardProps) => {
         <Image
           src={foto}
           sizes="(max-width: 768px) 100vw, (min-width: 1280px) 50vw,  33vw"
-          layout="fill"
+          fill
           style={{
             objectFit: "cover",
           }}
