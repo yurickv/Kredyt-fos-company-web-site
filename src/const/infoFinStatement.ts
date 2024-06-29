@@ -1,9 +1,22 @@
 export const infoFinStatement = [
-  // {
-  //   year: "2022",
-  //   finStatement: "#",
-  //   auditStatement: "#",
-  // },
+  {
+    year: "2023",
+    finStatement:
+      "https://drive.google.com/file/d/1G1VP8DMW6xofrleNE2gQU7SZNOD1LAbF/view?usp=sharing",
+    auditStatement:
+      "https://drive.google.com/file/d/1kOCOweZwC3QlVa4nYMxyY1MFWenCsxfO/view?usp=sharing",
+    assuranceReport:
+      "https://drive.google.com/file/d/1-GZDSYwHpwENN4R_yeoztSUYedzmEs3-/view?usp=sharing",
+  },
+  {
+    year: "2022",
+    finStatement:
+      "https://drive.google.com/file/d/1W4sqmPR30hvB_a-1A8NAudcgJzDbTyN-/view?usp=sharing",
+    auditStatement:
+      "https://drive.google.com/file/d/1V59B5whkblFDzDQ_KXjkYaHMkVd9u_8a/view?usp=sharing",
+    assuranceReport:
+      "https://drive.google.com/file/d/1fk4siZQwX17whMIS2HLCxSgwqjSvHwsG/view?usp=drive_link",
+  },
   {
     year: "2021",
     finStatement:

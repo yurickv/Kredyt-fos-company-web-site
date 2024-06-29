@@ -60,6 +60,21 @@ export const InfoFinStatement = () => {
                 Звіт незалежного аудитора за {item.year} рік
               </Link>
             </li>
+            {item.assuranceReport && (
+              <li>
+                <Link
+                  href={item.auditStatement}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-4 flex gap-2 items-center text-[18px] font-semibold text-primary_300 hover:text-primary_400 transition-colors duration-300"
+                >
+                  <div className="w-6 h-6">
+                    <PdfIcon />
+                  </div>
+                  Звіт з надання впевненості за {item.year} рік
+                </Link>
+              </li>
+            )}
           </ul>
         ))}
       </div>
