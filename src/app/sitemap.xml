@@ -42,8 +42,14 @@
     <priority>1</priority>
   </url> 
   <url>
+    <loc>https://fos.te.ua/about-us/credit-reestr-NBU</loc>
+    <lastmod>2024-06-29T15:02:24.021Z</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1</priority>
+  </url> 
+  <url>
     <loc>https://fos.te.ua/about-us/general-meetings-of-members</loc>
-    <lastmod>2024-06-01T15:02:24.021Z</lastmod>
+    <lastmod>2024-06-29T15:02:24.021Z</lastmod>
     <changefreq>always</changefreq>
     <priority>1</priority>
   </url> 
