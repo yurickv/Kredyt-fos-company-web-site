@@ -10,6 +10,8 @@ import profileDeposit from "../../../public/Main-screen1.webp";
 import profileCreditPp from "../../../public/Main-screen-pp.webp";
 
 export const HeroSlider = () => {
+  const [isLoaded, setIsLoaded] = React.useState(false);
+
   const [sliderRef] = useKeenSlider<HTMLDivElement>(
     {
       loop: true,
@@ -47,10 +49,13 @@ export const HeroSlider = () => {
   );
 
   return (
-    <section>
+    <section className="bg-slate-300">
       <div
         ref={sliderRef}
-        className="keen-slider w-[743px] md:w-[1279px] lg:w-[1440px] h-[548px] md:h-[448px] relative"
+        className={`keen-slider w-[743px] md:w-[1279px] lg:w-[1440px] h-[548px] md:h-[448px] relative transition-opacity duration-200 ${
+          isLoaded ? "opacity-100" : "opacity-0"
+        }`}
+        onLoad={() => setIsLoaded(true)}
       >
         <div className="keen-slider__slide w-full h-full flex flex-col justify-center items-center">
           <Image
@@ -63,6 +68,7 @@ export const HeroSlider = () => {
             style={{
               objectFit: "cover",
             }}
+            onLoad={() => setIsLoaded(true)}
           />
           <HeroText
             title="Кредити з гнучкими умовами"
@@ -82,6 +88,7 @@ export const HeroSlider = () => {
             style={{
               objectFit: "cover",
             }}
+            onLoad={() => setIsLoaded(true)}
           />
           <HeroText
             title="Депозити нового покоління"
@@ -101,6 +108,7 @@ export const HeroSlider = () => {
             style={{
               objectFit: "cover",
             }}
+            onLoad={() => setIsLoaded(true)}
           />
           <HeroText
             title="Кредити для підприємців"
