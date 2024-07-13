@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { Toaster, toast } from "sonner";
 
 interface ModalProps {
   data: {
@@ -62,7 +63,9 @@ export const ConsultForm: React.FC<ModalProps> = ({
       });
 
       if (response.ok) {
-        // console.log("Message sent successfully");
+        toast.success(
+          "Ваша заявка подана успішно! Очікуйте дзвінка від працівника спілки"
+        );
         if (onClose) {
           onClose();
         }
@@ -78,9 +81,10 @@ export const ConsultForm: React.FC<ModalProps> = ({
           dateInput: "",
         });
       } else {
-        console.error("Failed to send message");
+        toast.error("Failed to send message");
       }
     } catch (error) {
+      toast.error(`Failed to send message: ${error}`);
       console.error("Error sending message:", error);
     }
   };
@@ -188,6 +192,17 @@ export const ConsultForm: React.FC<ModalProps> = ({
           </span>
         </button>
       </div>
+      <Toaster
+        richColors
+        position="bottom-center"
+        toastOptions={{
+          duration: 5000,
+          classNames: {
+            title: "text-xl",
+          },
+        }}
+        closeButton
+      />
     </form>
   );
 };
