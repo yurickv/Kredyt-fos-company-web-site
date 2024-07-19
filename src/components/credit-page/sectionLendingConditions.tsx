@@ -15,7 +15,12 @@ export const SectionLendingConditions = () => {
             </a>
           </li>
           <li className="flex gap-2 md:w-[277px] lg:w-[442px]">
-            <a href="#" className="flex gap-3 mt-6 cursor-pointer">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://drive.google.com/file/d/1_5gvqNeAwsVNkx5dyVh8XMp4AOlX03fW/view"
+              className="flex gap-3 mt-6 cursor-pointer"
+            >
               <div className="w-6 h-6">
                 <PdfIcon />
               </div>{" "}
@@ -23,7 +28,12 @@ export const SectionLendingConditions = () => {
             </a>
           </li>
           <li className="flex gap-2 md:w-[277px] lg:w-[442px]">
-            <a href="#" className="flex gap-3 mt-6 cursor-pointer">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://drive.google.com/file/d/1kDVkv6E6VZxQTuwtr0CWxVP2a7FcU8T4/view"
+              className="flex gap-3 mt-6 cursor-pointer"
+            >
               <div className="w-6 h-6">
                 <PdfIcon />
               </div>{" "}
