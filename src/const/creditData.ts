@@ -1,9 +1,9 @@
 export const creditTypesPersent = [
   { Споживчий: 0.04 },
   { "Під заставу депозиту": 0.025 },
-  { Інноваційний: 0.0233 },
-  { Підприємницький: 0.03 },
-  { "Для діяльності в селі": 0.0345 },
+  { Інноваційний: 0.025 },
+  { Підприємницький: 0.025 },
+  { "Для діяльності в селі": 0.0375 },
   { Сільськогосподарський: 0.025 },
 ];
 
@@ -27,8 +27,8 @@ export const creditInnovative = {
   title: "Інноваційний",
   creditSum: "від 50 000 до 250 000грн.",
   creditTermine: "від 0 до 36",
-  creditInterest: "28%",
-  creditRealInterest: "31,84%",
+  creditInterest: "30%",
+  creditRealInterest: "34,49%",
   creditPurpose: [
     "для встановлення сонячних панелей",
     "для приватних вітрових електрогенераторів",
@@ -38,8 +38,8 @@ export const creditEntrepreneurial = {
   title: "Підприємницький",
   creditSum: "від 20 000 до 250 000грн.",
   creditTermine: "від 0 до 48",
-  creditInterest: "36%",
-  creditRealInterest: "42,58%",
+  creditInterest: "30%",
+  creditRealInterest: "34,49%",
   creditPurpose: ["для купівлі обладнання", "для купівлі товарів"],
 };
 export const creditFarming = {
@@ -47,7 +47,7 @@ export const creditFarming = {
   creditSum: "від 1000 до 200 000грн.",
   creditTermine: "від 0 до 24",
   creditInterest: "45%",
-  creditRealInterest: "50,23%",
+  creditRealInterest: "55,54%",
   creditPurpose: [
     "для фінансування діяльності в селі",
     "для купівлі кормів",
