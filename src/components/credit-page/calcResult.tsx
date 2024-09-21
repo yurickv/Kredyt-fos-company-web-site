@@ -11,6 +11,7 @@ interface FormData {
   duration: number;
   targetSum: number;
   dateInput: string;
+  repaymentType: string;
 }
 
 interface Props {
@@ -19,20 +20,34 @@ interface Props {
 
 export const CalcCreditResult: React.FC<Props> = ({ formData }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { credits, duration, targetSum } = formData;
+  const { credits, duration, targetSum, repaymentType } = formData;
 
   let persent = 0;
   persent = getCreditPercent(credits);
 
-  const payment = (
-    (targetSum * persent * (1 + persent) ** duration) /
-    ((1 + persent) ** duration - 1)
-  ).toFixed(2);
+  let payment = "";
+  let allPaidSum;
+  let paidInterest = "";
 
-  const allPaidSum = (parseFloat(payment) * duration).toFixed(2);
-  const paidInterest = (parseFloat(allPaidSum) - targetSum).toFixed(2);
+  if (repaymentType === "Ануїтет") {
+    payment = (
+      (targetSum * persent * (1 + persent) ** duration) /
+      ((1 + persent) ** duration - 1)
+    ).toFixed(2);
+    allPaidSum = (parseFloat(payment) * duration).toFixed(2);
+    paidInterest = (parseFloat(allPaidSum) - targetSum).toFixed(2);
+  } else {
+    payment = (targetSum * persent).toFixed(2);
+    paidInterest = (parseFloat(payment) * duration).toFixed(2);
+    allPaidSum = (parseFloat(paidInterest) + targetSum).toFixed(2);
+  }
 
-  const masivPays = generatePayments(parseFloat(payment), duration, targetSum);
+  const masivPays = generatePayments(
+    parseFloat(payment),
+    duration,
+    targetSum,
+    repaymentType
+  );
 
   const persentMonth = calculateIRR(masivPays);
   const AveragePersentRate = (((1 + persentMonth) ** 12 - 1) * 100).toFixed(2);

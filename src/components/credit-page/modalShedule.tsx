@@ -8,6 +8,7 @@ interface ModalProps {
     duration: number;
     targetSum: number;
     dateInput: string;
+    repaymentType: string;
   };
   payment: number;
   persent: number;
@@ -20,7 +21,7 @@ export const Modal: React.FC<ModalProps> = ({
   persent,
   onClose,
 }) => {
-  const { credits, duration, targetSum, dateInput } = formData;
+  const { credits, duration, targetSum, dateInput, repaymentType } = formData;
   const [paymentSchedule, setPaymentSchedule] = useState<any[]>([]);
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -73,13 +74,19 @@ export const Modal: React.FC<ModalProps> = ({
         const day = Math.min(currentDate.getDate(), lastDayOfMonth);
         const adjustedDate = new Date(year, month - 1, day);
 
-        const paymentAmount = payment;
-        const accruedInterest = (remainingBalance * persent).toFixed(2);
-        const principalPayment = (
+        let paymentAmount = payment;
+        let accruedInterest = (remainingBalance * persent).toFixed(2);
+        let principalPayment = (
           paymentAmount - parseFloat(accruedInterest)
         ).toFixed(2);
 
-        remainingBalance -= parseFloat(principalPayment);
+        if (repaymentType === "Сума в кінці" && i === duration) {
+          paymentAmount = payment + remainingBalance;
+          principalPayment = remainingBalance.toFixed(2);
+          remainingBalance = 0;
+        } else {
+          remainingBalance -= parseFloat(principalPayment);
+        }
 
         schedule.push({
           date: formatDate(adjustedDate),
@@ -94,7 +101,7 @@ export const Modal: React.FC<ModalProps> = ({
     };
 
     generatePaymentSchedule();
-  }, [duration, targetSum, dateInput, payment, persent]);
+  }, [duration, targetSum, dateInput, payment, persent, repaymentType]);
 
   const formatDate = (date: Date) => {
     const day = date.getDate().toString().padStart(2, "0");

@@ -24,6 +24,7 @@ export const SectionCreditCalc = () => {
     dateInput: new Date().toISOString().split("T")[0],
     targetSum: 10000,
     duration: 12,
+    repaymentType: "Ануїтет",
   });
   const [errors, setErrors] = useState<{
     targetSum?: number;
@@ -215,10 +216,57 @@ export const SectionCreditCalc = () => {
                 </div>
               </div>
               <div className="flex flex-col gap-4 w-full max-w-[552px]">
-                <div className="flex gap-2 items-center">
-                  <SuccessIcon />
-                  <span className="text-[18px] text-primary_700">Ануїтет</span>
+                <label className="text-netural_400 text-base text-center mt-5 md:mt-0">
+                  Тип погашення кредиту
+                </label>
+                <div className="flex gap-8 leading-none">
+                  <div className="flex items-center gap-2 relative">
+                    <input
+                      type="radio"
+                      id="annuity"
+                      name="repaymentType"
+                      value="Ануїтет"
+                      checked={formData.repaymentType === "Ануїтет"}
+                      onChange={handleChange}
+                      className="form-radio h-[18px] w-[18px] text-primary_700 appearance-none rounded-full border border-primary_700 bg-white"
+                    />
+                    {formData.repaymentType === "Ануїтет" && (
+                      <div className="absolute top-0 left-0 ">
+                        <SuccessIcon />
+                      </div>
+                    )}
+                    <label
+                      htmlFor="annuity"
+                      className="text-[18px] text-primary_700"
+                    >
+                      Ануїтет
+                    </label>
+                  </div>
+
+                  <div className="flex items-center gap-2 relative">
+                    <input
+                      type="radio"
+                      id="sumAtEnd"
+                      name="repaymentType"
+                      value="Сума в кінці"
+                      checked={formData.repaymentType === "Сума в кінці"}
+                      onChange={handleChange}
+                      className="form-radio h-[18px] w-[18px] text-primary_700 appearance-none rounded-full border border-primary_700 bg-white"
+                    />
+                    {formData.repaymentType === "Сума в кінці" && (
+                      <div className="absolute top-0 left-0 ">
+                        <SuccessIcon />
+                      </div>
+                    )}
+                    <label
+                      htmlFor="sumAtEnd"
+                      className="text-[18px] text-primary_700"
+                    >
+                      Сума в кінці
+                    </label>
+                  </div>
                 </div>
+
                 <div className="flex gap-2 items-center">
                   <FailureIcon />
                   <span className="text-[18px] text-primary_700">Знижка</span>
