@@ -44,13 +44,17 @@ export function calculateIRR(cashFlows: number[]): number {
 export function generatePayments(
   payment: number,
   duration: number,
-  targetSum: number
+  targetSum: number,
+  repaymentType: string
 ) {
   const payments = [targetSum];
 
   for (let i = 0; i < duration; i++) {
-    payments.push(payment * -1);
+    if (repaymentType === "Сума в кінці" && i + 1 === duration) {
+      payments.push((payment + targetSum) * -1);
+    } else {
+      payments.push(payment * -1);
+    }
   }
-
   return payments;
 }
