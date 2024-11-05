@@ -4,27 +4,19 @@ export const InfoManagment = () => {
   return (
     <div className="text-primary_700">
       <h3 className="text-primary_400 text-[32px] font-bold pt-4">
-        Спостережна рада
+        Наглядова рада
       </h3>
       <div className="w-[50px] h-1 rounded-full bg-primary_300 mt-2 md:mt-4"></div>
       <ul className="pt-4 border-b border-primary_100 pb-4">
         <li className="pb-4">
-          Голова спостережної ради - Маркович Марія Йосипівна
+          Голова наглядової ради - Маркович Марія Йосипівна
         </li>
         <li className="">
-          Заступник голови спостережної ради - Ткачук Роман Андрійович
+          Заступник голови наглядової ради - Ткачук Роман Андрійович
         </li>
-        <li className="">
-          Член спостережної ради - Колісник Дем'ян Васильович
-        </li>
-        <li className="">
-          Член спостережної ради - Паничев Володимир Олександрович
-        </li>
-        <li className="">
-          Член спостережної ради - Андрійчук Володимир Андрійович
-        </li>
+        <li className="">Член наглядової ради - Колісник Дем'ян Васильович</li>
       </ul>
-      <h3 className="text-primary_400 text-[32px] font-bold">
+      {/* <h3 className="text-primary_400 text-[32px] font-bold">
         Ревізійна комісія
       </h3>
       <div className="w-[50px] h-1 rounded-full bg-primary_300 mt-2 md:mt-4"></div>
@@ -34,7 +26,7 @@ export const InfoManagment = () => {
         </li>
         <li>Заступник голови ревізійної комісії - Фенюк Богдан Петрович</li>
         <li>Член ревізійної комісії - Збожна Ольга Михайлівна</li>
-      </ul>
+      </ul> */}
       <h3 className="text-primary_400 text-[32px] font-bold">
         Кредитний комітет
       </h3>
@@ -43,8 +35,7 @@ export const InfoManagment = () => {
         <li className="pb-4">
           Голова кредитного комітету - Скриник Віра Йосипівна
         </li>
-        <li>Секретар кредитного комітету - Маркович Марія Йосипівна</li>
-        <li>Член кредитного комітету - Король Ольга Дем'янівна</li>
+        <li>Секретар кредитного комітету - Бек Наталя Романівна</li>
         <li>Член кредитного комітету - Шуб'як Ігор Олексійович</li>
         <li>Член кредитного комітету - Теслюк Тетяна Леонідівна</li>
       </ul>
@@ -52,7 +43,7 @@ export const InfoManagment = () => {
       <div className="w-[50px] h-1 rounded-full bg-primary_300 mt-2 md:mt-4"></div>
       <ul className="pt-4 border-b border-primary_100 pb-4">
         <li className="pb-4">Голова правління - Теслюк Тетяна Леонідівна</li>
-        <li>Член правління - Король Ольга Дем'янівна</li>
+        <li>Член правління - Скриник Віра Йосипівна</li>
         <li>Член правління - Шуб'як Ігор Олексійович</li>
       </ul>
       <p className="mt-4">
