@@ -49,7 +49,7 @@ export const HeroSlider = () => {
   );
 
   return (
-    <section className="bg-slate-300">
+    <section className='bg-slate-300'>
       <div
         ref={sliderRef}
         className={`keen-slider w-[743px] md:w-[1279px] lg:w-[1440px] h-[548px] md:h-[448px] relative transition-opacity duration-200 ${
@@ -57,64 +57,64 @@ export const HeroSlider = () => {
         }`}
         onLoad={() => setIsLoaded(true)}
       >
-        <div className="keen-slider__slide w-full h-full flex flex-col justify-center items-center">
+        <div className='keen-slider__slide w-full h-full flex flex-col justify-center items-center'>
           <Image
-            alt="Kredyt FOS service foto"
+            alt='Kredyt FOS service foto'
             src={profileCredit}
-            placeholder="blur"
+            placeholder='blur'
             fill
             priority
-            sizes="100vw"
+            sizes='100vw'
             style={{
               objectFit: "cover",
             }}
             onLoad={() => setIsLoaded(true)}
           />
           <HeroText
-            title="Кредити з гнучкими умовами"
-            text="Кращі пропозиції для вас"
-            textButton="Дізнатитсь більше"
-            route="/credit"
+            title='Кредити з гнучкими умовами'
+            text='Кращі пропозиції для вас'
+            textButton='Дізнатись більше'
+            route='/credit'
           />
         </div>
-        <div className="keen-slider__slide w-full  h-full flex flex-col justify-center items-center">
+        <div className='keen-slider__slide w-full  h-full flex flex-col justify-center items-center'>
           <Image
-            alt="Kredyt FOS service foto"
+            alt='Kredyt FOS service foto'
             src={profileDeposit}
-            placeholder="blur"
+            placeholder='blur'
             fill
             priority
-            sizes="100vw"
+            sizes='100vw'
             style={{
               objectFit: "cover",
             }}
             onLoad={() => setIsLoaded(true)}
           />
           <HeroText
-            title="Депозити нового покоління"
-            text="Кращі пропозиції для вас"
-            textButton="Дізнатитсь більше"
-            route="/deposit"
+            title='Депозити нового покоління'
+            text='Кращі пропозиції для вас'
+            textButton='Дізнатись більше'
+            route='/deposit'
           />
         </div>
-        <div className="keen-slider__slide w-full  h-full flex flex-col justify-center items-center">
+        <div className='keen-slider__slide w-full  h-full flex flex-col justify-center items-center'>
           <Image
-            alt="Kredyt FOS service foto"
+            alt='Kredyt FOS service foto'
             src={profileCreditPp}
-            placeholder="blur"
+            placeholder='blur'
             fill
             priority
-            sizes="100vw"
+            sizes='100vw'
             style={{
               objectFit: "cover",
             }}
             onLoad={() => setIsLoaded(true)}
           />
           <HeroText
-            title="Кредити для підприємців"
-            text="Кращі пропозиції для вас"
-            textButton="Дізнатитсь більше"
-            route="/credit"
+            title='Кредити для підприємців'
+            text='Кращі пропозиції для вас'
+            textButton='Дізнатись більше'
+            route='/credit'
           />
         </div>
       </div>
