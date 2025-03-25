@@ -26,49 +26,54 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="bg-netural_100 w-full h-[81px] lg:h-[178px]">
-      <div className="w-full fixed top-0 inset-x-0 z-40 bg-netural_100">
-        <div className="px-4 md:px-[78px] lg:px-[120px] max-w-[1536px] mx-auto">
-          <div className="pt-6 pb-4 flex items-center justify-between">
-            <div className="flex items-center gap-14">
-              <Link className="" href="/" onClick={onCloseMobileMenu}>
-                <div className="hidden lg:block">
+    <header className='bg-netural_100 w-full h-[81px] lg:h-[178px]'>
+      <div className='w-full fixed top-0 inset-x-0 z-40 bg-netural_100'>
+        <div className='px-4 md:px-[78px] lg:px-[120px] max-w-[1536px] mx-auto'>
+          <div className='pt-6 pb-4 flex items-center justify-between'>
+            <div className='flex items-center gap-14'>
+              <Link
+                className=''
+                href='/'
+                onClick={onCloseMobileMenu}
+                aria-label='Перехід на головну сторінку'
+              >
+                <div className='hidden lg:block'>
                   <LogoIcon />
                 </div>
-                <div className="hidden md:block lg:hidden">
+                <div className='hidden md:block lg:hidden'>
                   <LogoIconTablet />
                 </div>
-                <div className="md:hidden">
+                <div className='md:hidden'>
                   <LogoIconMobile />
                 </div>
               </Link>
               <a
-                href="tel:+38(067)3501977"
-                className="flex gap-2.5 items-center text-primary_400 group hover:text-primary_300 p-4
-                transition-all duration-300 sr-only lg:not-sr-only text-xl font-extrabold"
-                target="_blank"
-                rel="noopener noreferrer"
+                href='tel:+38(067)3501977'
+                className='flex gap-2.5 items-center text-primary_400 group hover:text-primary_300 p-4
+                transition-all duration-300 sr-only lg:not-sr-only text-xl font-extrabold'
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 <PhoneIcon />
                 <div>+38 067 350-19-77</div>
               </a>
             </div>
             <Button
-              route="credit/#paidCredit"
-              text="Сплатити кредит"
-              style="hidden lg:block"
+              route='credit/#paidCredit'
+              text='Сплатити кредит'
+              style='hidden lg:block'
             />
             <button
-              type="button"
-              aria-label="on open mobile navigation"
+              type='button'
+              aria-label='on open mobile navigation'
               onClick={toggleMobileMenu}
-              className="text-primary_400 hover:text-primary_300 lg:sr-only"
+              className='text-primary_400 hover:text-primary_300 lg:sr-only'
             >
               {!isMobileMenuOpen && <MenuMobileIcon />}
               {isMobileMenuOpen && <OnCloseIcon />}
             </button>
           </div>
-          <nav className="hidden lg:flex justify-between text-netural_100 ">
+          <nav className='hidden lg:flex justify-between text-netural_100 '>
             {" "}
             {routeLink.map(({ link, descr }) => (
               <Link

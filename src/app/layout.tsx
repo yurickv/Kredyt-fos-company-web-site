@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ua">
+    <html lang='uk-UA'>
       <body className={montserrat.className}>
         <Header />
         {children}

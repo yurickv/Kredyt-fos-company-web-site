@@ -65,14 +65,15 @@
 
 .dots {
   display: flex;
+  gap: 4px;
   padding: 10px 0;
   justify-content: center;
 }
 
 .dot {
   border: none;
-  width: 10px;
-  height: 10px;
+  width: 14px;
+  height: 14px;
   background: #79c2e1;
   border-radius: 50%;
   margin: 0 5px;
