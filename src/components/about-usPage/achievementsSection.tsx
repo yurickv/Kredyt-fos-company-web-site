@@ -30,30 +30,30 @@ const AchievementsSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-[50px] bg-gradient_section text-primary_700"
+      className='py-[50px] bg-gradient_section text-primary_700'
     >
-      <div className="div-container flex flex-col gap-6">
-        <h2 className="title">Наші досягнення</h2>
-        <ul className="flex flex-col text-center gap-6 md:grid md:grid-cols-2 lg:flex lg:flex-row">
+      <div className='div-container flex flex-col gap-6'>
+        <h2 className='title'>Наші досягнення</h2>
+        <ul className='flex flex-col text-center gap-6 md:grid md:grid-cols-2 lg:flex lg:flex-row'>
           <AnimatedNumber
             isVisible={isVisible}
-            value={25}
-            label="Років на ринку України"
+            value={26}
+            label='Років на ринку України'
           />
           <AnimatedNumber
             isVisible={isVisible}
             value={1120}
-            label="Активних членів спілки"
+            label='Активних членів спілки'
           />
           <AnimatedNumber
             isVisible={isVisible}
             value={400}
-            label="Видаємо кредитів в рік"
+            label='Видаємо кредитів в рік'
           />
           <AnimatedNumber
             isVisible={isVisible}
             value={2}
-            label="Мільйонів резервного капіталу"
+            label='Мільйонів резервного капіталу'
           />
         </ul>
       </div>
@@ -93,12 +93,12 @@ const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
   }, [isVisible, value]);
 
   return (
-    <li className="md:w-[277px] lg:w-[442px]">
-      <p className="font-bold text-[32px] md:twxt-[40px]">
+    <li className='md:w-[277px] lg:w-[442px]'>
+      <p className='font-bold text-[32px] md:twxt-[40px]'>
         {Math.round(animatedValue)}
       </p>
-      <div className="w-[50px] h-1 rounded-full bg-primary_300 my-4 mx-auto"></div>
-      <p className="text-[16px] md:text-[18px] text-primary_700">{label}</p>
+      <div className='w-[50px] h-1 rounded-full bg-primary_300 my-4 mx-auto'></div>
+      <p className='text-[16px] md:text-[18px] text-primary_700'>{label}</p>
     </li>
   );
 };

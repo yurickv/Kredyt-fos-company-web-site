@@ -2,15 +2,8 @@ import { AboutUsSection } from "@/components/about-usPage/aboutSections";
 import AchievementsSection from "@/components/about-usPage/achievementsSection";
 import { PublicInfoSection } from "@/components/about-usPage/publicInfoSection";
 import { ValuesEmploeesSection } from "@/components/about-usPage/valuesEmploeesSection";
+import NewsSliderWrapper from "@/components/main-page/sectionNews/NewsSliderWrapper";
 import { Metadata } from "next";
-import dynamic from "next/dynamic";
-
-const NewsSliderDynamic = dynamic(
-  () => import("../../components/main-page/sectionNews/sectionNews"),
-  {
-    ssr: false,
-  }
-);
 
 import Link from "next/link";
 
@@ -31,19 +24,19 @@ export const metadata: Metadata = {
 const AboutUs = () => {
   return (
     <main>
-      <section className="bg-transparent min-h-[300px] py-16 md:py-[100px] lg:py-[120px]">
+      <section className='bg-transparent min-h-[300px] py-16 md:py-[100px] lg:py-[120px]'>
         <div className="fixed -top-[1px] -z-10 bg-[url('/Main-screen-1.webp')] bg-center bg-cover w-full h-[490px]"></div>
-        <div className="div-container">
-          <h1 className="text-primary_400  font-extrabold text-[32px] md:text-[40px]">
+        <div className='div-container'>
+          <h1 className='text-primary_400  font-extrabold text-[32px] md:text-[40px]'>
             Кредит ФОС - ваш партнер у фінансах
           </h1>
         </div>
       </section>
-      <section className="bg-netural_100">
-        <div className="div-container text-primary_200 flex gap-2 pt-4">
+      <section className='bg-netural_100'>
+        <div className='div-container text-primary_200 flex gap-2 pt-4'>
           <Link
-            href="/"
-            className="text-netural_300 hover:text-primary_200 transition-colors duration-300"
+            href='/'
+            className='text-netural_300 hover:text-primary_200 transition-colors duration-300'
           >
             Домашня
           </Link>
@@ -52,7 +45,7 @@ const AboutUs = () => {
         </div>
       </section>
       <AboutUsSection />
-      <NewsSliderDynamic />
+      <NewsSliderWrapper />
       {/* <ValuesEmploeesSection /> */}
       <AchievementsSection />
       <PublicInfoSection />
