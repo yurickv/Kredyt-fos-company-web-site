@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { NextRequest, NextResponse } from "next/server";
 
-export const POST = async (req: NextRequest, res: NextResponse) => {
+export const POST = async (req: NextRequest) => {
   const {
     userName,
     phoneNumber,
@@ -33,34 +33,37 @@ export const POST = async (req: NextRequest, res: NextResponse) => {
 
   const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.BOT_CHAT_ID;
+
   let message = "";
   if (credits) {
     message = `${titleMessage}
-        Ім'я: ${userName}
-        Номер телефону: ${phoneNumber}
-        Повідомлення: ${userMessage || "N/A"}
-        Вид кредиту - ${credits}
-        Термін - ${duration}міс.
-        Сума - ${targetSum}грн.
-        Початок договору - ${dateInput}`;
+Ім'я: ${userName}
+Номер телефону: ${phoneNumber}
+Повідомлення: ${userMessage || "N/A"}
+Вид кредиту - ${credits}
+Термін - ${duration} міс.
+Сума - ${targetSum} грн.
+Початок договору - ${dateInput}`;
   } else if (deposits) {
     message = `${titleMessage}
-        Ім'я: ${userName}
-        Номер телефону: ${phoneNumber}
-        Повідомлення: ${userMessage || "N/A"}
-        Вид депозиту - ${deposits}
-        Термін - ${duration}міс.
-        Сума - ${targetSum}грн.`;
+Ім'я: ${userName}
+Номер телефону: ${phoneNumber}
+Повідомлення: ${userMessage || "N/A"}
+Вид депозиту - ${deposits}
+Термін - ${duration} міс.
+Сума - ${targetSum} грн.`;
   } else {
     message = `${titleMessage}
-        Ім'я: ${userName}
-        Номер телефону: ${phoneNumber}
-        Повідомлення: ${userMessage || "N/A"}`;
+Ім'я: ${userName}
+Номер телефону: ${phoneNumber}
+Повідомлення: ${userMessage || "N/A"}`;
   }
+
   try {
     const response: AxiosResponse = await axios.post(
-      `https://api.telegram.org/bot${telegramBotToken}/sendMessage?chat_id=${chatId}`,
+      `https://api.telegram.org/bot${telegramBotToken}/sendMessage`,
       {
+        chat_id: chatId,
         text: message,
       }
     );
