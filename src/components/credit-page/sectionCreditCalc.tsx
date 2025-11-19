@@ -1,30 +1,30 @@
-"use client";
-import { useState } from "react";
-import * as Yup from "yup";
-import { CalcCreditResult } from "./calcResult";
-import { SuccessIcon } from "../icons/depositPage/successIcon";
-import { FailureIcon } from "../icons/depositPage/failureIcon";
-import { creditTypesPersent } from "@/const/creditData";
-import { ModalWindow } from "../modalWindow";
+'use client';
+import { useState } from 'react';
+import * as Yup from 'yup';
+import { CalcCreditResult } from './calcResult';
+import { SuccessIcon } from '../icons/depositPage/successIcon';
+import { FailureIcon } from '../icons/depositPage/failureIcon';
+import { creditTypesPersent } from '@/const/creditData';
+import { ModalWindow } from '../modalWindow';
 
 const schema = Yup.object().shape({
   targetSum: Yup.number()
-    .min(1000, "Не менше 1000грн.")
-    .max(200000, "Не більше 200000грн.")
+    .min(1000, 'Не менше 1000грн.')
+    .max(250000, 'Не більше 250000грн.')
     .required("Обов'язкове поле"),
   creditDuration: Yup.number()
-    .min(1, "Не менше 1міс.")
-    .max(24, "Не більше 24міс.")
+    .min(1, 'Не менше 1міс.')
+    .max(24, 'Не більше 24міс.')
     .required("Обов'язкове поле"),
 });
 
 export const SectionCreditCalc = () => {
   const [formData, setFormData] = useState({
-    credits: "Споживчий",
-    dateInput: new Date().toISOString().split("T")[0],
+    credits: 'Споживчий',
+    dateInput: new Date().toISOString().split('T')[0],
     targetSum: 10000,
     duration: 12,
-    repaymentType: "Ануїтет",
+    repaymentType: 'Ануїтет',
   });
   const [errors, setErrors] = useState<{
     targetSum?: number;
@@ -123,22 +123,22 @@ export const SectionCreditCalc = () => {
                 <div className="relative">
                   <input
                     className={`input-calc ${
-                      errors.targetSum ? "!ring-red-500" : ""
+                      errors.targetSum ? '!ring-red-500' : ''
                     }`}
                     type="text"
                     name="targetSum"
                     value={formData.targetSum}
                     onChange={handleCreditChange}
                     min={1000}
-                    max={200000}
+                    max={250000}
                     onBlur={validate}
                     required
-                  />{" "}
+                  />{' '}
                   {errors.targetSum && (
                     <p className="absolute left-2.5 bottom-0 text-red-500 text-xs  bg-white  rounded-md">
                       {errors.targetSum}
                     </p>
-                  )}{" "}
+                  )}{' '}
                   <input
                     className="absolute left-0 -bottom-1 w-full max-w-[552px] md:max-w-full lg:max-w-[552px] -mt-3.5 appearance-none rounded-md h-1"
                     // className="appearance-none w-full h-2 rounded-md bg-gray-200 outline-none"
@@ -153,7 +153,7 @@ export const SectionCreditCalc = () => {
                     onChange={handleCreditChange}
                     step={1000}
                     min={1000}
-                    max={200000}
+                    max={250000}
                   />
                 </div>
               </div>
@@ -165,7 +165,7 @@ export const SectionCreditCalc = () => {
                   <div className="relative">
                     <input
                       className={`input-calc ${
-                        errors.duration ? "!ring-red-500" : ""
+                        errors.duration ? '!ring-red-500' : ''
                       }`}
                       type="text"
                       name="duration"
@@ -180,7 +180,7 @@ export const SectionCreditCalc = () => {
                       <p className="absolute left-2.5 bottom-0 text-red-500 text-xs  bg-white  rounded-md">
                         {errors.duration}
                       </p>
-                    )}{" "}
+                    )}{' '}
                     <input
                       className="absolute left-0 -bottom-1 w-full max-w-[552px] md:max-w-full lg:max-w-[552px] -mt-3.5 appearance-none rounded-md h-1"
                       style={{
@@ -211,7 +211,7 @@ export const SectionCreditCalc = () => {
                     onChange={handleChange}
                     onBlur={validate}
                     required
-                    min={new Date().toISOString().split("T")[0]}
+                    min={new Date().toISOString().split('T')[0]}
                   />
                 </div>
               </div>
@@ -226,11 +226,11 @@ export const SectionCreditCalc = () => {
                       id="annuity"
                       name="repaymentType"
                       value="Ануїтет"
-                      checked={formData.repaymentType === "Ануїтет"}
+                      checked={formData.repaymentType === 'Ануїтет'}
                       onChange={handleChange}
                       className="form-radio h-[18px] w-[18px] text-primary_700 appearance-none rounded-full border border-primary_700 bg-white"
                     />
-                    {formData.repaymentType === "Ануїтет" && (
+                    {formData.repaymentType === 'Ануїтет' && (
                       <div className="absolute top-0 left-0 ">
                         <SuccessIcon />
                       </div>
@@ -249,11 +249,11 @@ export const SectionCreditCalc = () => {
                       id="sumAtEnd"
                       name="repaymentType"
                       value="Сума в кінці"
-                      checked={formData.repaymentType === "Сума в кінці"}
+                      checked={formData.repaymentType === 'Сума в кінці'}
                       onChange={handleChange}
                       className="form-radio h-[18px] w-[18px] text-primary_700 appearance-none rounded-full border border-primary_700 bg-white"
                     />
-                    {formData.repaymentType === "Сума в кінці" && (
+                    {formData.repaymentType === 'Сума в кінці' && (
                       <div className="absolute top-0 left-0 ">
                         <SuccessIcon />
                       </div>
