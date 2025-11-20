@@ -14,7 +14,7 @@ const schema = Yup.object().shape({
     .required("Обов'язкове поле"),
   creditDuration: Yup.number()
     .min(1, 'Не менше 1міс.')
-    .max(24, 'Не більше 24міс.')
+    .max(48, 'Не більше 48міс.')
     .required("Обов'язкове поле"),
 });
 
@@ -144,8 +144,8 @@ export const SectionCreditCalc = () => {
                     // className="appearance-none w-full h-2 rounded-md bg-gray-200 outline-none"
                     style={{
                       background: `linear-gradient(to right, #79C2E1 ${
-                        formData.targetSum / 2000
-                      }%, #808080 ${formData.targetSum / 2000}%)`,
+                        formData.targetSum / 2500
+                      }%, #808080 ${formData.targetSum / 2500}%)`,
                     }}
                     type="range"
                     name="targetSum"
@@ -172,7 +172,7 @@ export const SectionCreditCalc = () => {
                       value={formData.duration}
                       onChange={handleCreditChange}
                       min={1}
-                      max={24}
+                      max={48}
                       onBlur={validate}
                       required
                     />
@@ -185,15 +185,15 @@ export const SectionCreditCalc = () => {
                       className="absolute left-0 -bottom-1 w-full max-w-[552px] md:max-w-full lg:max-w-[552px] -mt-3.5 appearance-none rounded-md h-1"
                       style={{
                         background: `linear-gradient(to right, #79C2E1 ${
-                          formData.duration / 0.25
-                        }%, #808080 ${formData.duration / 0.25}%)`,
+                          formData.duration / 0.5
+                        }%, #808080 ${formData.duration / 0.5}%)`,
                       }}
                       type="range"
                       name="duration"
                       value={formData.duration}
                       onChange={handleCreditChange}
                       min={1}
-                      max={24}
+                      max={48}
                     />
                   </div>
                 </div>
