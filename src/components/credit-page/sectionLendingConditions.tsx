@@ -132,7 +132,7 @@ export const SectionLendingConditions = () => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="#"
+              href="https://drive.google.com/file/d/1T0ENG0DaYxxGA5RpeZEC_5rwUM-mj95-/view?usp=sharing"
               className="flex gap-3 mt-6 cursor-pointer"
             >
               <div className="size-6">
