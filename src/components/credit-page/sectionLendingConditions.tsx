@@ -1,4 +1,4 @@
-import { PdfIcon } from "../icons/depositPage/pdfIcon";
+import { PdfIcon } from '../icons/depositPage/pdfIcon';
 
 export const SectionLendingConditions = () => {
   return (
@@ -10,12 +10,45 @@ export const SectionLendingConditions = () => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://drive.google.com/file/d/1LxgvijOOov7GY4nxcAAAaoOFabz5Diy8/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1Vj0ZlunO2EZBh-tX9QaCuGdVb2GWIr8U/view?usp=sharing"
               className="flex gap-3 mt-6 cursor-pointer"
             >
               <div className="size-6">
                 <PdfIcon />
-              </div>{" "}
+              </div>{' '}
+              <span className="md:text-lg">
+                Приклад результатів розрахунку калькулятора Кредитний продукт
+                “Споживчий” 1000/1міс.
+              </span>
+            </a>
+          </li>
+          <li className="flex gap-2 md:w-[277px] lg:w-[442px]">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://drive.google.com/file/d/1DVl4kF099m20weYvsfJWCYPHN6l_9noi/view?usp=sharing"
+              className="flex gap-3 mt-6 cursor-pointer"
+            >
+              <div className="size-6">
+                <PdfIcon />
+              </div>{' '}
+              <span className="md:text-lg">
+                Приклад результатів розрахунку калькулятора Кредитний продукт
+                “Споживчий” 250 000/48міс.
+              </span>
+            </a>
+          </li>
+
+          <li className="flex gap-2 md:w-[277px] lg:w-[442px]">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://drive.google.com/file/d/17PPO-W0DHpQrtl85FtG7lgmcaKwlggCI/view?usp=drive_link"
+              className="flex gap-3 mt-6 cursor-pointer"
+            >
+              <div className="size-6">
+                <PdfIcon />
+              </div>{' '}
               <span className="md:text-lg">Кредитний продукт «Споживчий»</span>
             </a>
           </li>
@@ -28,7 +61,7 @@ export const SectionLendingConditions = () => {
             >
               <div className="w-6 h-6">
                 <PdfIcon />
-              </div>{" "}
+              </div>{' '}
               <span className="md:text-lg">
                 Примірний договір про споживчий кредит
               </span>
@@ -38,12 +71,12 @@ export const SectionLendingConditions = () => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://drive.google.com/file/d/1-n7uaNbO86RtR6SRGvsr4E2k_Mg9NeCu/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1beuDBeQEvotTu6CH6OcVJDaC8KxD7qzL/view?usp=drive_link"
               className="flex gap-3 mt-6 cursor-pointer"
             >
               <div className="w-6 h-6">
                 <PdfIcon />
-              </div>{" "}
+              </div>{' '}
               <span className="md:text-lg">
                 Істотні характеристики послуги з надання споживчого кредиту
               </span>
@@ -59,7 +92,7 @@ export const SectionLendingConditions = () => {
             >
               <div className="w-6 h-6">
                 <PdfIcon />
-              </div>{" "}
+              </div>{' '}
               <span className="md:text-lg">
                 Примірний договір кредитної лінії
               </span>
@@ -69,12 +102,12 @@ export const SectionLendingConditions = () => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://drive.google.com/file/d/1EGOUOmRO-ZVlwC2pcV7mr84w8pB7PbTB/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1rVieNhJrO7D8nSWJhvkyz7AFDalbqERK/view?usp=drive_link"
               className="flex gap-3 mt-6 cursor-pointer"
             >
               <div className="w-6 h-6">
                 <PdfIcon />
-              </div>{" "}
+              </div>{' '}
               <span className="md:text-lg">
                 Істотні характеристики послуги з надання мікрокредиту
               </span>
@@ -89,9 +122,25 @@ export const SectionLendingConditions = () => {
             >
               <div className="w-6 h-6">
                 <PdfIcon />
-              </div>{" "}
+              </div>{' '}
               <span className="md:text-lg">
                 Правила надання фінансових послуг
+              </span>
+            </a>
+          </li>
+          <li className="flex gap-2 md:w-[277px] lg:w-[442px]">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="#"
+              className="flex gap-3 mt-6 cursor-pointer"
+            >
+              <div className="size-6">
+                <PdfIcon />
+              </div>{' '}
+              <span className="md:text-lg">
+                Повідомлення споживача про право отримання інформації про
+                відсутність заборгованості по договору
               </span>
             </a>
           </li>
@@ -104,7 +153,7 @@ export const SectionLendingConditions = () => {
             >
               <div className="w-6 h-6">
                 <PdfIcon />
-              </div>{" "}
+              </div>{' '}
               <span className="md:text-lg">
                 Попередження про можливі наслідки згідно законодавством України
                 для споживачів у разі користування фінансовою послугою або

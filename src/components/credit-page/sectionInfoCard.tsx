@@ -1,12 +1,10 @@
-import { InfoCardCredit } from "./infoCardCredit";
+import { InfoCardCredit } from './infoCardCredit';
 import {
   creditСonsumer,
   creditOnBail,
-  creditInnovative,
   creditEntrepreneurial,
   creditFarming,
-  creditAgriculturalBusiness,
-} from "@/const/creditData";
+} from '@/const/creditData';
 
 export const SectionInfoCard = () => {
   return (
@@ -16,10 +14,8 @@ export const SectionInfoCard = () => {
         <div className="flex gap-6 flex-wrap">
           <InfoCardCredit term={creditСonsumer} />
           <InfoCardCredit term={creditOnBail} />
-          <InfoCardCredit term={creditInnovative} />
           <InfoCardCredit term={creditEntrepreneurial} />
           <InfoCardCredit term={creditFarming} />
-          <InfoCardCredit term={creditAgriculturalBusiness} />
         </div>
       </div>
     </section>
