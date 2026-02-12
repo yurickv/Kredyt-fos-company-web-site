@@ -1,4 +1,5 @@
 import { HeroSlider } from "@/components/main-page/heroSection";
+import { SectionAccessibility } from "@/components/main-page/sectionAccessibility/sectionAccessibility";
 import { SectionAdvantage } from "@/components/main-page/sectionAdvantage/sectionAdvantage";
 import { SectionConsultForm } from "@/components/main-page/sectionConsult/sectionConsult";
 import { SectionMap } from "@/components/main-page/sectionMap";
@@ -13,6 +14,7 @@ export default function Home() {
       <HeroSlider />
       <SectionServices />
       <SectionAdvantage />
+      <SectionAccessibility />
       <SectionMilitary />
       <SectionPartners />
       <NewsSliderWrapper />
