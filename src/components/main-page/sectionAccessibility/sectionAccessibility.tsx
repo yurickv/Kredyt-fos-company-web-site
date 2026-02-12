@@ -24,7 +24,7 @@ const branches = [
 
 export const SectionAccessibility = () => {
   return (
-    <section className="pt-10 lg:pt-[50px] pb-16 md:pb-[138px] lg:pb-[124px] max-w-[1536px] mx-auto bg-netural_100">
+    <section id="accessibility" className="pt-10 lg:pt-[50px] pb-16 md:pb-[138px] lg:pb-[124px] max-w-[1536px] mx-auto bg-netural_100">
       <div className="px-4 md:px-[78px] lg:px-[120px]">
         <h2 className="title">Філії без бар&#39;єрів</h2>
         <p className="text-[16px] md:text-[18px] text-primary_700 mt-3 max-w-[900px]">
