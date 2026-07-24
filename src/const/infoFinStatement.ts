@@ -1,5 +1,14 @@
 export const infoFinStatement = [
   {
+    year: "2025",
+    finStatement:
+      "https://drive.google.com/file/d/1q0gcaI99F7aPW5NbymBi1Mq5-4vgNMbz/view?usp=drive_link",
+    auditStatement:
+      "https://drive.google.com/file/d/1aNUAFlUhU3NsNTR71g6sarVnGkroUila/view?usp=sharing",
+    assuranceReport:
+      "https://drive.google.com/file/d/1owjLbweG95LaIkUUsKS8ExFyrLoFv-o8/view?usp=sharing",
+  },
+  {
     year: "2024",
     finStatement:
       "https://drive.google.com/file/d/1mnlc16OlX38Evi2ZfM8MvdDcAtwWr-O-/view?usp=sharing",
