@@ -85,6 +85,14 @@ const NewsSlider = () => {
           >
             <div className='keen-slider__slide'>
               <NewsCard
+                title='Запрошення на загальні збори 2026'
+                text='Шановні члени кредитної спілки "Кредит-ФОС" запрошуємо вас на річні загальні збори кредитної спілки, які відбудуться 30 червня 2026 року в м.Тернопіль.'
+                route='/about-us/general-meetings-of-members-26'
+                foto='/newsFoto6.webp'
+              />
+            </div>
+            <div className='keen-slider__slide'>
+              <NewsCard
                 title='Запрошення на загальні збори'
                 text='26 червня 2025 року відбудуться загальні збори членів. Буде розлянуто підсумки роботи за 2024рік, затвердженння нових внутрішніх нормативних документів спілки.'
                 route='/about-us/general-meetings-of-members-25'
