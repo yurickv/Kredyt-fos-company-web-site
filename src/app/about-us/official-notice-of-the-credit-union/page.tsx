@@ -54,44 +54,24 @@ const OfficialNotice = () => {
             банку України
           </h2>
           <p>
-            Національний банк України за результатами планового нагляду
-            застосував до Кредитної спілки «Кредит-ФОС» захід впливу у вигляді
-            письмового застереження.
-          </p>
-          <p>
-            Письмове застереження є найм’якшим превентивним заходом, який
-            стосується виправлення окремих процедурних і технічних недоліків у
-            документації та звітності. Воно не є штрафом чи обмеженням
-            діяльності.
+            Застосовано застереження, ознайомитись{" "}
+            <Link
+              href="https://drive.google.com/file/d/1cLk976YAO651BPMPYXeP3zI5YamYBWtB/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary_400 hover:text-primary_300 underline font-bold"
+            >
+              тут
+            </Link>
           </p>
           <div className="rounded-md overflow-hidden mx-auto">
             <Image
-              src="/news-foto/nbu-letter.webp"
+              src="/news-foto/nbu-letter-new.webp"
               alt="news in Kredit Union"
-              width={1000}
-              height={546}
+              width={720}
+              height={450}
             />
           </div>
-          <p className="font-bold">КС «Кредит-ФОС» працює у звичайному режимі:</p>
-          <ul className="flex flex-col gap-4 pl-6 list-disc">
-            <li>
-              <span className="font-bold">Вклади та відсотки:</span>{" "}
-              Виплачуються вчасно та у повному обсязі згідно з договорами.
-            </li>
-            <li>
-              <span className="font-bold">Кредитування:</span> Прийом платежів
-              та видача нових позик здійснюються без змін.
-            </li>
-            <li>
-              <span className="font-bold">Усунення зауважень:</span> Команда
-              спілки вже реалізує план дій для оперативного виправлення всіх
-              зазначених регулятором моментів.
-            </li>
-          </ul>
-          <p>
-            Кредитна спілка «Кредит-ФОС» залишається надійним і прозорим
-            партнером для кожного свого члена.
-          </p>
         </div>
       </section>
     </main>

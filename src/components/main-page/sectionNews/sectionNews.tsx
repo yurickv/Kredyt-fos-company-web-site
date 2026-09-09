@@ -86,9 +86,9 @@ const NewsSlider = () => {
             <div className="keen-slider__slide">
               <NewsCard
                 title="Застосовано захід впливу - письмове застереження"
-                text="Офіційне повідомлення КС «Кредит-ФОС» щодо рішення Національного банку України"
+                text="Застосовано застереження, ознайомитись тут"
                 route="/about-us/official-notice-of-the-credit-union"
-                foto="/news-foto/nbu-letter.webp"
+                foto="/news-foto/nbu-letter-new.webp"
               />
             </div>
             <div className="keen-slider__slide">
