@@ -1,14 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { NewsItem } from "./newsData";
 
-interface newsCardProps {
-  title: string;
-  text: string;
-  foto: string;
-  route: string;
-}
-
-export const NewsCard = ({ title, text, foto, route }: newsCardProps) => {
+export const NewsCard = ({ title, text, foto, route }: NewsItem) => {
   return (
     <Link href={route} className="flex flex-col group h-full">
       <div className="relative w-full h-[206px] min-h-[206px] rounded-md overflow-hidden">
